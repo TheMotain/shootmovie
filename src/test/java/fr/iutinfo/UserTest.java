@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response.Status;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
 
-
+//TEST COMMIT
 public class UserTest extends JerseyTest {
 	@Override
     protected Application configure() {
