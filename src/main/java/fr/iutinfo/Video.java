@@ -6,16 +6,33 @@ public class Video {
 	private String titre;
 	private String description;
 	private String date_upload;
+	private String lien;
 	private User realisateur;
 	private double note;
 	
-	public Video(String titre, String description, String date_upload, User realisateur){
+	public Video(String titre, String description, String date_upload, String lien, User realisateur){
 		this.titre = titre;
 		this.description = description;
 		this.date_upload = date_upload;
+		this.lien = lien;
 		this.realisateur = realisateur;
 		note = 0.0;
 	}
+	
+	/**
+	 * Vérifie si le lien ajouté est compatible avec l'ajout dans une page HTML5
+	 * Retourne le lien sous la forme compatibe intégration HTML5
+	 */
+	public String verficationLien(String lien){
+		if(lien.contains("www.youtube.com/embed/") == false){
+			String res[] = lien.split("=");
+			res[1] = "www.youtube.com/embed/" + res[1];
+			return res[1];
+		}
+		
+		return lien;
+	}
+	
 	
 	public int getId() {
 		return id;
@@ -40,6 +57,13 @@ public class Video {
 	}
 	public void setDate_upload(String date_upload) {
 		this.date_upload = date_upload;
+	}
+	public String getLien() {
+		return lien;
+	}
+
+	public void setLien(String lien) {
+		this.lien = lien;
 	}
 	public User getRealisateur() {
 		return realisateur;

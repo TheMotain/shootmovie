@@ -80,10 +80,19 @@ public class VideoTest extends JerseyTest {
 	}
 	
 	private User createVideo(String titre) {
-		Video v = new Video(titre, titre, titre, null);
+		Video v = new Video(titre, titre, titre, titre, null);
 	    Entity<Video> videoEntity = Entity.entity(v, MediaType.APPLICATION_JSON);
 		User videoUser = target("/video").request().post(videoEntity).readEntity(User.class);
 		return videoUser;
+	}
+	
+	/**
+	 * Permet de vérifier si le lien ajouté est compatible avec l'ajout dans une page HTML5
+	 */
+	@Test
+	public void textToLien() {
+		Video v = new Video("", "", "", "", null);
+		assertEquals("www.youtube.com/embed/yNpOz44RM20", v.verficationLien("https://www.youtube.com/watch?v=yNpOz44RM20"));
 	}
 	
 }
