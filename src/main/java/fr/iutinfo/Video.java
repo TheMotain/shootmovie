@@ -33,6 +33,10 @@ public class Video {
 		return lien;
 	}
 	
+
+	public Video(){
+		
+	}
 	
 	public int getId() {
 		return id;

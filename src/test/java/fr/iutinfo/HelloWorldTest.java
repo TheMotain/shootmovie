@@ -13,8 +13,9 @@ public class HelloWorldTest extends JerseyTest{
         return new App();
     }
 	@Test
-	public void testLogin() {
-		Signin user1 = target("/helloworld").request().get(Signin.class);
-		assertEquals(user1, "Hello World!");
+	public void testHelloWorld() {
+		String user1 = target("/helloworld").request().get(String.class);
+		System.out.print("************************************************** testHelloWorld: "+user1);
+		assertEquals(HelloWorldResource.CLICHED_MESSAGE, user1);
 	}
 }
