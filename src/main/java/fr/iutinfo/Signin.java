@@ -1,6 +1,7 @@
 package fr.iutinfo;
 
 import javax.ws.rs.DefaultValue;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,8 +20,8 @@ public class Signin {
 	}
 	
 	@GET
-	public String connect(@DefaultValue("tutu") @QueryParam("login") String login, 
-				@DefaultValue("titi") @QueryParam("mdp") String mdp){
+	public String connect(@FormParam("login") String login, 
+				@FormParam("mdp") String mdp){
 		System.out.print("************************ connect with "+login+"  and "+mdp);
 		if(login.equals("admin") && mdp.equals("admin"))
 			return "yes";
