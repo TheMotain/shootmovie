@@ -18,6 +18,9 @@ public class Bdd {
 
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, pseudo STRING, password STRING, email STRING, dateInscription STRING)");
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS videos (id SERIAL PRIMARY KEY, titre STRING, description TEXT, dateUpload STRING, realisateur INTEGER, note DOUBLE)");
+			statement.executeUpdate("ALTER TABLE users ADD pays STRING, role STRING, imageProfil STRING, imageCouverture STRING");
+			statement.executeUpdate("ALTER TABLE videos ADD lien STRING");
+			
 		}
 	}
 
