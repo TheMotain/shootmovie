@@ -13,11 +13,11 @@ public class Bdd {
 			SQLException {
 		if (con == null) {
 			Class.forName("org.sqlite.JDBC");
-			con = DriverManager.getConnection("jdbc:sqlite:3DViewer");
+			con = DriverManager.getConnection("jdbc:sqlite:ShootMovie");
 			Statement statement = con.createStatement();
 
-			statement
-					.executeUpdate("CREATE TABLE IF NOT EXISTS modele (id SERIAL PRIMARY KEY, name STRING, path STRING, description STRING, keywords STRING, date_ajout DATETIME, nbPoints INTEGER, nbSegments INTEGER, nbFaces INTEGER)");
+			statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, pseudo STRING, password STRING, email STRING, dateInscription STRING)");
+			statement.executeUpdate("CREATE TABLE IF NOT EXISTS videos (id SERIAL PRIMARY KEY, titre STRING, description TEXT, dateUpload STRING, realisateur INTEGER, note DOUBLE)");
 		}
 	}
 
