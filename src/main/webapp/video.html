@@ -7,6 +7,7 @@
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		
+		
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/video.css">
@@ -81,7 +82,10 @@
 					<div class="panel panel-default">
 					  <div class="panel-heading">Commentaires</div>
 					  <div class="panel-body">
-					    Contenu
+					    <textarea id="textarea" name="comm" rows=10 cols=40>Tapez vos commentaires ici</textarea>
+						<br></br>
+   						<input type="button" id="boutonaffi" value="Afficher"/>                  
+   						<input type="button" id="textarea_reset" value=" Reset "/>
 					  </div>
 					</div>
 				</div>
@@ -98,6 +102,15 @@
 				document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
 				document.getElementById("note").innerHTML = "Lien de la vidéo ";
 			}
+			
+			$("#boutonaffi").click(function() {
+				msg = $("#textarea").val();
+				alert(msg);
+				});
+				
+			$("#textarea_reset").click(function() {
+					document.getElementById("textarea").value = "";
+				});
 
 			modificationVariables();
 		</script>
