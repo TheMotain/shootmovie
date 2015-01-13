@@ -5,15 +5,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
@@ -86,7 +82,7 @@ public class UserTest extends JerseyTest {
 	}
 	
 	private User createUser(String name) {
-		User user = new User(0, name, name, name+"@test.com");
+		User user = new User(0, name, name, name);
 	    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
 		User savedUser = target("/user").request().post(userEntity).readEntity(User.class);
 		return savedUser;
