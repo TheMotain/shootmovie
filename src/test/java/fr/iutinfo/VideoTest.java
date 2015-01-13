@@ -78,14 +78,8 @@ public class VideoTest extends JerseyTest {
         assertEquals(202, status);
         
 	}
-	
-<<<<<<< HEAD
-	private User createVideo(String titre) {
-		Video v = new Video(titre, titre, titre, titre, null);
-=======
 	private Video createVideo(String titre) {
-		Video v = new Video(titre, titre, titre, null);
->>>>>>> f5d3236a6f77f01d4cb9cdee9a024169e933499e
+		Video v = new Video(titre, titre, titre, titre, null);
 	    Entity<Video> videoEntity = Entity.entity(v, MediaType.APPLICATION_JSON);
 		Video video = target("/video").request().post(videoEntity).readEntity(Video.class);
 		return video;
