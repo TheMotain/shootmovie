@@ -12,22 +12,22 @@ import javax.swing.JPanel;
 public class PanelPrincipal extends JPanel{
 	
 		private JLabel logo;
-		private PanelConnexion pc;
+		private Connexion c;
 	
 	
 	public PanelPrincipal() {
 		
 		
-		setLayout(new BorderLayout(100, 100));
+		setLayout(new BorderLayout(80,0));
 		
 		
 		logo= new JLabel(new ImageIcon("img/logo.png"));
 		add(logo,BorderLayout.NORTH);
 		
-		pc= new PanelConnexion();
-		//add(new Connexion(),BorderLayout.CENTER);
+		c= new Connexion();
+		add(c,BorderLayout.CENTER);
 		
-		add(new JLabel(),BorderLayout.SOUTH);
+	//	add(new JLabel(),BorderLayout.SOUTH);
 		add(new JLabel(),BorderLayout.EAST);
 		add(new JLabel(),BorderLayout.WEST);
 		

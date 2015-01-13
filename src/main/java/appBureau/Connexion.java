@@ -1,82 +1,57 @@
 package appBureau;
 	import javax.swing.*;
-	import java.awt.BorderLayout;
-	import java.awt.Dimension;
-	import java.awt.Color;
-	import java.awt.event.ActionListener;
-	import java.awt.event.ActionEvent;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Font;
+
 public class Connexion extends JPanel{
 
-	    JPanel textPanel, panelForTextFields, completionPanel;
+	    JPanel textPanel, panel, completionPanel;
 	    JLabel titleLabel, usernameLabel, passwordLabel, userLabel, passLabel;
-	    JTextField usernameField, loginField;
-	    JButton loginButton ;
+	    JTextField usernameField;JPasswordField loginField;
+	    JButton loginButton;
 
 	    public Connexion(){
 
 	        
 	
-	     setLayout(new BorderLayout(100, 100));
-	    
+	     setLayout(new BorderLayout(100,20));
+	     
+	     setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black));
+
 	        titleLabel = new JLabel("Connexion");
-	        titleLabel.setPreferredSize(new Dimension(290, 30));
+	        titleLabel.setFont(new Font("f", Font.BOLD, 20));
+	        titleLabel.setForeground(Color.white);
+	        titleLabel.setPreferredSize(new Dimension(100, 30));
 	        titleLabel.setHorizontalAlignment(0);
 	        add(titleLabel, BorderLayout.PAGE_START);
 
-	  
-	        textPanel = new JPanel();
-	        textPanel.setPreferredSize(new Dimension(70, 80));
-	        add(textPanel, BorderLayout.LINE_START);
+	        panel = new JPanel();
+	        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	        add(panel, BorderLayout.CENTER);
 
 	        
 	        usernameLabel = new JLabel("Login");
-	        usernameLabel.setPreferredSize(new Dimension(70, 30));
 	        usernameLabel.setHorizontalAlignment(4);
-	        textPanel.add(usernameLabel);
+	        panel.add(usernameLabel);
 
-	       
-	        passwordLabel = new JLabel("Mot de passe");
-	        passwordLabel.setPreferredSize(new Dimension(70, 30));
-	        passwordLabel.setHorizontalAlignment(4);
-	        textPanel.add(passwordLabel);
-
-	   
-	        panelForTextFields = new JPanel();
-	        panelForTextFields.setPreferredSize(new Dimension(100, 70));
-	        add(panelForTextFields, BorderLayout.CENTER);
-
-	   
 	        usernameField = new JTextField(8);
-	        usernameField.setPreferredSize(new Dimension(100, 30));
-	        panelForTextFields.add(usernameField);
-
-	      
-	        loginField = new JTextField(8);
-	        loginField.setPreferredSize(new Dimension(100, 30));
-	        panelForTextFields.add(loginField);
-
+	        panel.add(usernameField);
 	        
-	        completionPanel = new JPanel();
-	        completionPanel.setPreferredSize(new Dimension(70, 80));
-	        add(completionPanel, BorderLayout.LINE_END);
+	        passwordLabel = new JLabel("Mot de passe");
+	        passwordLabel.setHorizontalAlignment(4);
+	        panel.add(passwordLabel);
 
-	
-	        userLabel = new JLabel("Wrong");
-	        userLabel.setForeground(Color.red);
-	        userLabel.setPreferredSize(new Dimension(70, 30));
-	        completionPanel.add(userLabel);
+	        loginField = new JPasswordField(8);
+	        panel.add(loginField);
+	        
 
-
-	        passLabel = new JLabel("Wrong");
-	        passLabel.setForeground(Color.red);
-	        passLabel.setPreferredSize(new Dimension(70, 30));
-	        completionPanel.add(passLabel);
-
-	
-	        loginButton = new JButton("Login");
+	        loginButton = new JButton("connexion");
 	        add(loginButton, BorderLayout.PAGE_END);
 
-	    setOpaque(true);
+	        setOpaque(false);
 	       
 	    }
 
