@@ -17,6 +17,10 @@ public class Video {
 		note = 0.0;
 	}
 	
+	public Video(){
+		
+	}
+	
 	public int getId() {
 		return id;
 	}

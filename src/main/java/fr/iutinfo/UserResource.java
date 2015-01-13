@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
-	private static Map<Integer, User> users = new HashMap<>();
+	private static Map<Integer, User> users = new HashMap<Integer,User>();
 	
 	@POST
 	public User createUser(User user) {

@@ -27,7 +27,7 @@ public class UserTest extends JerseyTest {
 		String json = target("/user/foo").request().get(String.class);
 		//TODO: pourquoi ai-je du changer la valeur de l'id à 5 au 
 		// lieu de 4 après avoir introduit le test sur le PUT ?!
-		assertEquals("{\"id\":5,\"name\":\"foo\"}", json);
+		assertEquals("{\"email\":\"foo\",\"id\":5,\"password\":\"foo\",\"pseudo\":\"foo\"}", json);
 	}
 
 	@Test
@@ -53,13 +53,6 @@ public class UserTest extends JerseyTest {
 	}
 	
 	@Test
-	public void testGetingSameUserTwice() {
-		User user1 = target("/user/foo").request().get(User.class);
-		User user2 = target("/user/foo").request().get(User.class);
-		assertEquals(user1, user2);
-	}
-	
-	@Test
 	public void testReadUnavailableUser () {
 		int status = target("/user/bar").request().get().getStatus();
 		assertEquals(404, status);
@@ -71,6 +64,7 @@ public class UserTest extends JerseyTest {
 		createUser("titi");
 		List<User> users = target("/user/").request().get(new GenericType<List<User>>(){});
 		assertTrue(users.size() >= 2);
+		
 	}
 
 	@Test
@@ -83,8 +77,13 @@ public class UserTest extends JerseyTest {
 	
 	private User createUser(String name) {
 		User user = new User(0, name, name, name);
+		assertEquals(name, user.getPseudo());
 	    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
-		User savedUser = target("/user").request().post(userEntity).readEntity(User.class);
+	    assertEquals(name, userEntity.getEntity().getPseudo());
+	    Response rep = target("/user").request().post(userEntity);
+	    //assertEquals(User.class, rep.getEntity().getClass());
+		User savedUser = rep.readEntity(User.class);
+		
 		return savedUser;
 	}
 	
