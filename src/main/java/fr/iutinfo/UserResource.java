@@ -45,7 +45,7 @@ public class UserResource {
 	protected User find(String name) {
 		User out = null;
 		for (User user : users.values()) {
-			if (user.getName().equals(name)) {
+			if (user.getPseudo().equals(name)) {
 				return user;
 			}
 		}
@@ -66,7 +66,7 @@ public class UserResource {
 		if (user == null) {
 			throw new WebApplicationException(404);
 		}
-		oldUser.setName(user.getName());
+		oldUser.setPseudo(user.getPseudo());
 		return Response.status(200).entity(oldUser).build();
 	}
 	

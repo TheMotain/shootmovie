@@ -1,18 +1,20 @@
 package fr.iutinfo;
 
 public class User {
-	private String name;
-	private int id = 0;
+	private int id;
+	private String pseudo;
+	private String password;
+	private String email;
+	private String dateInscription;
 
-	public User(int id, String name) {
+	public User(int id, String pseudo, String password, String email, String dateInscription) {
 		this.id = id;
-		this.name = name;
+		this.pseudo = pseudo;
+		this.password = password;
+		this.email = email;
+		this.dateInscription = dateInscription;
 	}
 
-	public User() {
-		
-	}
-	
 	public int getId() {
 		return id;
 	}
@@ -21,20 +23,38 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getPseudo() {
+		return pseudo;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
-	public boolean equals(Object u) {
-		return name.equals(((User) u).name);
+	public String getPassword() {
+		return password;
 	}
 
-	public String toString() {
-		return id + ": " + name;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDateInscription() {
+		return dateInscription;
+	}
+
+	public void setDateInscription(String dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+	
+	
 
 }
