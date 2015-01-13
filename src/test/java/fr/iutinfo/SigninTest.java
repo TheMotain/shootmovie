@@ -14,7 +14,7 @@ public class SigninTest extends JerseyTest{
     }
 	
 	@Test
-	public void testGetingSameUserTwice() {
+	public void testLogin() {
 		Signin user1 = target("/Signin?login=admin&mdp=admin").request().get(Signin.class);
 		assertEquals(user1, "yes");
 	}
