@@ -3,6 +3,8 @@
 	width:100%;	
 }
 
-.description {
-	
+.commentaire-date {
+	font-size:10px;
+	font-style: italic;
+	color:#777;
 }

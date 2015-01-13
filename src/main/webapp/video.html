@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>ShootFilm</title>
+		<title>ShootFilm - Titre de la vidéo</title>
 		<meta charset='utf-8'>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -70,7 +70,7 @@
 		</div>
 		
 		<div class="row">
-		<div class="col-md-4">
+			<div class="col-md-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading"><span id="realisateur"></span></div>
 					  <div class="panel-body">
@@ -82,10 +82,29 @@
 					<div class="panel panel-default">
 					  <div class="panel-heading">Commentaires</div>
 					  <div class="panel-body">
-					    <textarea id="textarea" name="comm" rows=10 cols=40>Tapez vos commentaires ici</textarea>
-						<br></br>
-   						<input type="button" id="boutonaffi" value="Afficher"/>                  
-   						<input type="button" id="textarea_reset" value=" Reset "/>
+					  
+					  <!-- A  répeter pour chaque commentaire -->
+					  
+					  <div class="commentaire-box">
+					  	<div class="row">
+					  		<div class="col-md-2">
+					  			<img src="http://placehold.it/100x100" />
+								<a href="#">Pseudo</a><br>
+					  		</div>
+					  		<div class="col-md-10">
+					  			<span class="commentaire-date">Posté le 18-07-1995 à 04h34</span><br>
+					  			<p>Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit, putet esse leviorem, dum modo, cuius exemplo se consolatur, eius exitum expectet, praesertim cum in Albucio nec Pisonis libidines nec audacia Gabini fuerit ac tamen hac una plaga conciderit, ignominia senatus.</p>
+					  		</div>
+					  	</div>
+					  	<hr>
+					  </div>
+					  
+					  <!-- Fin de répétition -->
+					  
+					  	<form method="post" class="form-horizontal">
+					    	<textarea id="textarea" rows="5" class="form-control" placeholder="Commentez la vidéo ..." name="comm"></textarea><br>
+   							<input type="button" class="btn btn-block btn-default" id="boutonaffi" value="Afficher"/>
+   						</form>
 					  </div>
 					</div>
 				</div>
@@ -106,10 +125,6 @@
 			$("#boutonaffi").click(function() {
 				msg = $("#textarea").val();
 				alert(msg);
-				});
-				
-			$("#textarea_reset").click(function() {
-					document.getElementById("textarea").value = "";
 				});
 
 			modificationVariables();

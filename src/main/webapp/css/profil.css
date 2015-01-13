@@ -1,44 +1,34 @@
-h1{
-
-    color:#DDD;
+.banniere {
+	width:100%;
 }
 
-body{
-background-image: url("../img/bg.png");
-background-repeat: repeat
-
+.header-profil {
+	background: #931010; /* Old browsers */
+	background: -moz-linear-gradient(top, #931010 0%, #731010 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#931010), color-stop(100%,#731010)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #931010 0%,#731010 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #931010 0%,#731010 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #931010 0%,#731010 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #931010 0%,#731010 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#931010', endColorstr='#731010',GradientType=0 ); /* IE6-9 */
+	height:190px;
 }
 
-section{
-margin-left:170px;
-margin-right:170px;
-background-color:#444444
-}
-#infos{
-list-style-type:none;
+.photo-profil {
+	margin:20px;
 }
 
-li{
-color:#DDD;
-position:relative;
-left:-35px;
+.pseudo {
+	font-size: 30px;
 }
-#couverture{
-background-image: url("../img/cover.jpg");
-background-repeat: no-repeat
-}
-#videoAjoutes{
-background-color:#931010
-}
-#nom{
-background-color:#931010
-}
-#abonnement{
 
-background-image:url("../img/ab.png");
- width: 180px;
- height: 39px;
-/*margin-left:500;*/
-position:relative;
-left:900px;
+.date-inscription {
+	font-size: 12px;
+	position: relative;
+	bottom:10px;
+	color:#AAA;
+}
+
+.description {
+	text-align:justify;
 }
