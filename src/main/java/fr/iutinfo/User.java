@@ -7,12 +7,11 @@ public class User {
 	private String email;
 	private String dateInscription;
 
-	public User(int id, String pseudo, String password, String email, String dateInscription) {
+	public User(int id, String pseudo, String password, String email) {
 		this.id = id;
 		this.pseudo = pseudo;
 		this.password = password;
 		this.email = email;
-		this.dateInscription = dateInscription;
 	}
 
 	public int getId() {

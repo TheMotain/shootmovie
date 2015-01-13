@@ -86,7 +86,7 @@ public class UserTest extends JerseyTest {
 	}
 	
 	private User createUser(String name) {
-		User user = new User(0, name, name, name+"@test.com", "Aujourd'hui");
+		User user = new User(0, name, name, name+"@test.com");
 	    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
 		User savedUser = target("/user").request().post(userEntity).readEntity(User.class);
 		return savedUser;
