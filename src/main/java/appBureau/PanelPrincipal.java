@@ -25,7 +25,7 @@ public class PanelPrincipal extends JPanel{
 		add(logo,BorderLayout.NORTH);
 		
 		pc= new PanelConnexion();
-		add(new Connexion(),BorderLayout.CENTER);
+		//add(new Connexion(),BorderLayout.CENTER);
 		
 		add(new JLabel(),BorderLayout.SOUTH);
 		add(new JLabel(),BorderLayout.EAST);

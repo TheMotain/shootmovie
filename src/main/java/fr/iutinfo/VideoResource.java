@@ -72,7 +72,7 @@ public class VideoResource {
 	
 	@GET
 	@Path("/{name}")
-	public Video getVideo(@PathParam("name") String name ) {
+	public Video getUser(@PathParam("name") String name ) {
 		Video out = find(name);
 		if (out == null) {
 			throw new WebApplicationException(404);
@@ -81,7 +81,7 @@ public class VideoResource {
 	}
 	
 	@GET
-	public List<Video> getVideos(@DefaultValue("10") @QueryParam("limit") int limit) {
+	public List<Video> getUsers(@DefaultValue("10") @QueryParam("limit") int limit) {
 		return new ArrayList<Video>(videos.values());
 	}
 }

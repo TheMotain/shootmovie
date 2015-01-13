@@ -12,10 +12,16 @@ public class SigninTest extends JerseyTest{
     protected Application configure() {
         return new App();
     }
-	
+	@Test
+	public void testPing() {
+		String user1 = target("/signin/ping").request().get(String.class);
+		System.out.println("--------------- PING ----------------");
+		assertEquals("Yes !", user1);
+	}
 	@Test
 	public void testLogin() {
-		Signin user1 = target("/Signin?login=admin&mdp=admin").request().get(Signin.class);
-		assertEquals(user1, "yes");
+		String user1 = target("/signin?login=admin&mdp=admin").request().get(String.class);
+		System.out.println("--------------- testLogin ---------------- "+user1);
+		assertEquals("yes", user1);
 	}
 }
