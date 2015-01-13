@@ -1,0 +1,44 @@
+h1{
+
+    color:#DDD;
+}
+
+body{
+background-image: url("../img/bg.png");
+background-repeat: repeat
+
+}
+
+section{
+margin-left:170px;
+margin-right:170px;
+background-color:#444444
+}
+#infos{
+list-style-type:none;
+}
+
+li{
+color:#DDD;
+position:relative;
+left:-35px;
+}
+#couverture{
+background-image: url("../img/cover.jpg");
+background-repeat: no-repeat
+}
+#videoAjoutes{
+background-color:#931010
+}
+#nom{
+background-color:#931010
+}
+#abonnement{
+
+background-image:url("../img/ab.png");
+ width: 180px;
+ height: 39px;
+/*margin-left:500;*/
+position:relative;
+left:900px;
+}

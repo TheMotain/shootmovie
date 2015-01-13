@@ -32,7 +32,6 @@ public class Video {
 		
 		return lien;
 	}
-	
 
 	public Video(){
 		

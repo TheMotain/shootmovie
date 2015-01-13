@@ -8,25 +8,69 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <!-- bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <!-- Code local -->
-<script src="all.js"></script>
+<script src="all.js">
+	
+</script>
+
+
 
 
 </head>
 <body>
+
 	<div>
-		<center>
-			<iframe width="560" height="315"
-				src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0"
-				allowfullscreen></iframe>
-		</center>
+
+
+		<iframe width="560" height="315" src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0" allowfullscreen></iframe>
+
+
+		<p>Titre : <a id="titre"></a> </p>
+		
+		<p>Description : <a id="desc"></a> </p>
+		<p>Date_upload : <a id="date"></a> </p>
+		<p>Lien : <a id="lien"></a> </p>
+		<p>Realisateur : <a id="realisateur"></a> </p>
+		<p>Note : <a id="note"></a> </p>
+
+		
+	
+		<script type="text/javascript">
+	
+			function afficheDescURL(toThis) {
+				
+					document.getElementById("titre").innerHTML = "Titre de la videooooo";
+					document.getElementById("desc").innerHTML = "Ceci est une description";
+					document.getElementById("date").innerHTML = "Date du jour";
+					document.getElementById("lien").innerHTML = "Lien de la vidéo ";
+					document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
+					document.getElementById("note").innerHTML = "Lien de la vidéo ";
+
+			}
+	
+			base = " Vous êtes sur la page d'accueil ";
+			afficheDescURL(base);
+	
+		</script>
+
+
+
+
+
+
+
 	</div>
+	
+	
+	
+	
+	
+	
+	
 </body>
+
 </html>
