@@ -9,6 +9,7 @@
 		
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/video.css">
 		<script src="js/bootstrap.min.js"></script>
 		
 		<!-- Code local -->
@@ -52,31 +53,40 @@
 </nav>
 <!-- ----------------- FIN MENU HAUT ------------------- -->
 
-	<div>
-		<iframe width="720" height="480" src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0" allowfullscreen></iframe>
-
-
-		<p>
-			Titre : <a id="titre"></a>
-		</p>
-
-		<p>
-			Description : <a id="desc"></a>
-		</p>
-		<p>
-			Date_upload : <a id="date"></a>
-		</p>
-		<p>
-			Lien : <a id="lien"></a>
-		</p>
-		<p>
-			Realisateur : <a id="realisateur"></a>
-		</p>
-		<p>
-			Note : <a id="note"></a>
-		</p>
-
-
+	<div class="container">
+	<div class="video-player">
+					<iframe width="100%;" height="620" src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0" allowfullscreen></iframe>
+				</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><span id="titre"></span></div>
+			<div class="panel-body">
+				<p>Synopsis :</p>
+				<i class="description">Description : <span id="desc"></span></i>
+				<p>Date_upload : <span id="date"></span></p>
+				<p>Lien : <span id="lien"></span></p>
+				<p>Note : <span id="note"></span></p>
+			</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-md-4">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><span id="realisateur"></span></div>
+					  <div class="panel-body">
+					    Contenu
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Commentaires</div>
+					  <div class="panel-body">
+					    Contenu
+					  </div>
+					</div>
+				</div>
+				
+			</div>
 
 		<script type="text/javascript">
 			function modificationVariables() {
