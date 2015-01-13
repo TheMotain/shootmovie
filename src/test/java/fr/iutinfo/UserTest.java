@@ -37,7 +37,7 @@ public class UserTest extends JerseyTest {
 	@Test
 	public void testReadUserWithNameFooAsObject() {
 		User utilisateur = target("/user/foo").request().get(User.class);
-		assertEquals("foo", utilisateur.getName());
+		assertEquals("foo", utilisateur.getPseudo());
 	}
 	
 	@Test
@@ -49,11 +49,11 @@ public class UserTest extends JerseyTest {
 	@Test
 	public void testUpdateUserName() {
 		User u = createUser("thomas");
-		u.setName("yann");
+		u.setPseudo("yann");
 		Response rep = target("/user").path(""+u.getId()).request()
 				.put(Entity.entity(u,MediaType.APPLICATION_JSON));;
 		User updatedUser = rep.readEntity(User.class);
-		assertEquals("yann", updatedUser.getName());
+		assertEquals("yann", updatedUser.getPseudo());
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class UserTest extends JerseyTest {
 	}
 	
 	private User createUser(String name) {
-		User user = new User(0, name);
+		User user = new User(0, name, name, name+"@test.com", "Aujourd'hui");
 	    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
 		User savedUser = target("/user").request().post(userEntity).readEntity(User.class);
 		return savedUser;
