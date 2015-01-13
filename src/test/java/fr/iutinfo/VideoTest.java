@@ -29,20 +29,20 @@ public class VideoTest extends JerseyTest {
 	}
 
 	@Test
-	public void testReadUserWithNameFooAsObject() {
-		User utilisateur = target("/user/foo").request().get(User.class);
-		assertEquals("foo", utilisateur.getPseudo());
+	public void testReadVideoWithNameFooAsObject() {
+		Video video = target("/video/foo").request().get(Video.class);
+		assertEquals("foo", video.getTitre());
 	}
 	
 	@Test
 	public void testcreateVideoMustReturnUserWithId() {
-		User savedUser = createVideo("thomas");
-		assertTrue(savedUser.getId() > 0);
+		Video savedVideo = createVideo("thomas");
+		assertTrue(savedVideo.getId() > 0);
 	}
 
 	@Test
 	public void testUpdateUserName() {
-		User u = createVideo("thomas");
+		User u = null;//createVideo("thomas");
 		u.setPseudo("yann");
 		Response rep = target("/user").path(""+u.getId()).request()
 				.put(Entity.entity(u,MediaType.APPLICATION_JSON));;
@@ -51,10 +51,10 @@ public class VideoTest extends JerseyTest {
 	}
 	
 	@Test
-	public void testGetingSameUserTwice() {
-		User user1 = target("/user/foo").request().get(User.class);
-		User user2 = target("/user/foo").request().get(User.class);
-		assertEquals(user1, user2);
+	public void testGetingSameVideoTwice() {
+		Video video1 = target("/video/foo").request().get(Video.class);
+		Video video2 = target("/video/foo").request().get(Video.class);
+		assertEquals(video1, video2);
 	}
 	
 	@Test
@@ -64,26 +64,31 @@ public class VideoTest extends JerseyTest {
 	}
 	
 	@Test
-	public void tesListAllUsers() {
+	public void tesListAllVideos() {
 		createVideo("toto");
 		createVideo("titi");
-		List<User> users = target("/user/").request().get(new GenericType<List<User>>(){});
-		assertTrue(users.size() >= 2);
+		List<Video> videos = target("/video/").request().get(new GenericType<List<Video>>(){});
+		assertTrue(videos.size() >= 2);
 	}
 
 	@Test
-	public void testDeleteUser() {
-		User u = createVideo("toto");
-		int status = target("/user/"+u.getId()).request().delete().getStatus();
+	public void testDeleteVideo() {
+		Video u = createVideo("toto");
+		int status = target("/video/"+u.getId()).request().delete().getStatus();
         assertEquals(202, status);
         
 	}
 	
+<<<<<<< HEAD
 	private User createVideo(String titre) {
 		Video v = new Video(titre, titre, titre, titre, null);
+=======
+	private Video createVideo(String titre) {
+		Video v = new Video(titre, titre, titre, null);
+>>>>>>> f5d3236a6f77f01d4cb9cdee9a024169e933499e
 	    Entity<Video> videoEntity = Entity.entity(v, MediaType.APPLICATION_JSON);
-		User videoUser = target("/video").request().post(videoEntity).readEntity(User.class);
-		return videoUser;
+		Video video = target("/video").request().post(videoEntity).readEntity(Video.class);
+		return video;
 	}
 	
 	/**
