@@ -101,6 +101,7 @@ public class Connexion extends JPanel{
 				}catch (Exception e) {
 					System.err.println(e.getClass().getName() + ": " + e.getMessage());
 					System.exit(0);
+					
 				} finally {
 					try {
 
