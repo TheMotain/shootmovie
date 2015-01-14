@@ -6,16 +6,18 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class PanelPrincipal extends JPanel{
 	
 		private JLabel logo;
 		private Connexion c;
 	
 	
-	public PanelPrincipal() {
+	public PanelPrincipal(JFrame j) {
 		
 		
 		setLayout(new BorderLayout(80,0));
@@ -24,7 +26,7 @@ public class PanelPrincipal extends JPanel{
 		logo= new JLabel(new ImageIcon("img/logo.png"));
 		add(logo,BorderLayout.NORTH);
 		
-		c= new Connexion();
+		c= new Connexion(j);
 		add(c,BorderLayout.CENTER);
 		
 	//	add(new JLabel(),BorderLayout.SOUTH);

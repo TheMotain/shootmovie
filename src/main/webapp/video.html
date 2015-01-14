@@ -56,13 +56,13 @@
 
 	<div class="container">
 	<div class="video-player">
-					<iframe width="100%;" height="620" src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0" allowfullscreen></iframe>
+					<iframe id="video" width="100%;" height="620" src="//www.youtube.com/embed/xrs0_XyW3jk" frameborder="0" allowfullscreen></iframe>
 				</div>
 		<div class="panel panel-default">
 			<div class="panel-heading"><span id="titre"></span></div>
 			<div class="panel-body">
-				<p>Synopsis :</p>
-				<i class="description">Description : <span id="desc"></span></i>
+				<p>Synopsis : <span id="synopsis"></span></p>
+				<p class="description">Description : <i><span id="desc"></span></i></p>
 				<p>Date_upload : <span id="date"></span></p>
 				<p>Lien : <span id="lien"></span></p>
 				<p>Note : <span id="note"></span></p>
@@ -115,11 +115,15 @@
 			function modificationVariables() {
 
 				document.getElementById("titre").innerHTML = "Titre de la video";
+				document.getElementById("synopsis").innerHTML = "Ceci est un synopsis";
 				document.getElementById("desc").innerHTML = "Ceci est une description";
 				document.getElementById("date").innerHTML = "Date du jour";
 				document.getElementById("lien").innerHTML = "Lien de la vidéo ";
 				document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
 				document.getElementById("note").innerHTML = "Lien de la vidéo ";
+				
+				document.getElementById("video").src = "//www.youtube.com/embed/cU1akTtb5aU";
+
 			}
 			
 			$("#boutonaffi").click(function() {
