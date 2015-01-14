@@ -13,6 +13,14 @@ public class User {
 		this.pseudo = pseudo;
 		this.password = password;
 		this.email = email;
+		this.type = "standard user";
+		this.dateInscription = "00/00/0000";
+	}
+	
+	public User(int id, String pseudo, String password, String email, String type, String dateInscription){
+		this(id,pseudo,password,email);
+		this.type = type;
+		this.dateInscription = dateInscription;
 	}
 
 	public int getId() {
