@@ -7,11 +7,11 @@ public class Video {
 	private String description;
 	private String date_upload;
 	private String lien;
-	private User realisateur;
+	private int realisateur;
 	private double note;
 	private int compteur;
 	
-	public Video(String titre, String description, String date_upload, String lien, User realisateur){
+	public Video(String titre, String description, String date_upload, String lien, int realisateur){
 		this.titre = titre;
 		this.description = description;
 		this.date_upload = date_upload;
@@ -70,10 +70,10 @@ public class Video {
 	public void setLien(String lien) {
 		this.lien = lien;
 	}
-	public User getRealisateur() {
+	public int getRealisateur() {
 		return realisateur;
 	}
-	public void setRealisateur(User realisateur) {
+	public void setRealisateur(int realisateur) {
 		this.realisateur = realisateur;
 	}
 	public double getNote() {
