@@ -14,7 +14,7 @@ public class Main {
 		jf.setTitle("ShootMovie");
 		jf.setLocation(500, 250);
 		jf.setResizable(false);
-		jf.add(new PanelPrincipal());
+		jf.add(new PanelPrincipal(jf));
 		jf.setVisible(true);
 		
 		
