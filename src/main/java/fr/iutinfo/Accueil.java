@@ -13,7 +13,7 @@ public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	public void service( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("menu.jsp").forward(req, res);
+		this.getServletContext().getRequestDispatcher("/index.jsp").forward(req, res);
 	}
 
 }
