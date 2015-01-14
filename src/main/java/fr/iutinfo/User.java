@@ -5,6 +5,7 @@ public class User {
 	private String pseudo;
 	private String password;
 	private String email;
+	private String type;
 	private String dateInscription;
 
 	public User(int id, String pseudo, String password, String email) {
@@ -52,6 +53,14 @@ public class User {
 
 	public void setDateInscription(String dateInscription) {
 		this.dateInscription = dateInscription;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

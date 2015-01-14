@@ -9,6 +9,7 @@ public class Video {
 	private String lien;
 	private User realisateur;
 	private double note;
+	private int compteur;
 	
 	public Video(String titre, String description, String date_upload, String lien, User realisateur){
 		this.titre = titre;
@@ -17,6 +18,7 @@ public class Video {
 		this.lien = lien;
 		this.realisateur = realisateur;
 		note = 0.0;
+		compteur=0;
 	}
 	
 	/**
@@ -79,6 +81,18 @@ public class Video {
 	}
 	public void setNote(double note) {
 		this.note = note;
+	}
+	
+	public void setCompteur1(int compteur) {
+		this.compteur=compteur;
+	}
+	
+	public void setCompteur() {
+		compteur++;
+	}
+	
+	public int getCompteur() {
+		return compteur;
 	}
 
 }

@@ -7,17 +7,18 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface UserDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, dateInscription STRING)")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, type STRING, dateInscription STRING)")
 	public void createTable();
 	
-	@SqlUpdate("INSERT INTO users (pseudo,password,email,dateInscription) VALUES(:pseudo,:password,:email,:dateInscription)")
-	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("dateInscription") String dateInscription);
+
+	@SqlUpdate("INSERT INTO users (pseudo,password,type,dateInscription) VALUES (:pseudo,:password,'standard user',:date)")
+	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("date") String date);
 	
-	@SqlUpdate("INSERT INTO users (pseudo,password) VALUES(:pseudo,:password)")
-	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password);
+	@SqlUpdate("INSERT INTO users (pseudo,password,email,type,dateInscription) VALUES(:pseudo,:password,:email,:type,:dateInscription)")
+	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
 	
-	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,dateInscription:dateInscription) where id=:id")
-	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("dateInscription") String dateInscription);
+	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,type=:type,dateInscription:dateInscription) where id=:id")
+	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
 	
 	@SqlQuery("SELECT * FROM users WHERE pseudo=:pseudo")
 	@RegisterMapperFactory(BeanMapperFactory.class)
