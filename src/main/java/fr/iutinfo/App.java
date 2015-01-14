@@ -13,7 +13,6 @@ public class App extends Application{
     	Set<Class<?>> s = new HashSet<Class<?>>();
     	s.add(UserResource.class);
     	s.add(HelloWorldResource.class);
-    	s.add(Signin.class);
     	return s;
     }
 }
