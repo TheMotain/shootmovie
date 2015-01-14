@@ -7,7 +7,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface UserDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY AUTOINCREMENT, pseudo STRING, password STRING, email STRING, dateInscription STRING)")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, dateInscription STRING)")
 	public void createTable();
 	
 	@SqlUpdate("INSERT INTO users (pseudo,password,email,dateInscription) VALUES(:pseudo,:password,:email,:dateInscription)")
@@ -18,7 +18,6 @@ public interface UserDao {
 	
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,dateInscription:dateInscription) where id=:id")
 	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("dateInscription") String dateInscription);
-	
 	
 	@SqlQuery("SELECT * FROM users WHERE pseudo=:pseudo")
 	@RegisterMapperFactory(BeanMapperFactory.class)
