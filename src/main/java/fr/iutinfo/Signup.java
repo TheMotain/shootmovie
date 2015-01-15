@@ -22,6 +22,7 @@ public class Signup extends HttpServlet {
 			userdao.createTable();
 			String pseudo = req.getParameter("login");
 			String password = req.getParameter("mdp");
+			String email = req.getParameter("email");
 			String user = userdao.selectPseudo(pseudo);
 			Calendar cal = Calendar.getInstance();
 			String day;
@@ -37,7 +38,7 @@ public class Signup extends HttpServlet {
 				month = cal.get(Calendar.MONTH) + "";
 			String date = day + "/" + month + "/" + year;
 			if (user == null) {
-				userdao.insertUser(pseudo, password, date);
+				userdao.insertUser(pseudo, password, email, date);
 				res.sendRedirect("login.jsp?inscription");
 			} else
 				res.sendRedirect("inscription.html");

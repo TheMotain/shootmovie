@@ -23,31 +23,38 @@ String login = (String) s.getAttribute("login");
         <li><a href="#">Séries</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      	<%
+          	if(login == null){
+          %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Espace Membres <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-          <%
-          	if(login == null){
-          %>
+          
             <li><button type="button" class="btn btn-link"
 							data-toggle="modal" data-target="#connexion">Se connecter</button></li>
             <li><button type="button" class="btn btn-link"
 							data-toggle="modal" data-target="#inscription">S'inscrire</button></li>
 							<li class="divider"></li>
             <li><a href="#">Mot de passe perdu ?</a></li>
+            </ul>
+        </li>
 		<%
           	} else {
 		%>
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bonjour <% out.println(login); %> ! <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
 			<li><a href="home">Mon Home</a></li>
 			<li><a href="myProfil">Mon Profil</a></li>
 			<li class="divider"></li>
 			<li><a href="signout">Déconnexion</a></li>
+			</ul>
+        </li>
 			<% } %>
             
             
             
-          </ul>
-        </li>
+          
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -89,6 +96,9 @@ String login = (String) s.getAttribute("login");
 							</div>
 							<div class="form-group">
 								<input type='password' style="width:370px;margin-left:15px" class="form-control" name='mdp' placeholder="Mot de passe"><br>
+							</div>
+							<div class="form-group">
+								<input type='email' style="width:370px;margin-left:15px" class="form-control" name='email' placeholder="E-mail"><br>
 							</div>
 							<input class="btn btn-block btn-default" type='submit' value="S'inscrire">
 						</form>

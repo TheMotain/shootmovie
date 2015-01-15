@@ -39,6 +39,9 @@
 							<div class="form-group">
 								<input type='password' style="width:370px;margin-left:15px" class="form-control" name='mdp' placeholder="Mot de passe"><br>
 							</div>
+							<div class="form-group">
+								<input type='email' style="width:370px;margin-left:15px" class="form-control" name='email' placeholder="E-mail"><br>
+							</div>
 							<input class="btn btn-block btn-default" type='submit' value="S'inscrire">
 							<input class="btn btn-block btn-default" type='reset' value='Réinitialiser'>
 						</form>
