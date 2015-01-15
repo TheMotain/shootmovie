@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <title>ShootFilm - Pseudo</title>
-<meta charset='utf-8'>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- jQuery -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -18,6 +18,7 @@
 <body>
 
 	<!-- ----------------- MENU HAUT ------------------- -->
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -67,7 +68,10 @@
 					<img src="http://placehold.it/150x150" class="photo-profil img-circle" />
 				</div>
 				<div class="col-md-8" style="margin-top: 10px;">
-					<span class="pseudo">Romain</span><br> <span
+					<span class="pseudo"><%
+							String param = (String) request.getAttribute("name");
+							out.println(param);
+						%></span><br> <span
 						class="date-inscription">Inscrit le 23/09/2016</span><br>
 					<p class="description">Montius Emissa industria intepesceret
 						tribunos sint e qui nec Eusebium si increpabat conperissent
@@ -85,17 +89,17 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="panel panel-default">
-					<div class="panel-heading">Ses r√©alisations</div>
+					<div class="panel-heading">Ses rÈalisations</div>
 					<div class="panel-body">
-						Une liste de vid√©os
+						Une liste de vidÈos
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">R√©seaux sociaux</div>
+					<div class="panel-heading">RÈseaux sociaux</div>
 					<div class="panel-body">
-						Les r√©seaux sociaux
+						
 					</div>
 				</div>
 			</div>

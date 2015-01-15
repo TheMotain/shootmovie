@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @SuppressWarnings("serial")
 @WebServlet("/myProfil")
 public class myProfil extends HttpServlet{
-	private static UserDao userdao = App.dbi.open(UserDao.class);
+	//private static UserDao userdao = App.dbi.open(UserDao.class);
 	
 	/*
 	 * Ceci est MON profil.
@@ -29,7 +29,7 @@ public class myProfil extends HttpServlet{
 		 * A faire. 
 		 */
 		
-		userdao.createTable();
+		/*userdao.createTable();
 		
 		HttpSession s = req.getSession(true);
 		User user = userdao.selectUser((String) s.getAttribute("pseudo"));
@@ -40,7 +40,10 @@ public class myProfil extends HttpServlet{
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
 		String dateInscription = user.getDateInscription();
-		String type = user.getType();
+		String type = user.getType();*/
+		
+		req.setAttribute("name", "Motain");
+		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);
 		
 	}
 
