@@ -34,7 +34,7 @@ public class Video extends JPanel {
 		JFrame frame = new JFrame("YouTube Viewer");
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().add(
-				new Video("http://www.youtube.com/embed/yNpOz44RM20"),
+				new Video("www.dailymotion.com/video/x2eqw5g_the-legend-of-zelda-majora-s-mask-3d-trailer-nintendo-direct-us_videogames"),
 				BorderLayout.CENTER);
 		frame.setSize(720, 480);
 		frame.setResizable(false);
