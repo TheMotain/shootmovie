@@ -1,5 +1,8 @@
 package appBureau;
 import javax.swing.*;
+import fr.iutinfo.App;
+import fr.iutinfo.User;
+import fr.iutinfo.UserDao;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,21 +11,37 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 
 public class Connexion{
+	
 	JFrame frame=new JFrame();
 
 	JPanel textPanel, panel, completionPanel;
 	JLabel titleLabel, usernameLabel, passwordLabel, userLabel, passLabel;
 	JTextField usernameField;JPasswordField loginField;
 	JButton loginButton;
-	//	private static UserDao userdao = App.dbi.open(UserDao.class);
-
+	private static UserDao userdao = App.dbi.open(UserDao.class);
+	
 	public Connexion(){
-
+		userdao.createTable();
+		
+		Calendar cal = Calendar.getInstance();
+		String day;
+		String month;
+		String year = "" + cal.get(Calendar.YEAR);
+		if(cal.get(Calendar.DAY_OF_MONTH) < 10)
+			day = 0 + "" + cal.get(Calendar.DAY_OF_MONTH);
+		else
+			day = cal.get(Calendar.DAY_OF_MONTH) + "";
+		if(cal.get(Calendar.MONTH)+1 < 10)
+			month = 0 + "" + (cal.get(Calendar.MONTH) + 1);
+		else
+			month = cal.get(Calendar.MONTH) + "";
+		String date = day+"/"+month+"/"+year;
+		userdao.insertUser("test1", "test1", "test1.fr", "test", date);
 		Container c= frame.getContentPane();
 		c.setBackground(new Color(68	, 68, 68));
-
 		c.setLayout(new BorderLayout());
 		JLabel logo= new JLabel(new ImageIcon("img/logo.png"));
 		c.add(logo,BorderLayout.NORTH);
@@ -69,15 +88,19 @@ public class Connexion{
 		connexion.setOpaque(false);
 		jp.add(connexion, BorderLayout.PAGE_END);
 		loginButton.addActionListener(new ActionListener() {
+		
 
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(usernameField.getText().equals("toto")&&loginField.getText().equals("toto")){
+				User res = userdao.selectUser(usernameField.getText(),loginField.getText());
+				if(res!=null){
+					String pseudo= res.getPseudo();
+					String dateInscription =res.getDateInscription();
 					frame.dispose();
 					JFrame test = new JFrame();
 					test.setSize(250, 500);
-					test.add(new PanelProfil(new Profil(usernameField.getText())));
+					test.add(new PanelProfil(new Profil(pseudo, dateInscription, "a modifier")));
 					test.setVisible(true);
 					
 				}else{
@@ -92,6 +115,9 @@ public class Connexion{
 		frame.setResizable(false);
 		frame.setVisible(true);
 
+	}
+	public static void main(String[]args){
+		new Connexion();
 	}
 
 }

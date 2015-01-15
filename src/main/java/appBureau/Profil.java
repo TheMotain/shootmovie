@@ -2,16 +2,19 @@ package appBureau;
 
 import javax.swing.ImageIcon;
 
+import fr.iutinfo.App;
+import fr.iutinfo.UserDao;
+
 public class Profil  {
 
-	
 	private String pseudo,age,dateCreation,img;
 	private ImageIcon photo;
 	private int nbreAbonnes;
 	
-	
-	public Profil(String pseudo) {
+	public Profil(String pseudo, String dateCreation,String age) {
 		this.pseudo=pseudo;
+		this.dateCreation=dateCreation;
+		this.age=age;
 		this.setImg("img/photoProfil.jpg");
 		photo= new ImageIcon(img);	
 		this.setAge("30");
