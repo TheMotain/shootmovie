@@ -2,11 +2,9 @@ package appBureau;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+@SuppressWarnings("serial")
 public class PanelProfil extends JPanel {
 
 	
@@ -72,8 +71,10 @@ public class PanelProfil extends JPanel {
 					int retour = choix.showOpenDialog(null);
 					 
 					if (retour == JFileChooser.APPROVE_OPTION) {
-					    String name = choix.getSelectedFile().getName();
-					    String path = choix.getSelectedFile().getAbsolutePath();               
+					    @SuppressWarnings("unused")
+						String name = choix.getSelectedFile().getName();
+					    @SuppressWarnings("unused")
+						String path = choix.getSelectedFile().getAbsolutePath();               
 
 					}
 					

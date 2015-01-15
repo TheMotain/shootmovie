@@ -2,43 +2,51 @@ package appBureau;
 import javax.swing.*;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.Statement;
 
-@SuppressWarnings("serial")
-public class Connexion extends JPanel{
+public class Connexion{
+	JFrame frame=new JFrame();
 
 	JPanel textPanel, panel, completionPanel;
 	JLabel titleLabel, usernameLabel, passwordLabel, userLabel, passLabel;
 	JTextField usernameField;JPasswordField loginField;
 	JButton loginButton;
+	//	private static UserDao userdao = App.dbi.open(UserDao.class);
 
-	public Connexion(final JFrame j){
+	public Connexion(){
 
+		Container c= frame.getContentPane();
+		c.setBackground(new Color(68	, 68, 68));
 
-
-		setLayout(new BorderLayout(100,20));
-
-		setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black));
-
+		c.setLayout(new BorderLayout());
+		JLabel logo= new JLabel(new ImageIcon("img/logo.png"));
+		c.add(logo,BorderLayout.NORTH);
+		JPanel jp = new JPanel();
+		jp.setBackground(new Color(68	, 68, 68));
+		jp.setLayout(new BorderLayout(100,20));
+		JPanel est =new JPanel();
+		est.setOpaque(false);
+		JPanel ouest =new JPanel();
+		ouest.setOpaque(false);
+		jp.add(est,BorderLayout.EAST);
+		jp.add(ouest,BorderLayout.WEST);
+		c.add(jp,BorderLayout.CENTER);
+		jp.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black));
 		titleLabel = new JLabel("Connexion");
 		titleLabel.setFont(new Font("f", Font.BOLD, 20));
 		titleLabel.setForeground(Color.white);
-		titleLabel.setPreferredSize(new Dimension(100, 30));
+		titleLabel.setPreferredSize(new Dimension(50, 30));
 		titleLabel.setHorizontalAlignment(0);
-		add(titleLabel, BorderLayout.PAGE_START);
+		jp.add(titleLabel, BorderLayout.PAGE_START);
 
 		panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		add(panel, BorderLayout.CENTER);
+		jp.add(panel, BorderLayout.CENTER);
 
 
 		usernameLabel = new JLabel("Login");
@@ -54,69 +62,36 @@ public class Connexion extends JPanel{
 
 		loginField = new JPasswordField(8);
 		panel.add(loginField);
-
-
+		JPanel connexion =new JPanel();
 		loginButton = new JButton("connexion");
-		add(loginButton, BorderLayout.PAGE_END);
-
-		setOpaque(false);
-
-
+		loginButton.setPreferredSize(new Dimension(150,27));
+		connexion.add(loginButton);
+		connexion.setOpaque(false);
+		jp.add(connexion, BorderLayout.PAGE_END);
 		loginButton.addActionListener(new ActionListener() {
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Connection c = null;
-				Statement stmt = null;
-				ResultSet rs = null;
-				try {
-					Class.forName("org.sqlite.JDBC");
-					c = DriverManager.getConnection("jdbc:sqlite:ShootMovie.db");
-					c.setAutoCommit(false);
-
-					stmt = c.createStatement();
-					@SuppressWarnings("deprecation")
-					String query = "SELECT * FROM users WHERE pseudo = '"+ usernameField.getText() + "'"+ " AND password = '"+ loginField.getText() +"'";
-					rs = stmt.executeQuery(query);
-					ResultSetMetaData rsmd = rs.getMetaData();
-
-					for(int i=1;i<=rsmd.getColumnCount();++i){
-						System.out.println(rs.getString(i));
-					}
-
-					 if(!rs.next()) {
-						 
-						 JOptionPane.showMessageDialog(j, "login ou mot de passe incorrect",
-									"Attention", JOptionPane.WARNING_MESSAGE);
-							rs.close();
-							stmt.close();
-							c.commit();
-							c.close();
-
-								}
-									else{
-									
-
-									}
-				}catch (Exception e) {
-					System.err.println(e.getClass().getName() + ": " + e.getMessage());
-					System.exit(0);
+				if(usernameField.getText().equals("toto")&&loginField.getText().equals("toto")){
+					frame.dispose();
+					JFrame test = new JFrame();
+					test.setSize(250, 500);
+					test.add(new PanelProfil(new Profil(usernameField.getText())));
+					test.setVisible(true);
 					
-				} finally {
-					try {
-
-						rs.close();
-						stmt.close();
-						c.close();
-
-					} catch (Exception e1) {
-						e1.printStackTrace();
-					}
+				}else{
+					JOptionPane.showMessageDialog(frame, "login ou mot de passe incorrect",
+							"Attention", JOptionPane.WARNING_MESSAGE);
 				}
-			}
+				}
+			
 		});
+		frame.setSize(new Dimension(300,300));
+		frame.pack();
+		frame.setResizable(false);
+		frame.setVisible(true);
 
 	}
-
 
 }

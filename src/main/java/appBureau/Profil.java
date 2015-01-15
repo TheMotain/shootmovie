@@ -1,11 +1,8 @@
 package appBureau;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
 import javax.swing.ImageIcon;
 
-public class Profil {
+public class Profil  {
 
 	
 	private String pseudo,age,dateCreation,img;
@@ -13,15 +10,14 @@ public class Profil {
 	private int nbreAbonnes;
 	
 	
-	public Profil(String pseudo,String age,String dateCreation,String img) {
-		
-		
+	public Profil(String pseudo) {
 		this.pseudo=pseudo;
-		this.age=age;
-		this.dateCreation=dateCreation;
-		this.setImg(img);
+		this.setImg("img/photoProfil.jpg");
+		photo= new ImageIcon(img);	
+		this.setAge("30");
+		this.setDateCreation("25-12-2004");
+		setNbreAbonnes(0);
 		
-		photo= new ImageIcon(img);		
 		
 
 		
