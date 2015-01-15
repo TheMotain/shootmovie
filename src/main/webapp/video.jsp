@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Accueil <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="#">VidÃ©os</a></li>
+        <li class="active"><a href="#">Vidéos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -120,9 +120,9 @@
 				document.getElementById("titre").innerHTML = "Titre de la video";
 				document.getElementById("desc").innerHTML = "Ceci est une description";
 				document.getElementById("date").innerHTML = "Date du jour";
-				document.getElementById("lien").innerHTML = "Lien de la vidÃ©o ";
-				document.getElementById("realisateur").innerHTML = "Realisateur de la vidÃ©o ";
-				document.getElementById("note").innerHTML = "Lien de la vidÃ©o ";
+				document.getElementById("lien").innerHTML = "Lien de la vidéo ";
+				document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
+				document.getElementById("note").innerHTML = "Lien de la vidéo ";
 			}
 			
 			$("#boutonaffi").click(function() {

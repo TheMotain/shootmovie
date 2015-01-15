@@ -83,7 +83,7 @@ public class Video {
 		this.note = note;
 	}
 	
-	public void setCompteur1(int compteur) {
+	public void setCompteur(int compteur) {
 		this.compteur=compteur;
 	}
 	
