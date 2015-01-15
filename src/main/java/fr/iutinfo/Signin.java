@@ -18,7 +18,7 @@ public class Signin extends HttpServlet {
 		userdao.createTable();
 		HttpSession s = req.getSession(true);
 		if(s.getAttribute("login") != null){
-			res.sendRedirect("/shootmovie/home");
+			res.sendRedirect("/home");
 		} else {
 			String login = req.getParameter("login");
 			String password = req.getParameter("mdp");
@@ -28,7 +28,7 @@ public class Signin extends HttpServlet {
 				s.setAttribute("login", user.getPseudo());
 				s.setAttribute("id", user.getId());
 				s.setAttribute("logged", true);
-				res.sendRedirect("/shootmovie/home");
+				res.sendRedirect("home");
 			}
 			else
 				res.sendRedirect("login.jsp?error");

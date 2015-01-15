@@ -64,13 +64,24 @@
 					Double note = (Double) request.getAttribute("note");
 					out.print(note);
 				%>
+				<%
+					Integer log = (Integer) request.getAttribute("log");
+					if (log == 1) {
+				%>
 				</p>
 				<p>Noter la vidéo:
-				<form action="/setNote?id=<%request.getParameter("id");%>"
+				<form action="/setNote?id=<%out.print(request.getParameter("id"));%>"
 					method="post" class="form-horizontal">
-					<input type="range" min="0" max="5" value="3" step="1"
-						onchange="showValue(this.value)"> <span id="range">0</span>
+					<input type="range" name="note" min="0" max="5" value="<%Integer vote = (Integer) request.getAttribute("vote");
+					out.print(note);%>" step="1"
+						onchange="showValue(this.value)"> <span id="range"><%out.print(note);%></span>
+					<input type="submit" value="Noter">
 				</form>
+				</p>
+				<%
+				}
+				%>
+				<p>Vues : <%out.print(request.getAttribute("compteur")); %>
 			</div>
 		</div>
 
@@ -127,7 +138,6 @@
 						<!-- Fin de rï¿½pï¿½tition -->
 
 						<%
-							Integer log = (Integer) request.getAttribute("log");
 							if (log == 1) {
 						%>
 						<form

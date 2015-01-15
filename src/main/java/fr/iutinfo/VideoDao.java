@@ -36,4 +36,7 @@ public interface VideoDao {
 	
 	@SqlUpdate("DELETE FROM IF EXISTS videos where id=:id")
 	public void deleteVideo(@Bind("id") int id);
+
+	@SqlUpdate("UPDATE videos SET note=:note WHERE id=:id")
+	public void updateNote(@Bind("id") int id, @Bind("note")double note);
 }

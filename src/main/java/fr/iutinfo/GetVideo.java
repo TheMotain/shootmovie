@@ -15,11 +15,13 @@ public class GetVideo extends HttpServlet{
 	private static VideoDao videodao = App.dbi.open(VideoDao.class);
 	private static CommentaireDao commentairedoa = App.dbi.open(CommentaireDao.class);
 	private static UserDao userdao = App.dbi.open(UserDao.class);
+	private static NoteDao notedao = App.dbi.open(NoteDao.class);
 
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		videodao.createTable();
 		commentairedoa.createTable();
 		userdao.createTable();
+		notedao.createTable();
 
 		Video video = videodao.getVideo(Integer.parseInt(req.getParameter("id")));
 
@@ -30,13 +32,18 @@ public class GetVideo extends HttpServlet{
 		req.setAttribute("date", video.getDateUpload());
 		req.setAttribute("note", video.getNote());
 
-		int log;
-		if(req.getSession().getAttribute("logged") != null)
-			log = 1;
-		else
-			log = 0;
-
-		req.setAttribute("log", log);
+		if(req.getSession().getAttribute("logged") != null){
+			req.setAttribute("log", 1);
+			Integer id = notedao.getID(Integer.parseInt(req.getParameter("id")),(Integer) req.getSession().getAttribute("id"));
+			if(id != null){
+				System.out.println(notedao.getNote(id));
+				req.setAttribute("vote", notedao.getNote(id));
+			}else
+				req.setAttribute("vote", 3);
+		}
+		else{
+			req.setAttribute("log", 0);
+		}
 
 		Iterator<Commentaire> it = commentairedoa.getAllCommentaireDescLimit(video.getId(),5);
 		String commentaire = "";

@@ -17,7 +17,7 @@ public class Signup extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		HttpSession s = req.getSession(true);
 		if (s.getAttribute("login") != null) {
-			res.sendRedirect("/shootmovie/home");
+			res.sendRedirect("home");
 		} else {
 			userdao.createTable();
 			String pseudo = req.getParameter("login");
