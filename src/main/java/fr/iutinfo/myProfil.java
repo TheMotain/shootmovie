@@ -27,8 +27,14 @@ public class myProfil extends HttpServlet{
 		HttpSession s = req.getSession(true);
 		User user = userdao.selectUserbyPseudo((String) s.getAttribute("login"));
 		if(user == null){
-			res.sendRedirect("home");
+			res.sendRedirect("/");
 		}
+		
+		// des, facebook, twitter et gplus à mettre dans un table si possible
+		String des = "*Description*";
+		String fb = "*Facebook*";
+		String twitter = "*Twitter*";
+		String gplus = "*Google+*";
 		
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
@@ -39,6 +45,11 @@ public class myProfil extends HttpServlet{
 		req.setAttribute("email", email);
 		req.setAttribute("dateInscription", dateInscription);
 		req.setAttribute("type", type);
+		req.setAttribute("des", des);
+		req.setAttribute("facebook", fb);
+		req.setAttribute("twitter", twitter);
+		req.setAttribute("gplus", gplus);
+		
 		
 		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);
 		

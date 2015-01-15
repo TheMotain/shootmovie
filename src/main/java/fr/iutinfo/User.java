@@ -25,6 +25,13 @@ public class User {
 		this.type = type;
 		this.dateInscription = dateInscription;
 	}
+	
+	public String getMdp() {
+		return password;
+	}
+	public void setMdp(String mdp){
+		this.password = mdp;
+	}
 
 	public int getId() {
 		return id;

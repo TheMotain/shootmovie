@@ -24,13 +24,16 @@ public class AjouterVideo extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		vdao.createTable();
+		HttpSession s = request.getSession(true);
+		
 		String lien = request.getParameter("lien");
 		String titre = request.getParameter("titre");
 		String description = request.getParameter("description");
+		String realisateur = (String) s.getAttribute("login");
 		
 		Video v = vdao.getVideoByLink(lien);
 		if(v == null){
-			HttpSession s = request.getSession(true);
+			
 			Calendar cal = Calendar.getInstance();
 			String day;
 			String month;
@@ -45,7 +48,7 @@ public class AjouterVideo extends HttpServlet {
 				month = cal.get(Calendar.MONTH) + "";
 			String date = day+"/"+month+"/"+year;
 			
-			vdao.insertVideo(titre, description, date, lien,(String) s.getAttribute("login"));
+			vdao.insertVideo(titre, description, date, lien, realisateur);
 			
 			Video newVideo = vdao.getVideoByLink(lien);
 			

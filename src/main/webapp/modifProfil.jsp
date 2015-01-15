@@ -21,7 +21,8 @@
 	<%@ include file="/elements/menu.jsp" %>
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	
-	<form method="post" action="myProfil">
+	<form method="post" action="modifierProfil">
+		<input type="hidden" name="change" value="1" />
 		<p>
 			<label for="pseudo">Changer de Pseudo :</label>		
 		      	<input type="text" name="pseudo" id="pseudo" placeholder="Ex : toto"/>

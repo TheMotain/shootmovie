@@ -40,13 +40,10 @@
 							String date = (String) request.getAttribute("dateInscription");
 							out.println(date);
 						%></span><br>
-					<p class="description">Montius Emissa industria intepesceret
-						tribunos sint e qui nec Eusebium si increpabat conperissent
-						ducitur ostendens orator hi qui Pittacas armorum et dilancinantium
-						et conperissent concitatus ab si Epigonum dilancinantium
-						cognomento ducitur spiritum increpabat conperissent ducitur
-						Epigonum sint manus nequid ducitur dignitatem hi promittentes
-						dignitatem si Epigonum res aliquotiens intepesceret Eusebius.</p>
+					<p class="description"><%
+							String des = (String) request.getAttribute("des");
+							out.println(des);
+						%></p>
 				</div>
 				<div class="col-md-2" style="margin-top: 10px;padding-right:10px;">
 					
@@ -66,15 +63,32 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Réseaux sociaux</div>
 					<div class="panel-body">
-						Email : <%
+						<p>Email : <%
 							String mail = (String) request.getAttribute("email");
 							out.println(mail);
 						%>
+						</p>
+						<p>Facebook : <%
+							String fb = (String) request.getAttribute("facebook");
+							out.println(fb);
+						%>
+						</p>
+						<p>Twitter : <%
+							String twitter = (String) request.getAttribute("twitter");
+							out.println(twitter);
+						%>
+						</p>
+						<p>Google+ : <%
+							String gplus = (String) request.getAttribute("gplus");
+							out.println(gplus);
+						%>
+						</p>
 					</div>
 				</div>
 			</div>
-			<a href="modifProfil.jsp" role="button" class="btn btn-block btn-default">Modifier son profil</a>
+			
 		</div>
 	</div>
+	<a href="modifProfil.jsp" role="button" class="btn btn-block btn-default">Modifier son profil</a>
 </body>
 </html>
