@@ -22,30 +22,6 @@
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	<div class="container">
 
-		<!-- DEBUT CAROUSEL -->
-		<div id="carousel-example-generic" class="carousel slide"
-			data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example-generic" data-slide-to="0"
-					class="active"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="http://placehold.it/1170x400">
-					<div class="carousel-caption">Slide 1</div>
-				</div>
-				<div class="item">
-					<img src="http://placehold.it/1170x400">
-					<div class="carousel-caption">Slide 2</div>
-				</div>
-			</div>
-		</div>
-		<!-- FIN CAROUSEL -->
-
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-md-8">
 				<div class="panel panel-default">
@@ -90,13 +66,13 @@
 					<p>Projet réalisé lors de la semaine d'Agilité.</p>
 					Equipe :
 					<ul>
-						<li>HEMBERT Romain</li>
 						<li>DALENCOURT Alex</li>
-						<li>ZAROURI Mohamed</li>
 						<li>DECOCK Alexis</li>
 						<li>GHESQUIERE Jérôme</li>
-						<li>REGNIER Camille</li>
+						<li>HEMBERT Romain</li>
 						<li>MIGAN Karen</li>
+						<li>REGNIER Camille</li>
+						<li>ZAROURI Mohamed</li>
 					</ul>
 				</div>
 			</div>
