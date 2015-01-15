@@ -46,7 +46,7 @@
 					<h4 class="modal-title" id="myModalLabel">Connexion</h4>
 				</div>
 				<div class="modal-body">
-					<form action='signin' method='get' class="form-horizontal">
+					<form action='signin' method='post' class="form-horizontal">
 							<div class="form-group">
 								<input type='text' style="width:370px;margin-left:15px" class="form-control" name='login' placeholder="Login"><br>
 							</div>

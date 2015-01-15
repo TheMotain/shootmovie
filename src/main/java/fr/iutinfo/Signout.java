@@ -16,6 +16,6 @@ public class Signout extends HttpServlet {
 	public void service( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession s = req.getSession(true);
 		s.invalidate();
-		res.sendRedirect("/index.jsp");
+		res.sendRedirect("/shootmovie/login.jsp");
 	}
 }

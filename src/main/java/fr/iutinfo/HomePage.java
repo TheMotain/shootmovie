@@ -15,14 +15,14 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/home")
 public class HomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static UserDao userdao = App.dbi.open(UserDao.class);
 
-	public void service( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession s = request.getSession(true);
-		if(s.getAttribute("logged") != null) response.sendRedirect("/index.jsp");
-		
-		String user = userdao.selectType((String) s.getAttribute("login"));
-		request.setAttribute("user", user);
-		this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(request, response);
+		if (s.getAttribute("login") == null) {
+			response.sendRedirect("login.jsp?connexion");
+		} else {
+			request.setAttribute("user", (String) s.getAttribute("login"));
+			this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(request, response);
+		}
 	}
 }

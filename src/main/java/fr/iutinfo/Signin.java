@@ -27,6 +27,6 @@ public class Signin extends HttpServlet {
 			res.sendRedirect("/shootmovie/home");
 		}
 		else
-			res.sendRedirect("login.html");
+			res.sendRedirect("login.jsp?error");
 	}
 }

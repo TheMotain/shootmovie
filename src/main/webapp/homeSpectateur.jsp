@@ -24,7 +24,7 @@
 	<div class="container">
 		<%
 			String user = (String) request.getAttribute("user");
-			out.println(user);
+			out.println("Bonjour "+user);
 		%>
 	</div>
 </body>

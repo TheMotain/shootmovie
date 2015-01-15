@@ -28,7 +28,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Dernières vidéos</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Titre</th>
@@ -51,7 +51,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Derniers commentaires</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Pseudo</th>
@@ -76,7 +76,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Dernières inscriptions</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Pseudo</th>
@@ -111,7 +111,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Demandes de grade</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Pseudo</th>
@@ -135,7 +135,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Signalement vidéo</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Pseudo</th>
@@ -159,7 +159,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Signalement profil</div>
 					<div class="panel-body">
-						<table class="table table-hover table-bordered">
+						<table class="table table-hover">
 						<tr>
 							<th>#</th>
 							<th>Pseudo</th>
