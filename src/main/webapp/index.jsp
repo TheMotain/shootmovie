@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
+		<!-- Bonjour -->
 		<title>ShootMovie</title>
 		<meta charset='utf-8'>
 		<!-- jQuery -->
@@ -17,43 +18,7 @@
 	<body>
 
 <!-- ----------------- MENU HAUT ------------------- -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">ShootMovie</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Accueil <span class="sr-only">(current)</span></a></li>
-        <li><a href="video.html">R√©alisations</a></li>
-        <li><a href="#">S√©ries</a></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Espace Membres <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="login.html">Connexion</a></li>
-            <li><a href="inscription.html">Inscription</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Mot de passe perdu ?</a></li>
-            <li class="divider"></li>
-            <li><a href="dumpPage.html">Mon profil</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<%@ include file="/elements/menu.jsp" %>
 <!-- ----------------- FIN MENU HAUT ------------------- -->
 		<div class="container">
 			<form class="form-inline" style="float:right; padding-bottom:5px" role="search">
@@ -93,9 +58,9 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading">Acc√©der au contenu</div>
+					  <div class="panel-heading">AccÈder au contenu</div>
 					  <div class="panel-body">
-					  	<p><a href="inscription.html">Inscrivez-vous</a> pour pouvoir acc√©der aux r√©alisations post√©es sur ShootMovie.</p>
+					  	<p><a href="inscription.html">Inscrivez-vous</a> pour pouvoir accÈder aux rÈalisations postÈes sur ShootMovie.</p>
 					   	<img src="http://placehold.it/200x150" width="100%" />
 					   	<hr>
 					   	<a href="login.html" role="button" class="btn btn-block btn-default">Se connecter</a>
@@ -110,29 +75,29 @@
 				</div>
 				<div class="col-md-8">
 					<div class="panel panel-default">
-					  <div class="panel-heading">R√©alisations du moment</div>
+					  <div class="panel-heading">RÈalisations du moment</div>
 					  <div class="panel-body">
-					    Liste de vid√©o
+					    Liste de vidÈo
 					  </div>
 					</div>
 					<div class="panel panel-default">
-					  <div class="panel-heading">Derni√®res r√©alisations</div>
+					  <div class="panel-heading">Derni√®res rÈalisations</div>
 					  <div class="panel-body">
-					    Liste de vid√©os
+					    Liste de vidÈos
 					  </div>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="panel panel-default">
-							  <div class="panel-heading">Meilleures s√©ries</div>
+							  <div class="panel-heading">Meilleures sÈries</div>
 							  <div class="panel-body">
-							    Liste de vid√©os
+							    Liste de vidÈos
 							  </div>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="panel panel-default">
-							  <div class="panel-heading">Derniers √©pidoses</div>
+							  <div class="panel-heading">Derniers Èpidoses</div>
 							  <div class="panel-body">
 							    Liste
 							  </div>
