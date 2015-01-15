@@ -9,37 +9,38 @@ import javax.swing.WindowConstants;
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 
-public class Video {
+public class Video extends JPanel {
 
-//	public static void main(String[] args) {
-//		NativeInterface.open();
-//		SwingUtilities.invokeLater(new Runnable() {
-//			public void run() {
-//				JFrame frame = new JFrame("YouTube Viewer");
-//				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//				frame.getContentPane().add(getBrowserPanel(), BorderLayout.CENTER);
-//				frame.setSize(720, 480);
-//				frame.setResizable(false);
-//				frame.setLocationByPlatform(true);
-//				frame.setVisible(true);
-//			}
-//		});
-//		NativeInterface.runEventPump();
-//		// don't forget to properly close native components
-//		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				NativeInterface.close();
-//			}
-//		}));
-//	}
-
-	public static JPanel getBrowserPanel() {
-		JPanel webBrowserPanel = new JPanel(new BorderLayout());
+	public Video(String url) {
+		setLayout(new BorderLayout());
 		JWebBrowser webBrowser = new JWebBrowser();
-		webBrowserPanel.add(webBrowser, BorderLayout.CENTER);
+		this.add(webBrowser, BorderLayout.CENTER);
 		webBrowser.setBarsVisible(false);
-		webBrowser.navigate("www.youtube.com/embed/yNpOz44RM20");
-		return webBrowserPanel;
+		webBrowser.navigate(url);
+		NativeInterface.open();
+
+		NativeInterface.runEventPump();
+		// don't forget to properly close native components
+		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+			@Override
+			public void run() {
+				NativeInterface.close();
+			}
+		}));
 	}
+
+	public static void main(String[] args) {
+
+		JFrame frame = new JFrame("YouTube Viewer");
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		frame.getContentPane().add(
+				new Video("http://www.youtube.com/embed/yNpOz44RM20"),
+				BorderLayout.CENTER);
+		frame.setSize(720, 480);
+		frame.setResizable(false);
+		frame.setLocationByPlatform(true);
+		frame.setVisible(true);
+
+	}
+
 }
