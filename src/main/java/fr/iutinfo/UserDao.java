@@ -29,9 +29,9 @@ public interface UserDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUserbyPseudo(@Bind("pseudo") String pseudo);
 	
-	@SqlQuery("SELECT * FROM users")
+	@SqlQuery("SELECT * FROM users ORDER BY id DESC")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Iterator<User> selectAllUsers();
+	public Iterator<User> selectLastUsers();
 	
 	@SqlQuery("SELECT type FROM users WHERE pseudo=:pseudo ")
 	public String selectType(@Bind("pseudo") String pseudo);
