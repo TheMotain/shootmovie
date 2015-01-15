@@ -23,6 +23,9 @@ public interface UserDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUser(@Bind("pseudo") String pseudo , @Bind("password") String password);
 	
+	@SqlQuery("SELECT type FROM users WHERE pseudo=:pseudo")
+	public String selectType(@Bind("pseudo") String pseudo);
+	
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo")
 	public String selectPseudo(@Bind("pseudo") String pseudo);
 	
