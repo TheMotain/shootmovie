@@ -5,17 +5,17 @@ public class Video {
 	private int id;
 	private String titre;
 	private String description;
-	private String date_upload;
-	private String lien;
+	private String dateUpload;
+	private String url;
 	private int realisateur;
 	private double note;
 	private int compteur;
 	
-	public Video(String titre, String description, String date_upload, String lien, int realisateur){
+	public Video(String titre, String description, String dateUpload, String url, int realisateur){
 		this.titre = titre;
 		this.description = description;
-		this.date_upload = date_upload;
-		this.lien = lien;
+		this.dateUpload = dateUpload;
+		this.url = url;
 		this.realisateur = realisateur;
 		note = 0.0;
 		compteur=0;
@@ -57,18 +57,18 @@ public class Video {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getDate_upload() {
-		return date_upload;
+	public String getDateUpload() {
+		return dateUpload;
 	}
-	public void setDate_upload(String date_upload) {
-		this.date_upload = date_upload;
+	public void setDateUpload(String dateUpload) {
+		this.dateUpload = dateUpload;
 	}
-	public String getLien() {
-		return lien;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setLien(String lien) {
-		this.lien = lien;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public int getRealisateur() {
 		return realisateur;

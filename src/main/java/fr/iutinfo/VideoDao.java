@@ -7,7 +7,7 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 
 public interface VideoDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS videos (id INTEGER PRIMARY KEY, titre STRING, description TEXT, dateUpload STRING, url text, realisateur INTEGER, note DOUBLE, compteur INTEGER)")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS videos (id INTEGER PRIMARY KEY, titre STRING, description TEXT, dateUpload STRING, url TEXT, realisateur INTEGER, note DOUBLE, compteur INTEGER)")
 	public void createTable();
 	
 	@SqlUpdate("INSERT INTO videos (titre,description,dateUpload,url,realisateur,note,compteur) VALUES (:titre,:description,:dateUpload,:url,:realisateur,'2.5',0)")

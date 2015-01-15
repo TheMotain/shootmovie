@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>ShootFilm - Titre de la vidÃ©o</title>
+		<title>ShootFilm - Titre de la vidéo</title>
 		<meta charset='utf-8'>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -57,9 +57,8 @@
 	<div class="container">
 	<div class="video-player">
 					<iframe width="100%;" height="620" src="<%
-					UserDao userdao = App.dbi.open(UserDao.class);
-
-					out.print("//www.youtube.com/embed/yNpOz44RM20");
+					String url = (String) request.getAttribute("url");
+					out.print(url);
 					%>" frameborder="0" allowfullscreen></iframe>
 				</div>
 		<div class="panel panel-default">
