@@ -106,6 +106,7 @@
 						String coms = (String) request.getAttribute("commentaires");
 						String tmp[] = coms.split("\\|");
 						String tmp2[];
+						if(!tmp[0].equals("")) {
 						for(int i = 0; i < tmp.length; i++){
 							tmp2 = tmp[i].split(" ");
 					%>
@@ -126,7 +127,7 @@
 					  	<hr>
 					  </div>
 					  <%
-					  }
+					  }}
 					  %>
 					  
 					  <!-- Fin de répétition -->

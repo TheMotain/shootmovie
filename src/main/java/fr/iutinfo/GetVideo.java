@@ -40,6 +40,7 @@ public class GetVideo extends HttpServlet{
 			if(it.hasNext())
 				commentaire += "|";
 		}
+		
 		req.setAttribute("commentaires", commentaire);
 		
 		req.getServletContext().getRequestDispatcher("/video.jsp").forward(req, res);
