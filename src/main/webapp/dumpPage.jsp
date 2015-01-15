@@ -30,10 +30,16 @@
 				</div>
 				<div class="col-md-8" style="margin-top: 10px;">
 					<span class="pseudo"><%
-							String param = (String) request.getAttribute("name");
-							out.println(param);
-						%></span><br> <span
-						class="date-inscription">Inscrit le 23/09/2016</span><br>
+							String nom = (String) request.getAttribute("name");
+							out.println(nom);
+						%> ( <%
+							String role = (String) request.getAttribute("type");
+							out.println(role);
+						%> )</span><br> <span
+						class="date-inscription">Inscrit le <%
+							String date = (String) request.getAttribute("dateInscription");
+							out.println(date);
+						%></span><br>
 					<p class="description">Montius Emissa industria intepesceret
 						tribunos sint e qui nec Eusebium si increpabat conperissent
 						ducitur ostendens orator hi qui Pittacas armorum et dilancinantium
@@ -60,10 +66,14 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Réseaux sociaux</div>
 					<div class="panel-body">
-						
+						Email : <%
+							String mail = (String) request.getAttribute("email");
+							out.println(mail);
+						%>
 					</div>
 				</div>
 			</div>
+			<a href="modifProfil.html" role="button" class="btn btn-block btn-default">Modifier son profil</a>
 		</div>
 	</div>
 </body>
