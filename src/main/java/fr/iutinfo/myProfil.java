@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @SuppressWarnings("serial")
 @WebServlet("/myProfil")
 public class myProfil extends HttpServlet{
-	//private static UserDao userdao = App.dbi.open(UserDao.class);
+//	private static UserDao userdao = App.dbi.open(UserDao.class);
 	
 	/*
 	 * Ceci est MON profil.
@@ -22,27 +22,31 @@ public class myProfil extends HttpServlet{
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		
-		/*
-		 * this.getServletContext().getRequestDispatcher("dumpPage.jsp").forward(req, res);
-		 *  ^^^^
-		 * Ligne à virer du commentaire si on souhaite modifier la dumpPage en profil personnel (avec SON pseudo, SON email...etc)
-		 * A faire. 
-		 */
+//		userdao.createTable();
+//		
+//		HttpSession s = req.getSession(true);
+//		s.setAttribute("pseudo", "toto");
+//		User user = userdao.selectUser((String) s.getAttribute("pseudo"));
+//		User user = new User(userdao.selectUser("toto").getId(), userdao.selectUser("toto").getPseudo(), userdao.selectUser("toto").getPassword(), userdao.selectUser("toto").getEmail());
+//		if(user == null){
+//			res.sendRedirect("index.html");
+//		}
+//		
+//		String pseudo = user.getPseudo();
+//		String email = user.getEmail();
+//		String dateInscription = user.getDateInscription();
+//		String type = user.getType();
+//		
+//		req.setAttribute("name", pseudo);
+//		req.setAttribute("email", email);
+//		req.setAttribute("dateInscription", dateInscription);
+//		req.setAttribute("type", type);
 		
-		/*userdao.createTable();
+		req.setAttribute("name", "Troll");
+		req.setAttribute("email", "Testasse");
+		req.setAttribute("dateInscription", "15/01/2015");
+		req.setAttribute("type", "Membre");
 		
-		HttpSession s = req.getSession(true);
-		User user = userdao.selectUser((String) s.getAttribute("pseudo"));
-		if(user == null){
-			res.sendRedirect("index.html");
-		}
-		
-		String pseudo = user.getPseudo();
-		String email = user.getEmail();
-		String dateInscription = user.getDateInscription();
-		String type = user.getType();*/
-		
-		req.setAttribute("name", "Motain");
 		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);
 		
 	}
