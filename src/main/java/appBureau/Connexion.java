@@ -86,6 +86,8 @@ public class Connexion {
 					frame.dispose();
 					JFrame test = new JFrame();
 					test.setSize(800, 500);
+					Profil p= new Profil(pseudo, dateInscription, "18");
+				p.updateVideos();
 					test.add(new PanelVideo(new PanelProfil(new Profil(pseudo, dateInscription, "modifier"))));
 					test.setVisible(true);
 

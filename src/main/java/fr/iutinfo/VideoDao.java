@@ -23,6 +23,10 @@ public interface VideoDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getAllVideo();
 	
+	@SqlQuery("SELECT * FROM videos where realisateur=:pseudo")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Video> getPseudoVideo(@Bind("pseudo") String pseudo);
+	
 	@SqlUpdate("DROP TABLE videos")
 	public void dropTable();
 	

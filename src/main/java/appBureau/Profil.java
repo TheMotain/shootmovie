@@ -1,15 +1,23 @@
 package appBureau;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import javax.swing.ImageIcon;
 
 import fr.iutinfo.App;
 import fr.iutinfo.UserDao;
+import fr.iutinfo.Video;
+import fr.iutinfo.VideoDao;
 
 public class Profil  {
 
 	private String pseudo,age,dateCreation,img;
 	private ImageIcon photo;
 	private int nbreAbonnes;
+	private ArrayList<fr.iutinfo.Video> videos;
+	private static VideoDao videodao = App.dbi.open(VideoDao.class);
+	
 	
 	public Profil(String pseudo, String dateCreation,String age) {
 		this.pseudo=pseudo;
@@ -18,7 +26,7 @@ public class Profil  {
 		this.setImg("img/photoProfil.jpg");
 		photo= new ImageIcon(img);	
 		setNbreAbonnes(0);
-		
+		videos= new ArrayList<Video>();
 	}
 	
 	public String getDateCreation() {
@@ -67,7 +75,18 @@ public class Profil  {
 	public void setNbreAbonnes(int nbreAbonnes) {
 		this.nbreAbonnes = nbreAbonnes;
 	}
-	
+	public void updateVideos(){
+		
+		Iterator<fr.iutinfo.Video> it = videodao.getPseudoVideo(getPseudo());
+		while(it.hasNext()){
+			videos.add(it.next());
+		}
+		System.out.println( "LISTE :");
+		System.out.println(videos);
+		
+		
+		
+	}
 	
 
 	
