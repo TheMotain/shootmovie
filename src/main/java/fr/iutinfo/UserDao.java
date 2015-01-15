@@ -61,5 +61,5 @@ public interface UserDao {
 	public void deleteUser(@Bind("id") int id);
 	
 	@SqlUpdate("SELECT id FROM users WHERE pseudo=:pseudo")
-	public String selectId(@Bind("pseudo") String pseudo);
+	public int selectId(@Bind("pseudo") String pseudo);
 }
