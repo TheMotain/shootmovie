@@ -28,7 +28,22 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Dernières vidéos</div>
 					<div class="panel-body">
-						
+						<table class="table table-hover table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Titre</th>
+							<th>Lien</th>
+							<th>Réalisateur</th>
+							<th>Action</th>
+							
+							<tr>
+							<td>
+								<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+							</td>
+							</tr>
+						</tr>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -36,7 +51,22 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Derniers commentaires</div>
 					<div class="panel-body">
-					
+						<table class="table table-hover table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Pseudo</th>
+							<th>Date</th>
+							<th>Contenu</th>
+							<th>Lien de vidéo</th>
+							<th>Action</th>
+							
+						</tr>
+						<tr>
+						<td>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+							</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -67,7 +97,7 @@
 						%>
 								<td>
 								<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 								</td>
 						<%
 								out.println("</tr>");
@@ -81,7 +111,69 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Demandes de grade</div>
 					<div class="panel-body">
-					
+						<table class="table table-hover table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Pseudo</th>
+							<th>Lien de chaine</th>
+							<th>Action</th>
+							
+							<tr>
+							<td>
+								<a class="btn btn-xs btn-success" href="#" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+							</td>
+							</tr>
+						</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Signalement vidéo</div>
+					<div class="panel-body">
+						<table class="table table-hover table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Pseudo</th>
+							<th>E-mail</th>
+							<th>Rang</th>
+							<th>Date d'inscription</th>
+							<th>Action</th>
+							
+						</tr>
+						<tr>
+						<td>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+							</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Signalement profil</div>
+					<div class="panel-body">
+						<table class="table table-hover table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Pseudo</th>
+							<th>Lien de chaine</th>
+							<th>Action</th>
+							
+							<tr>
+							<td>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+							</td>
+							</tr>
+						</tr>
+						</table>
 					</div>
 				</div>
 			</div>
