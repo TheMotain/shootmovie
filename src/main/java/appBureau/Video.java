@@ -1,6 +1,8 @@
 package appBureau;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,13 +14,18 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 public class Video extends JPanel {
 
 	JButton left,right;
+	Profil p;	
+	JWebBrowser webBrowser;
 	
-	public Video(String url) {
+	
+	public Video(final Profil p) {
+		this.p=p;
+		
 		setLayout(new BorderLayout());
-		JWebBrowser webBrowser = new JWebBrowser();
+		webBrowser = new JWebBrowser();
 		this.add(webBrowser, BorderLayout.CENTER);
 		webBrowser.setBarsVisible(false);
-		webBrowser.navigate(url);
+		webBrowser.navigate(p.getVideos().get(Profil.indexVideoCourante).getUrl());
 		NativeInterface.open();
 
 		NativeInterface.runEventPump();
@@ -34,6 +41,17 @@ public class Video extends JPanel {
 		left.setContentAreaFilled(false);
 		right= new JButton(new ImageIcon("img/fleche-droite.png"));
 		right.setContentAreaFilled(false);
+		right.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource().equals(right)){
+					webBrowser.navigate(p.getVideos().get(++Profil.indexVideoCourante).getUrl());
+				
+				}
+				
+			}
+		});
 		this.add(left,BorderLayout.WEST);
 		this.add(right,BorderLayout.EAST);
 		this.add(new JPanel(),BorderLayout.SOUTH);
