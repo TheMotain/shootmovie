@@ -14,7 +14,7 @@ public class PanelVideo extends JPanel{
 	
 	setLayout(new BorderLayout());
 	add(pp,BorderLayout.WEST);
-	add(new JPanel(),BorderLayout.CENTER);
+	add(new Video("http://www.youtube.com/embed/yNpOz44RM20"),BorderLayout.CENTER);
 		
 	}
 	

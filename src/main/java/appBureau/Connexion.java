@@ -85,7 +85,7 @@ public class Connexion {
 					String dateInscription = res.getDateInscription();
 					frame.dispose();
 					JFrame test = new JFrame();
-					test.setSize(250, 500);
+					test.setSize(800, 500);
 					test.add(new PanelVideo(new PanelProfil(new Profil(pseudo, dateInscription, "modifier"))));
 					test.setVisible(true);
 

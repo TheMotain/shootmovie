@@ -19,12 +19,6 @@ public class Profil  {
 		photo= new ImageIcon(img);	
 		setNbreAbonnes(0);
 		
-		
-
-		
-		
-		
-		
 	}
 	
 	public String getDateCreation() {
