@@ -1,3 +1,7 @@
+<%
+HttpSession s = request.getSession(true);
+String login = (String) s.getAttribute("login");
+%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,7 +18,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/shootmovie">Accueil <span class="sr-only">(current)</span></a></li>
+        <li><a href="/shootmovie">Accueil</a></li>
         <li><a href="#">Réalisations</a></li>
         <li><a href="#">Séries</a></li>
       </ul>
@@ -22,15 +26,26 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Espace Membres <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+          <%
+          	if(login == null){
+          %>
             <li><button type="button" class="btn btn-link"
 							data-toggle="modal" data-target="#connexion">Se connecter</button></li>
             <li><button type="button" class="btn btn-link"
 							data-toggle="modal" data-target="#inscription">S'inscrire</button></li>
-			<li><a href="signout">Déconnexion</a></li>
-            <li class="divider"></li>
+							<li class="divider"></li>
             <li><a href="#">Mot de passe perdu ?</a></li>
-            <li class="divider"></li>
-            <li><a href="myProfil">Profil</a></li>
+		<%
+          	} else {
+		%>
+			<li><a href="home">Mon Home</a></li>
+			<li><a href="myProfil">Mon Profil</a></li>
+			<li class="divider"></li>
+			<li><a href="signout">Déconnexion</a></li>
+			<% } %>
+            
+            
+            
           </ul>
         </li>
       </ul>
