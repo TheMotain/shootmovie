@@ -4,6 +4,8 @@ import java.util.Iterator;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
+import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
+import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface CommentaireDao {
 	
@@ -14,15 +16,19 @@ public interface CommentaireDao {
 	public void insertVideo(@Bind("id_c") int id_c, @Bind("id_v") int id_v, @Bind("id_u") int id_u, @Bind("commentaire") String commentaire);
 
 	@SqlQuery("SELECT * FROM commentaires where id_c=:id_c")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Commentaire getCommentaire(@Bind("id_c") int id_c);
 	
 	@SqlQuery("SELECT * FROM commentaires where id_v=:id_v")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Commentaire getCommentaireByVideo(@Bind("id_v") int id_v);
 	
 	@SqlQuery("SELECT * FROM commentaires where id_u=:id_u")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Commentaire getCommentaireByUser(@Bind("id_u") int id_u);
 	
 	@SqlQuery("SELECT * FROM commentaires")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Commentaire> getAllCommentaire();
 	
 	@SqlUpdate("DROP TABLE COMMMENTAIRES")

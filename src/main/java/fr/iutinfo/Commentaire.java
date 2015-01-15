@@ -40,7 +40,7 @@ public Commentaire(){
 	public String getCommentaire() {
 		return commentaire;
 	}
-	public void setTitre(String commentaire) {
+	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}
 	
