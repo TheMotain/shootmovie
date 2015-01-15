@@ -103,27 +103,37 @@
 					  <!-- A  rÃ©peter pour chaque commentaire -->
 					  
 					<%
-						List<Commentaire> it = (List) request.getAttribute("commentaires");
+						String coms = (String) request.getAttribute("commentaires");
+						String tmp[] = coms.split("\\|");
+						String tmp2[];
+						if(!tmp[0].equals("")) {
+						for(int i = 0; i < tmp.length; i++){
+							tmp2 = tmp[i].split(" ");
 					%>
 					  <div class="commentaire-box">
 					  	<div class="row">
 					  		<div class="col-md-2">
 					  			<img src="http://placehold.it/100x100" />
-								<a href="#">Pseudo</a><br>
+								<a href="#"><%
+								out.print(tmp2[0]); %></a><br>
 					  		</div>
 					  		<div class="col-md-10">
-					  			<span class="commentaire-date">Posté le 18-07-1995 Ã  04h34</span><br>
-					  			<p>Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit, putet esse leviorem, dum modo, cuius exemplo se consolatur, eius exitum expectet, praesertim cum in Albucio nec Pisonis libidines nec audacia Gabini fuerit ac tamen hac una plaga conciderit, ignominia senatus.</p>
+					  			<span class="commentaire-date">Posté le <%
+					  			out.print(tmp2[2]+" à "+tmp2[3]); %></span><br>
+					  			<p><%
+					  			out.print(tmp2[1]); %></p>
 					  		</div>
 					  	</div>
 					  	<hr>
 					  </div>
-					%>
+					  <%
+					  }}
+					  %>
 					  
-					  <!-- Fin de rÃ©pÃ©tition -->
+					  <!-- Fin de répétition -->
 					  
 					  	<form method="post" class="form-horizontal">
-					    	<textarea id="textarea" rows="5" class="form-control" placeholder="Commentez la vidÃ©o ..." name="comm"></textarea><br>
+					    	<textarea id="textarea" rows="5" class="form-control" placeholder="Commentez la vidéo ..." name="comm"></textarea><br>
    							<input type="button" class="btn btn-block btn-default" id="boutonaffi" value="Afficher"/>
    						</form>
 					  </div>

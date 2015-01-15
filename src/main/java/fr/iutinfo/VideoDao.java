@@ -15,6 +15,10 @@ public interface VideoDao {
 	@SqlUpdate("INSERT INTO videos (titre,description,dateUpload,url,realisateur,note,compteur) VALUES (:titre,:description,:dateUpload,:url,:realisateur,'2.5',0)")
 	public void insertVideo(@Bind("titre") String titre, @Bind("description") String description, @Bind("dateUpload") String dateUpload, @Bind("url") String url, @Bind("realisateur") String realisateur);
 	
+	@SqlQuery("SELECT * FROM videos where url=:url")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Video getVideoByLink(@Bind("url") String url);
+	
 	@SqlQuery("SELECT * FROM videos where id=:id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Video getVideo(@Bind("id") int id);
