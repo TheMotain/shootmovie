@@ -11,28 +11,28 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 
 public class Video {
 
-	public static void main(String[] args) {
-		NativeInterface.open();
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				JFrame frame = new JFrame("YouTube Viewer");
-				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-				frame.getContentPane().add(getBrowserPanel(), BorderLayout.CENTER);
-				frame.setSize(720, 480);
-				frame.setResizable(false);
-				frame.setLocationByPlatform(true);
-				frame.setVisible(true);
-			}
-		});
-		NativeInterface.runEventPump();
-		// don't forget to properly close native components
-		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-			@Override
-			public void run() {
-				NativeInterface.close();
-			}
-		}));
-	}
+//	public static void main(String[] args) {
+//		NativeInterface.open();
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				JFrame frame = new JFrame("YouTube Viewer");
+//				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//				frame.getContentPane().add(getBrowserPanel(), BorderLayout.CENTER);
+//				frame.setSize(720, 480);
+//				frame.setResizable(false);
+//				frame.setLocationByPlatform(true);
+//				frame.setVisible(true);
+//			}
+//		});
+//		NativeInterface.runEventPump();
+//		// don't forget to properly close native components
+//		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				NativeInterface.close();
+//			}
+//		}));
+//	}
 
 	public static JPanel getBrowserPanel() {
 		JPanel webBrowserPanel = new JPanel(new BorderLayout());
