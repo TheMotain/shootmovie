@@ -19,7 +19,7 @@ public interface UserDao {
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,type=:type,dateInscription:dateInscription) where id=:id")
 	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
 	
-	@SqlQuery("SELECT * FROM users WHERE pseudo=:pseudo and password=:password")
+	@SqlQuery("SELECT * FROM users WHERE pseudo=:pseudo")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUser(@Bind("pseudo") String pseudo , @Bind("password") String password);
 	
