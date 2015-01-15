@@ -56,7 +56,9 @@
 
 	<div class="container">
 	<div class="video-player">
-					<iframe width="100%;" height="620" src="//www.youtube.com/embed/yNpOz44RM20" frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%;" height="620" src="<%
+					//www.youtube.com/embed/yNpOz44RM20
+					%>" frameborder="0" allowfullscreen></iframe>
 				</div>
 		<div class="panel panel-default">
 			<div class="panel-heading"><span id="titre"></span></div>
