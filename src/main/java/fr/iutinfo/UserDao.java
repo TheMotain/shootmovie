@@ -1,5 +1,7 @@
 package fr.iutinfo;
 
+import java.util.Iterator;
+
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
@@ -26,6 +28,10 @@ public interface UserDao {
 	@SqlQuery("SELECT * FROM users WHERE pseudo=:pseudo")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUserbyPseudo(@Bind("pseudo") String pseudo);
+	
+	@SqlQuery("SELECT * FROM users")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<User> selectAllUsers();
 	
 	@SqlQuery("SELECT type FROM users WHERE pseudo=:pseudo ")
 	public String selectType(@Bind("pseudo") String pseudo);
