@@ -67,6 +67,29 @@ public class Connexion {
 		panel.add(passwordLabel);
 
 		loginField = new JPasswordField(8);
+		loginField.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				User res = userdao.selectUser(usernameField.getText(), loginField.getText());
+				if (res != null) {
+					String pseudo = res.getPseudo();
+					String dateInscription = res.getDateInscription();
+					frame.dispose();
+					JFrame test = new JFrame();
+					test.setSize(800, 500);
+					Profil p= new Profil(pseudo, dateInscription, "18");
+				p.updateVideos();
+					test.add(new PanelVideo(new PanelProfil(p)));
+					test.setVisible(true);
+
+				} else {
+					JOptionPane.showMessageDialog(frame, "login ou mot de passe incorrect", "Attention", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+		});
+		
+		
 		panel.add(loginField);
 		JPanel connexion = new JPanel();
 		loginButton = new JButton("connexion");

@@ -16,7 +16,7 @@ public class Video extends JPanel {
 	JButton left,right;
 	Profil p;	
 	JWebBrowser webBrowser;
-	
+	int index = 0;
 	
 	public Video(final Profil p) {
 		this.p=p;
@@ -25,7 +25,7 @@ public class Video extends JPanel {
 		webBrowser = new JWebBrowser();
 		this.add(webBrowser, BorderLayout.CENTER);
 		webBrowser.setBarsVisible(false);
-		webBrowser.navigate(p.getVideos().get(Profil.indexVideoCourante).getUrl());
+		webBrowser.navigate(p.getListVideos().get(0).getUrl());
 		NativeInterface.open();
 
 		NativeInterface.runEventPump();
@@ -39,17 +39,35 @@ public class Video extends JPanel {
 		
 		left= new JButton(new ImageIcon("img/fleche-gauche.png"));
 		left.setContentAreaFilled(false);
+		left.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(index >=1){
+					index--;
+				}else{
+					index = p.getListVideos().size()-1;
+				}
+				webBrowser.navigate(p.getListVideos().get(index).getUrl());
+				System.out.println(index);
+			}
+		});
+	
+		
+		
+		
 		right= new JButton(new ImageIcon("img/fleche-droite.png"));
 		right.setContentAreaFilled(false);
 		right.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(e.getSource().equals(right)){
-					webBrowser.navigate(p.getVideos().get(++Profil.indexVideoCourante).getUrl());
-				
+				if(index < p.getListVideos().size()-1){
+					index++;
+			
+				}else{
+					index = 0;
 				}
-				
+				webBrowser.navigate(p.getListVideos().get(index).getUrl());
+				System.out.println(index);
 			}
 		});
 		this.add(left,BorderLayout.WEST);
