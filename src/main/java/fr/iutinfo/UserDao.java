@@ -39,6 +39,9 @@ public interface UserDao {
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo")
 	public String selectPseudo(@Bind("pseudo") String pseudo);
 	
+	@SqlQuery("SELECT pseudo FROM users WHERE id=:id")
+	public String selectPseudo(@Bind("id") int id);
+	
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo and password=:password")
 	public String selectPseudo(@Bind("pseudo") String pseudo, @Bind("password") String password);
 	

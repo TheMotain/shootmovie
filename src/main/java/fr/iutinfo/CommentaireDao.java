@@ -9,31 +9,39 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface CommentaireDao {
 	
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS commentaires (id_c INTEGER PRIMARY KEY, foreign_key_id_v INTEGER, foreign_key_id_u INTEGER, commentaire TEXT, FOREIGN KEY(foreign_key_id_v) REFERENCES videos(id), FOREIGN KEY(foreign_key_id_u) REFERENCES users(id)))")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS commentaires (id INTEGER PRIMARY KEY, id_video INTEGER, id_utilisateur INTEGER, commentaire TEXT, date TEXT, heure TEXT, FOREIGN KEY(id_video) REFERENCES videos(id), FOREIGN KEY(id_utilisateur) REFERENCES users(id))")
 	public void createTable();
 	
-	@SqlUpdate("INSERT INTO commentaires (id_c,id_v,id_u,commentaire) VALUES (:id_c,:id_v,:id_u,:commentaire)")
-	public void insertVideo(@Bind("id_c") int id_c, @Bind("id_v") int id_v, @Bind("id_u") int id_u, @Bind("commentaire") String commentaire);
+	@SqlUpdate("INSERT INTO commentaires (id_video,id_utilisateur,commentaire,date,heure) VALUES (:id_video,:id_utilisateur,:commentaire,:date,:heure)")
+	public void insertCommentaire(@Bind("id_video") int id_video, @Bind("id_utilisateur") int id_utilisateur, @Bind("commentaire") String commentaire, @Bind("date") String date, @Bind("heure") String heure);
 
-	@SqlQuery("SELECT * FROM commentaires where id_c=:id_c")
+	@SqlQuery("SELECT * FROM commentaires where id=:id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Commentaire getCommentaire(@Bind("id_c") int id_c);
+	public Commentaire getCommentaire(@Bind("id") int id);
 	
-	@SqlQuery("SELECT * FROM commentaires where id_v=:id_v")
+	@SqlQuery("SELECT * FROM commentaires where id_video=:id_video")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Commentaire getCommentaireByVideo(@Bind("id_v") int id_v);
+	public Commentaire getCommentaireByVideo(@Bind("id_video") int id_video);
 	
-	@SqlQuery("SELECT * FROM commentaires where id_u=:id_u")
+	@SqlQuery("SELECT * FROM commentaires where id_utilisateur=:id_utilisateur")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Commentaire getCommentaireByUser(@Bind("id_u") int id_u);
+	public Commentaire getCommentaireByUser(@Bind("id_utilisateur") int id_utilisateur);
 	
 	@SqlQuery("SELECT * FROM commentaires")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Commentaire> getAllCommentaire();
 	
-	@SqlUpdate("DROP TABLE COMMMENTAIRES")
+	@SqlQuery("SELECT * FROM commentaires ORDER BY date DESC, heure DESC")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Commentaire> getAllCommentaireDesc();
+	
+	@SqlQuery("SELECT * FROM commentaires ORDER BY date DESC, heure DESC LIMIT :limit")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Commentaire> getAllCommentaireDescLimit(@Bind("limit") int limit);
+	
+	@SqlUpdate("DROP TABLE IF EXISTS commentaires")
 	public void dropTable();
 	
-	@SqlUpdate("DELETE FROM IF EXISTS commentaires where id_c=:id_c")
-	public void deleteCommentaire(@Bind("id_c") int id_c);
+	@SqlUpdate("DELETE FROM commentaires where id=:id")
+	public void deleteCommentaire(@Bind("id") int id);
 }

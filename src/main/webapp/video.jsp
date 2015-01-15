@@ -80,7 +80,7 @@
 				out.print(realisateur);
 				%></p>
 				<p>Note : <%
-				String note = (String) request.getAttribute("note");
+				Double note = (Double) request.getAttribute("note");
 				out.print(note);
 				%></p>
 			</div>
@@ -102,6 +102,9 @@
 					  
 					  <!-- A  répeter pour chaque commentaire -->
 					  
+					<%
+						List<Commentaire> it = (List) request.getAttribute("commentaires");
+					%>
 					  <div class="commentaire-box">
 					  	<div class="row">
 					  		<div class="col-md-2">
@@ -115,6 +118,7 @@
 					  	</div>
 					  	<hr>
 					  </div>
+					%>
 					  
 					  <!-- Fin de répétition -->
 					  
