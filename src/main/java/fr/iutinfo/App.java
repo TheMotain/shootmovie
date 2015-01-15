@@ -15,7 +15,6 @@ public class App extends Application{
     public Set<Class<?>> getClasses() {
     	Set<Class<?>> s = new HashSet<Class<?>>();
     	s.add(UserResource.class);
-    	s.add(HelloWorldResource.class);
     	return s;
     }
     

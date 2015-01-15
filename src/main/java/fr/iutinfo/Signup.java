@@ -33,7 +33,7 @@ public class Signup extends HttpServlet{
 		String date = day+"/"+month+"/"+year;
 		if(user == null){
 			userdao.insertUser(pseudo, password, date);
-			res.sendRedirect("index.html");
+			res.sendRedirect("index.jsp");
 		}
 		else
 			res.sendRedirect("inscription.html");
