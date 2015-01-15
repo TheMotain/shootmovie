@@ -1,113 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<!-- Bonjour -->
-		<title>ShootMovie</title>
-		<meta charset='utf-8'>
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<script src="js/bootstrap.min.js"></script>
-		
-		<!-- Code local -->
-		<script src="all.js"></script>
-	</head>
-	<body>
+<head>
+<!-- Bonjour -->
+<title>ShootMovie</title>
+<meta charset='utf-8'>
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<!-- ----------------- MENU HAUT ------------------- -->
-<%@ include file="/elements/menu.jsp" %>
-<!-- ----------------- FIN MENU HAUT ------------------- -->
-		<div class="container">
-			<form class="form-inline" style="float:right; padding-bottom:5px" role="search">
-	        	<div class="input-group">
-	        		<span class="input-group-addon" id="loupe-recherche"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-	          		<input type="text" class="form-control" aria-describedby="loupe-recherche">
-	        	</div>
-	      	</form>
-	      	<div style="clear:both"></div>
-	      	
-	      	<!-- DEBUT CAROUSEL -->
-	      	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			  </ol>
-			
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="http://placehold.it/1170x300">
-			      <div class="carousel-caption">
-			       	Slide 1
-			      </div>
-			    </div>
-			    <div class="item">
-			      <img src="http://placehold.it/1170x300">
-			      <div class="carousel-caption">
-			        Slide 2
-			      </div>
-			    </div>
-			  </div>
-			</div>
-	      	<!-- FIN CAROUSEL -->
-	      	
-			<div class="row">
-				<div class="col-md-4">
-					<div class="panel panel-default">
-					  <div class="panel-heading">Accéder au contenu</div>
-					  <div class="panel-body">
-					  	<p><a href="inscription.html">Inscrivez-vous</a> pour pouvoir accéder aux réalisations postées sur ShootMovie.</p>
-					   	<img src="http://placehold.it/200x150" width="100%" />
-					   	<hr>
-					   	<a href="login.html" role="button" class="btn btn-block btn-default">Se connecter</a>
-					   	<a href="inscription.html" role="button" class="btn btn-block btn-danger">S'inscrire</a>
-					  </div>
-					</div>
-					<div class="panel panel-default">
-					  <div class="panel-body">
-					  	<a href="mailto:romain.hembert@gmail.com">Contacter l'administrateur</a> - <a href="#">A propos</a>
-					  </div>
-					</div>
+<!-- bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Code local -->
+<script src="all.js"></script>
+</head>
+<body>
+
+	<!-- ----------------- MENU HAUT ------------------- -->
+	<%@ include file="/elements/menu.jsp"%>
+	<!-- ----------------- FIN MENU HAUT ------------------- -->
+	<div class="container">
+
+		<!-- DEBUT CAROUSEL -->
+		<div id="carousel-example-generic" class="carousel slide"
+			data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="http://placehold.it/1170x400">
+					<div class="carousel-caption">Slide 1</div>
 				</div>
-				<div class="col-md-8">
-					<div class="panel panel-default">
-					  <div class="panel-heading">Réalisations du moment</div>
-					  <div class="panel-body">
-					    Liste de vidéo
-					  </div>
-					</div>
-					<div class="panel panel-default">
-					  <div class="panel-heading">DerniÃ¨res réalisations</div>
-					  <div class="panel-body">
-					    Liste de vidéos
-					  </div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel panel-default">
-							  <div class="panel-heading">Meilleures séries</div>
-							  <div class="panel-body">
-							    Liste de vidéos
-							  </div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="panel panel-default">
-							  <div class="panel-heading">Derniers épidoses</div>
-							  <div class="panel-body">
-							    Liste
-							  </div>
-							</div>
-						</div>
-					</div>
+				<div class="item">
+					<img src="http://placehold.it/1170x400">
+					<div class="carousel-caption">Slide 2</div>
 				</div>
-				
 			</div>
-			
 		</div>
-	</body>
+		<!-- FIN CAROUSEL -->
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">ShootMovie</div>
+					<div class="panel-body">
+						<p>ShootMovie est une plateforme de courts-métrages
+							cinématographiques. Ici, vous pourrez trouver une multitude de
+							courts-métrages de réalisateurs amateur. Vous pourrez noter et
+							commentez les réalisations présentes sur le site, et vous abonner
+							à vos réalisateurs, séries ou acteurs préférés. Vous pourrez même
+							retrouver des réalisations inédites à ShootMovie et introuvable
+							autre part sur internet !</p>
+						<center><b>Vous êtes passioné de cinéma ou vous réalisez des courts-métrages ?<br>Alors <a href="inscription.html">rejoignez-nous</a>, c'est grauit !</b></center>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Nous contacter</div>
+					<div class="panel-body">
+						<a href="mailto:romain.hembert@gmail.com" role="button"
+							class="btn btn-info btn-block">Nous contacter</a>
+						<button type="button" class="btn btn-default btn-block"
+							data-toggle="modal" data-target="#a-propos">A propos</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="modal fade" id="a-propos" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">ShootMovie</h4>
+				</div>
+				<div class="modal-body">
+					<center style="color: red; font-weight: bold;">STILL IN
+						DEVLOPMENT</center><br>
+					<p>Projet réalisé lors de la semaine d'Agilité.</p>
+					Equipe :
+					<ul>
+						<li>HEMBERT Romain</li>
+						<li>DALENCOURT Alex</li>
+						<li>ZAROURI Mohamed</li>
+						<li>DECOCK Alexis</li>
+						<li>GHESQUIERE Jérôme</li>
+						<li>REGNIER Camille</li>
+						<li>MIGAN Karen</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
