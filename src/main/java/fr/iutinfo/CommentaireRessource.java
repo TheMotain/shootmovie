@@ -90,7 +90,7 @@ public class CommentaireRessource {
 	}
 	
 	@GET
-	public List<Commentaire> getUsers(@DefaultValue("10") @QueryParam("limit") int limit) {
+	public List<Commentaire> getListComment(@DefaultValue("10") @QueryParam("limit") int limit) {
 		return new ArrayList<Commentaire>(commentaires.values());
 	}
 }

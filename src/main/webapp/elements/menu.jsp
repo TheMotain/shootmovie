@@ -1,6 +1,3 @@
-
-	<body>
-	
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,6 +26,7 @@
 							data-toggle="modal" data-target="#connexion">Se connecter</button></li>
             <li><button type="button" class="btn btn-link"
 							data-toggle="modal" data-target="#inscription">S'inscrire</button></li>
+			<li><a href="signout">Déconnexion</a></li>
             <li class="divider"></li>
             <li><a href="#">Mot de passe perdu ?</a></li>
             <li class="divider"></li>

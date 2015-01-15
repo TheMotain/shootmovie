@@ -1,8 +1,5 @@
 package appBureau;
 import javax.swing.*;
-import fr.iutinfo.App;
-import fr.iutinfo.User;
-import fr.iutinfo.UserDao;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,22 +8,21 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Calendar;
 
 public class Connexion{
-	
 	JFrame frame=new JFrame();
 
 	JPanel textPanel, panel, completionPanel;
 	JLabel titleLabel, usernameLabel, passwordLabel, userLabel, passLabel;
 	JTextField usernameField;JPasswordField loginField;
 	JButton loginButton;
-	private static UserDao userdao = App.dbi.open(UserDao.class);
-	
+	//	private static UserDao userdao = App.dbi.open(UserDao.class);
+
 	public Connexion(){
-		userdao.createTable();
+
 		Container c= frame.getContentPane();
 		c.setBackground(new Color(68	, 68, 68));
+
 		c.setLayout(new BorderLayout());
 		JLabel logo= new JLabel(new ImageIcon("img/logo.png"));
 		c.add(logo,BorderLayout.NORTH);
@@ -73,19 +69,15 @@ public class Connexion{
 		connexion.setOpaque(false);
 		jp.add(connexion, BorderLayout.PAGE_END);
 		loginButton.addActionListener(new ActionListener() {
-		
 
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				User res = userdao.selectUser(usernameField.getText(),loginField.getText());
-				if(res!=null){
-				String pseudo= res.getPseudo();
-					String dateInscription =res.getDateInscription();
+				if(usernameField.getText().equals("toto")&&loginField.getText().equals("toto")){
 					frame.dispose();
 					JFrame test = new JFrame();
-					test.setSize(250, 500);
-					test.add(new PanelVideo(new PanelProfil( new Profil(pseudo,dateInscription,"modifier"))));
+					test.setSize(800, 500);
+					test.add(new PanelVideo(new PanelProfil( new Profil(usernameField.getText()))));
 					test.setVisible(true);
 					
 				}else{
@@ -96,14 +88,11 @@ public class Connexion{
 			
 		});
 		frame.setSize(new Dimension(300,300));
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setResizable(false);
 		frame.setVisible(true);
 
 	}
-	public static void main(String[]args){
-		new Connexion();
-	}
 
 }
+

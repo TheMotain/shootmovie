@@ -8,6 +8,8 @@ public class User {
 	private String type;
 	private String dateInscription;
 
+	public User() {}
+	
 	public User(int id, String pseudo, String password, String email) {
 		this.id = id;
 		this.pseudo = pseudo;

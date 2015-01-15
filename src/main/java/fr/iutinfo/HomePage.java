@@ -9,23 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@SuppressWarnings("serial")
-@WebServlet("/signin")
-public class Signin extends HttpServlet {
+/**
+ * Servlet implementation class HomePage
+ */
+@WebServlet("/home")
+public class HomePage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	public void service( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		userdao.createTable();
-		String login = req.getParameter("login");
-		String password = req.getParameter("mdp");
-		String user = userdao.selectPseudo(login,password);
-		if(user != null){
-			HttpSession s = req.getSession(true);
-			s.setAttribute("login", login);
-			s.setAttribute("logged", true);
-			res.sendRedirect("home");
-		}
-		else
-			res.sendRedirect("login.html");
+		HttpSession s = req.getSession(true);
+		if(s.getAttribute("logged") != null) res.sendRedirect("/index.jsp");
+		
+		String user = userdao.selectType((String) s.getAttribute("login"));
+		req.setAttribute("user", user);
+		this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(req, res);
 	}
 }
