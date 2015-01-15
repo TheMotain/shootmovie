@@ -20,7 +20,7 @@ public class VideoTest extends JerseyTest {
 	 */
 	@Test
 	public void textToLien() {
-		Video v = new Video("", "", "", "", 0);
+		Video v = new Video("", "", "", "", "");
 		assertEquals("www.youtube.com/embed/yNpOz44RM20", v.verficationLien("https://www.youtube.com/watch?v=yNpOz44RM20"));
 	}
 

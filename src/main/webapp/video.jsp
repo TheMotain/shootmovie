@@ -62,13 +62,27 @@
 					%>" frameborder="0" allowfullscreen></iframe>
 				</div>
 		<div class="panel panel-default">
-			<div class="panel-heading"><span id="titre"></span></div>
+			<div class="panel-heading"><%
+			String titre = (String) request.getAttribute("titre");
+			out.print(titre);
+			%></div>
 			<div class="panel-body">
 				<p>Synopsis :</p>
-				<i class="description"><span id="desc"></span></i>
-				<p>Date_upload : <span id="date"></span></p>
-				<p>Lien : <span id="lien"></span></p>
-				<p>Note : <span id="note"></span></p>
+				<p><%String description = (String) request.getAttribute("description");
+				out.print(description);
+				%></p>
+				<p>Date Upload : <%
+				String date = (String) request.getAttribute("date");
+				out.print(date);
+				%></p>
+				<p>Realisateur : <%
+				String realisateur = (String) request.getAttribute("realisateur");
+				out.print(realisateur);
+				%></p>
+				<p>Note : <%
+				String note = (String) request.getAttribute("note");
+				out.print(note);
+				%></p>
 			</div>
 		</div>
 		
@@ -95,7 +109,7 @@
 								<a href="#">Pseudo</a><br>
 					  		</div>
 					  		<div class="col-md-10">
-					  			<span class="commentaire-date">PostÃ© le 18-07-1995 Ã  04h34</span><br>
+					  			<span class="commentaire-date">Posté le 18-07-1995 Ã  04h34</span><br>
 					  			<p>Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit, putet esse leviorem, dum modo, cuius exemplo se consolatur, eius exitum expectet, praesertim cum in Albucio nec Pisonis libidines nec audacia Gabini fuerit ac tamen hac una plaga conciderit, ignominia senatus.</p>
 					  		</div>
 					  	</div>
@@ -115,15 +129,6 @@
 			</div>
 
 		<script type="text/javascript">
-			function modificationVariables() {
-
-				document.getElementById("titre").innerHTML = "Titre de la video";
-				document.getElementById("desc").innerHTML = "Ceci est une description";
-				document.getElementById("date").innerHTML = "Date du jour";
-				document.getElementById("lien").innerHTML = "Lien de la vidéo ";
-				document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
-				document.getElementById("note").innerHTML = "Lien de la vidéo ";
-			}
 			
 			$("#boutonaffi").click(function() {
 				msg = $("#textarea").val();
