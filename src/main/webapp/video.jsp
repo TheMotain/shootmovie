@@ -65,6 +65,12 @@
 					out.print(note);
 				%>
 				</p>
+				<p>Noter la vidéo:
+				<form action="/setNote?id=<%request.getParameter("id");%>"
+					method="post" class="form-horizontal">
+					<input type="range" min="0" max="5" value="3" step="1"
+						onchange="showValue(this.value)"> <span id="range">0</span>
+				</form>
 			</div>
 		</div>
 
@@ -96,8 +102,8 @@
 							<div class="row">
 								<div class="col-md-2">
 									<img src="http://placehold.it/100x100" /> <a href="#"> <%
-											out.print(tmp2[0]);
-										%>
+ 									out.print(tmp2[0]);
+ 									%>
 									</a><br>
 								</div>
 								<div class="col-md-10">
@@ -138,9 +144,13 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
+	<script type="text/javascript">
+		function showValue(newValue) {
+			document.getElementById("range").innerHTML = newValue;
+		}
+	</script>
 </body>
 </html>
 

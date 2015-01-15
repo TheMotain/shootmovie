@@ -22,7 +22,7 @@ public class myProfil extends HttpServlet{
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		
-		userdao.createTable();
+ 		userdao.createTable();
 		
 		HttpSession s = req.getSession(true);
 		User user = userdao.selectUserbyPseudo((String) s.getAttribute("login"));
