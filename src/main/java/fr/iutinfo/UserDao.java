@@ -29,15 +29,18 @@ public interface UserDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUserbyPseudo(@Bind("pseudo") String pseudo);
 	
-	@SqlQuery("SELECT * FROM users")
+	@SqlQuery("SELECT * FROM users ORDER BY id DESC")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Iterator<User> selectAllUsers();
+	public Iterator<User> selectLastUsers();
 	
 	@SqlQuery("SELECT type FROM users WHERE pseudo=:pseudo ")
 	public String selectType(@Bind("pseudo") String pseudo);
 	
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo")
 	public String selectPseudo(@Bind("pseudo") String pseudo);
+	
+	@SqlQuery("SELECT pseudo FROM users WHERE id=:id")
+	public String selectPseudo(@Bind("id") int id);
 	
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo and password=:password")
 	public String selectPseudo(@Bind("pseudo") String pseudo, @Bind("password") String password);
