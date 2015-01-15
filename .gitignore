@@ -5,3 +5,5 @@
 .settings
 target/
 sqlite3.exe
+swt-debug-windows.jar
+swt-windows.jar

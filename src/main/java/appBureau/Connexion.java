@@ -12,7 +12,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Calendar;
+
 
 public class Connexion {
 
@@ -27,6 +27,7 @@ public class Connexion {
 
 	public Connexion() {
 		userdao.createTable();
+		userdao.insertUser("moi", "moi", "10");
 		Container c = frame.getContentPane();
 		c.setBackground(new Color(68, 68, 68));
 		c.setLayout(new BorderLayout());
