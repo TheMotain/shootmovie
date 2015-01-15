@@ -23,6 +23,7 @@ public class AjouterVideo extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		vdao.createTable();
 		String lien = request.getParameter("lien");
 		String titre = request.getParameter("titre");
 		String description = request.getParameter("description");
@@ -45,6 +46,10 @@ public class AjouterVideo extends HttpServlet {
 			String date = day+"/"+month+"/"+year;
 			
 			vdao.insertVideo(titre, description, date, lien,(String) s.getAttribute("login"));
+			
+			Video newVideo = vdao.getVideoByLink(lien);
+			
+			response.sendRedirect("video?id="+newVideo.getId());
 		}
 	}
 }
