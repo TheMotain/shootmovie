@@ -4,10 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
 
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
@@ -15,7 +12,6 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 public class Video extends JPanel {
 
 	JButton left,right;
-	
 	
 	public Video(String url) {
 		setLayout(new BorderLayout());
@@ -43,7 +39,4 @@ public class Video extends JPanel {
 		this.add(new JPanel(),BorderLayout.SOUTH);
 		
 	}
-
-
-
 }

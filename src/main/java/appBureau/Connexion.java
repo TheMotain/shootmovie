@@ -26,8 +26,8 @@ public class Connexion {
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	public Connexion() {
-		userdao.createTable();
-		userdao.insertUser("moi", "moi", "10");
+		AutoRemplissageBDD.remplissageUsers();
+		AutoRemplissageBDD.remplissageVideos();
 		Container c = frame.getContentPane();
 		c.setBackground(new Color(68, 68, 68));
 		c.setLayout(new BorderLayout());

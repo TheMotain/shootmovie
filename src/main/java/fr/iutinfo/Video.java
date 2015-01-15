@@ -21,6 +21,8 @@ public class Video {
 		compteur=0;
 	}
 	
+
+
 	/**
 	 * Vérifie si le lien ajouté est compatible avec l'ajout dans une page HTML5
 	 * Retourne le lien sous la forme compatibe intégration HTML5
@@ -95,4 +97,10 @@ public class Video {
 		return compteur;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "Video [id=" + id + ", titre=" + titre + ", description=" + description + ", dateUpload=" + dateUpload + ", url=" + url + ", realisateur="
+				+ realisateur + ", note=" + note + ", compteur=" + compteur + "]";
+	}
 }
