@@ -46,6 +46,7 @@ String login = (String) s.getAttribute("login");
           <ul class="dropdown-menu" role="menu">
 			<li><a href="home">Mon Home</a></li>
 			<li><a href="myProfil">Mon Profil</a></li>
+			<li><a href="modifProfil.jsp">Paramètres</a></li>
 			<li class="divider"></li>
 			<li><a href="signout">Déconnexion</a></li>
 			</ul>
@@ -92,13 +93,13 @@ String login = (String) s.getAttribute("login");
 				<div class="modal-body">
 					<form action='signup' method='get' class="form-horizontal">
 							<div class="form-group">
-								<input type='text' style="width:370px;margin-left:15px" class="form-control" name='login' placeholder="Login"><br>
+								<input type='text' class="form-control" name='login' placeholder="Login"><br>
 							</div>
 							<div class="form-group">
-								<input type='password' style="width:370px;margin-left:15px" class="form-control" name='mdp' placeholder="Mot de passe"><br>
+								<input type='password' class="form-control" name='mdp' placeholder="Mot de passe"><br>
 							</div>
 							<div class="form-group">
-								<input type='email' style="width:370px;margin-left:15px" class="form-control" name='email' placeholder="E-mail"><br>
+								<input type='email' class="form-control" name='email' placeholder="E-mail"><br>
 							</div>
 							<input class="btn btn-block btn-default" type='submit' value="S'inscrire">
 						</form>

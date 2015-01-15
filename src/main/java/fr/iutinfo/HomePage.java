@@ -21,7 +21,6 @@ public class HomePage extends HttpServlet {
 		if (s.getAttribute("login") == null) {
 			response.sendRedirect("login.jsp?connexion");
 		} else {
-			request.setAttribute("user", (String) s.getAttribute("login"));
 			this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(request, response);
 		}
 	}

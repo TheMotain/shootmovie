@@ -109,10 +109,38 @@
 						name="send" id="send" value="Envoyer" />
 
 				</form>
-				<br> <a href="#" role="button"
-					class="btn btn-success pull-right">Devenir réalisateur</a>
+				<br>
+				<button type="button" class="btn btn-success pull-right"
+					data-toggle="modal" data-target="#realisateur">Devenir
+					réalisateur</button>
 				<div style="clear: both"></div>
 
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="realisateur" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Devenir réalisateur</h4>
+				</div>
+				<div class="modal-body">
+					<p>Pour pouvoir <b>devenir réalisateur</b>, vous devez simplement
+						ajouter <b>un lien vers votre chaine de publication de vos vidéos</b>.
+						Grace à ça, nos équipes vont pouvoir vérifier que vous êtes bien
+						propriétaire du compte, et aussi vérifier que vous faites bien des
+						réalisations en correspondance avec le thème du site.</p>
+
+						<form action="#" method="post">
+							<div class="form-group">
+								<input type='text' class="form-control" name='link' placeholder="Lien de la chaîne"><br>
+							</div>
+							<input class="btn btn-block btn-success" type='submit'
+							value="Devenir réalisateur">
+						</form>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -22,10 +22,12 @@
 	<%@ include file="/elements/menu.jsp" %>
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	<div class="container">
-		<%
-			String user = (String) request.getAttribute("user");
-			out.println("Bonjour "+user);
-		%>
+		<div class="panel panel-default">
+			<div class="panel-heading">Dernières vidéos parues</div>
+			<div class="panel-body">
+				blabla
+			</div>
+		</div>
 	</div>
 </body>
 </html>

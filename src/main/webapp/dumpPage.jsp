@@ -53,7 +53,8 @@
 						%></p>
 				</div>
 				<div class="col-md-2" style="margin-top: 10px;padding-right:10px;">
-					
+					<a href="modifProfil.jsp" role="button" class="btn btn-xs btn-default" style="float:right;margin-right:15px;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
@@ -96,6 +97,6 @@
 			
 		</div>
 	</div>
-	<a href="modifProfil.jsp" role="button" class="btn btn-block btn-default">Modifier son profil</a>
+	
 </body>
 </html>
