@@ -22,6 +22,7 @@ public class Signin extends HttpServlet {
 		if(user != null){
 			HttpSession s = req.getSession(true);
 			s.setAttribute("login", login);
+			s.setAttribute("id", userdao.selectId(pseudo));
 			s.setAttribute("logged", true);
 			res.sendRedirect("/shootmovie/home");
 		}
