@@ -73,7 +73,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="modifProfil.html" role="button" class="btn btn-block btn-default">Modifier son profil</a>
+			<a href="modifProfil.jsp" role="button" class="btn btn-block btn-default">Modifier son profil</a>
 		</div>
 	</div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>ShootFilm - Titre de la vidÃ©o</title>
+		<title>ShootFilm - Titre de la vidéo</title>
 		<meta charset='utf-8'>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Accueil <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="#">VidÃ©os</a></li>
+        <li class="active"><a href="#">Vidéos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -57,9 +57,8 @@
 	<div class="container">
 	<div class="video-player">
 					<iframe width="100%;" height="620" src="<%
-					UserDao userdao = App.dbi.open(UserDao.class);
-
-					out.print("//www.youtube.com/embed/yNpOz44RM20");
+					String url = (String) request.getAttribute("url");
+					out.print(url);
 					%>" frameborder="0" allowfullscreen></iframe>
 				</div>
 		<div class="panel panel-default">
@@ -121,9 +120,9 @@
 				document.getElementById("titre").innerHTML = "Titre de la video";
 				document.getElementById("desc").innerHTML = "Ceci est une description";
 				document.getElementById("date").innerHTML = "Date du jour";
-				document.getElementById("lien").innerHTML = "Lien de la vidÃ©o ";
-				document.getElementById("realisateur").innerHTML = "Realisateur de la vidÃ©o ";
-				document.getElementById("note").innerHTML = "Lien de la vidÃ©o ";
+				document.getElementById("lien").innerHTML = "Lien de la vidéo ";
+				document.getElementById("realisateur").innerHTML = "Realisateur de la vidéo ";
+				document.getElementById("note").innerHTML = "Lien de la vidéo ";
 			}
 			
 			$("#boutonaffi").click(function() {
