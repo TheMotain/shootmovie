@@ -35,9 +35,9 @@ public interface CommentaireDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Commentaire> getAllCommentaireDesc();
 	
-	@SqlQuery("SELECT * FROM commentaires ORDER BY date DESC, heure DESC LIMIT :limit")
+	@SqlQuery("SELECT * FROM commentaires where id_video=:id_video ORDER BY date DESC, heure DESC LIMIT :limit")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	public Iterator<Commentaire> getAllCommentaireDescLimit(@Bind("limit") int limit);
+	public Iterator<Commentaire> getAllCommentaireDescLimit(@Bind("id_video") int id_video, @Bind("limit") int limit);
 	
 	@SqlUpdate("DROP TABLE IF EXISTS commentaires")
 	public void dropTable();

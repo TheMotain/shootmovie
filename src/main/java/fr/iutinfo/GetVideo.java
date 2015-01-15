@@ -30,7 +30,7 @@ public class GetVideo extends HttpServlet{
 		req.setAttribute("date", video.getDateUpload());
 		req.setAttribute("note", video.getNote());
 		
-		Iterator<Commentaire> it = commentairedoa.getAllCommentaireDescLimit(5);
+		Iterator<Commentaire> it = commentairedoa.getAllCommentaireDescLimit(video.getId(),5);
 		String commentaire = "";
 		Commentaire tmp;
 		while(it.hasNext()){
