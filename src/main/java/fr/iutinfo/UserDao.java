@@ -32,4 +32,7 @@ public interface UserDao {
 	
 	@SqlUpdate("DROP TABLE IF EXISTS users")
 	public void dropTable();
+	
+	@SqlUpdate("DELETE FROM users WHERE id=:id")
+	public void deleteUser(@Bind("id") int id);
 }
