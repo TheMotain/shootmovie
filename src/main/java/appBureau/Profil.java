@@ -17,7 +17,7 @@ public class Profil  {
 	private int nbreAbonnes;
 	private ArrayList<fr.iutinfo.Video> videos;
 	private static VideoDao videodao = App.dbi.open(VideoDao.class);
-	
+	public static int indexVideoCourante=0;
 	
 	public Profil(String pseudo, String dateCreation,String age) {
 		this.pseudo=pseudo;
@@ -88,6 +88,9 @@ public class Profil  {
 		
 	}
 	
+	public ArrayList<fr.iutinfo.Video> getVideos() {
+		return videos;
+	}
 
 	
 	
