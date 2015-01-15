@@ -18,11 +18,11 @@ public class Signin extends HttpServlet {
 		userdao.createTable();
 		String login = req.getParameter("login");
 		String password = req.getParameter("mdp");
-		String user = userdao.selectPseudo(login,password);
+		User user = userdao.selectUser(login, password);
 		if(user != null){
 			HttpSession s = req.getSession(true);
-			s.setAttribute("login", login);
-			s.setAttribute("id", userdao.selectId(login));
+			s.setAttribute("login", user.getPseudo());
+			s.setAttribute("id", user.getId());
 			s.setAttribute("logged", true);
 			res.sendRedirect("/shootmovie/home");
 		}

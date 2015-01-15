@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>ShootFilm - Titre de la vidéo</title>
+		<title>ShootFilm - Titre de la vidï¿½o</title>
 		<meta charset='utf-8'>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Accueil <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="#">Vidéos</a></li>
+        <li class="active"><a href="#">Vidï¿½os</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -118,8 +118,8 @@
 								out.print(tmp2[0]); %></a><br>
 					  		</div>
 					  		<div class="col-md-10">
-					  			<span class="commentaire-date">Posté le <%
-					  			out.print(tmp2[2]+" à "+tmp2[3]); %></span><br>
+					  			<span class="commentaire-date">Postï¿½ le <%
+					  			out.print(tmp2[2]+" ï¿½ "+tmp2[3]); %></span><br>
 					  			<p><%
 					  			out.print(tmp2[1]); %></p>
 					  		</div>
@@ -130,27 +130,18 @@
 					  }}
 					  %>
 					  
-					  <!-- Fin de répétition -->
+					  <!-- Fin de rï¿½pï¿½tition -->
 					  
-					  	<form method="post" class="form-horizontal">
-					    	<textarea id="textarea" rows="5" class="form-control" placeholder="Commentez la vidéo ..." name="comm"></textarea><br>
-   							<input type="button" class="btn btn-block btn-default" id="boutonaffi" value="Afficher"/>
+					  	<form action="/setCommentaire?id=<%
+					  	out.print(request.getParameter("id"));%>" method="post" class="form-horizontal">
+					    	<textarea id="textarea" rows="5" class="form-control" placeholder="Commentez la vidï¿½o ..." name="comm"></textarea><br>
+   							<input type="submit" class="btn btn-block btn-default" value="Poster"/>
    						</form>
 					  </div>
 					</div>
 				</div>
 				
 			</div>
-
-		<script type="text/javascript">
-			
-			$("#boutonaffi").click(function() {
-				msg = $("#textarea").val();
-				alert(msg);
-				});
-
-			modificationVariables();
-		</script>
 	</div>
 	</body>
 </html>
