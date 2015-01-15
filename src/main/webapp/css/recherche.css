@@ -1,0 +1,36 @@
+
+#searchbar{position:relative; width:1040px; height:auto; text-align:center;}
+.formulaire{display:inline-block;
+ width: 1290px;
+ height: 39px;
+	position:relative;}
+.formulaire .champ {width:600px; height:35px;}
+.formulaire .bouton{
+box-shadow: none;
+background-image: url(../img/recherche.png);
+background-repeat: no-repeat;
+width: 35px;
+height: 35px;
+padding: 0; 
+}
+h1{
+ width: 1180px;
+ height: 39px;
+	position:relative;
+    color:#DDD;
+}
+
+body{
+background-image: url(../img/bg.png);
+background-repeat: repeat
+
+}
+#videoAjoutes{
+background-color:#931010
+}
+#video
+{
+ border-collapse: separate;
+ border-spacing: 15px 10px;
+}
+
