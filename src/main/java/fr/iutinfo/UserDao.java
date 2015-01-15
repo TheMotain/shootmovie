@@ -10,7 +10,6 @@ public interface UserDao {
 	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, type STRING, dateInscription STRING)")
 	public void createTable();
 	
-
 	@SqlUpdate("INSERT INTO users (pseudo,password,type,dateInscription) VALUES (:pseudo,:password,'standard user',:date)")
 	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("date") String date);
 	

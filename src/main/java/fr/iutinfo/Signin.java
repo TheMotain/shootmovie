@@ -22,7 +22,7 @@ public class Signin extends HttpServlet {
 		if(user != null){
 			HttpSession s = req.getSession(true);
 			s.setAttribute("login", login);
-			res.sendRedirect("index.html");
+			res.sendRedirect("index.jsp");
 		}
 		else
 			res.sendRedirect("login.html");
