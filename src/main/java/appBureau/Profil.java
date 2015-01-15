@@ -15,9 +15,8 @@ public class Profil  {
 	private String pseudo,age,dateCreation,img;
 	private ImageIcon photo;
 	private int nbreAbonnes;
-	private ArrayList<fr.iutinfo.Video> videos;
+	private ArrayList<Video> listVideos = new ArrayList<Video>();
 	private static VideoDao videodao = App.dbi.open(VideoDao.class);
-	public static int indexVideoCourante=0;
 	
 	public Profil(String pseudo, String dateCreation,String age) {
 		this.pseudo=pseudo;
@@ -26,7 +25,7 @@ public class Profil  {
 		this.setImg("img/photoProfil.jpg");
 		photo= new ImageIcon(img);	
 		setNbreAbonnes(0);
-		videos= new ArrayList<Video>();
+
 	}
 	
 	public String getDateCreation() {
@@ -77,20 +76,22 @@ public class Profil  {
 	}
 	public void updateVideos(){
 		
-		Iterator<fr.iutinfo.Video> it = videodao.getPseudoVideo(getPseudo());
+		
+		Iterator<fr.iutinfo.Video> it = videodao.getAllVideo();
 		while(it.hasNext()){
-			videos.add(it.next());
+			listVideos.add(it.next());
 		}
-		System.out.println( "LISTE :");
-		System.out.println(videos);
+		
+	
 		
 		
-		
+	}
+
+	public ArrayList<Video> getListVideos() {
+		return listVideos;
 	}
 	
-	public ArrayList<fr.iutinfo.Video> getVideos() {
-		return videos;
-	}
+
 
 	
 	
