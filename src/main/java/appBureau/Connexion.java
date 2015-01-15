@@ -88,7 +88,7 @@ public class Connexion {
 					test.setSize(800, 500);
 					Profil p= new Profil(pseudo, dateInscription, "18");
 				p.updateVideos();
-					test.add(new PanelVideo(new PanelProfil(new Profil(pseudo, dateInscription, "modifier"))));
+					test.add(new PanelVideo(new PanelProfil(p)));
 					test.setVisible(true);
 
 				} else {

@@ -35,9 +35,9 @@ public class GetVideo extends HttpServlet{
 		Commentaire tmp;
 		while(it.hasNext()){
 			tmp = it.next();
-			commentaire += userdao.selectPseudo(tmp.getId_utilisateur())
+			commentaire += userdao.selectPseudo(tmp.getId_utilisateur());
 		}
-		req.setAttribute("commentaires", commentaires);
+		req.setAttribute("commentaires", commentaire);
 		
 		req.getServletContext().getRequestDispatcher("/video.jsp").forward(req, res);
 	}
