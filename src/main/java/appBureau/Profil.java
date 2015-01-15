@@ -17,8 +17,6 @@ public class Profil  {
 		this.age=age;
 		this.setImg("img/photoProfil.jpg");
 		photo= new ImageIcon(img);	
-		this.setAge("30");
-		this.setDateCreation("25-12-2004");
 		setNbreAbonnes(0);
 		
 		

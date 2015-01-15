@@ -25,21 +25,6 @@ public class Connexion{
 	
 	public Connexion(){
 		userdao.createTable();
-		
-		Calendar cal = Calendar.getInstance();
-		String day;
-		String month;
-		String year = "" + cal.get(Calendar.YEAR);
-		if(cal.get(Calendar.DAY_OF_MONTH) < 10)
-			day = 0 + "" + cal.get(Calendar.DAY_OF_MONTH);
-		else
-			day = cal.get(Calendar.DAY_OF_MONTH) + "";
-		if(cal.get(Calendar.MONTH)+1 < 10)
-			month = 0 + "" + (cal.get(Calendar.MONTH) + 1);
-		else
-			month = cal.get(Calendar.MONTH) + "";
-		String date = day+"/"+month+"/"+year;
-		userdao.insertUser("test2", "test2", "test1.fr", "test", date);
 		Container c= frame.getContentPane();
 		c.setBackground(new Color(68	, 68, 68));
 		c.setLayout(new BorderLayout());
@@ -95,12 +80,12 @@ public class Connexion{
 			public void actionPerformed(ActionEvent arg0) {
 				User res = userdao.selectUser(usernameField.getText(),loginField.getText());
 				if(res!=null){
-				/*	String pseudo= res.getPseudo();
-					String dateInscription =res.getDateInscription();*/
+				String pseudo= res.getPseudo();
+					String dateInscription =res.getDateInscription();
 					frame.dispose();
 					JFrame test = new JFrame();
 					test.setSize(250, 500);
-					test.add(new PanelProfil(new Profil("toto","toto","modifier")));
+					test.add(new PanelProfil(new Profil(pseudo,dateInscription,"modifier")));
 					test.setVisible(true);
 					
 				}else{
