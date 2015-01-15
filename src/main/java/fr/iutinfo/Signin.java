@@ -23,7 +23,7 @@ public class Signin extends HttpServlet {
 			HttpSession s = req.getSession(true);
 			s.setAttribute("login", login);
 			s.setAttribute("logged", true);
-			res.sendRedirect("home");
+			res.sendRedirect("/shootmovie/home");
 		}
 		else
 			res.sendRedirect("login.html");

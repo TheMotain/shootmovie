@@ -17,12 +17,12 @@ public class HomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
-	public void service( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		HttpSession s = req.getSession(true);
-		if(s.getAttribute("logged") != null) res.sendRedirect("/index.jsp");
+	public void service( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession s = request.getSession(true);
+		if(s.getAttribute("logged") != null) response.sendRedirect("/index.jsp");
 		
 		String user = userdao.selectType((String) s.getAttribute("login"));
-		req.setAttribute("user", user);
-		this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(req, res);
+		request.setAttribute("user", user);
+		this.getServletContext().getRequestDispatcher("/homeSpectateur.jsp").forward(request, response);
 	}
 }
