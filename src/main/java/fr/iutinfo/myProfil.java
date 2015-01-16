@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 public class myProfil extends HttpServlet{
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 	private static VideoDao vdao = App.dbi.open(VideoDao.class);
+	private static ProfilDao pdao = App.dbi.open(ProfilDao.class);
 	
 	/*
 	 * Ceci est MON profil.
@@ -25,13 +26,15 @@ public class myProfil extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		vdao.createTable();
  		userdao.createTable();
-		
+ 		pdao.createTable();
+ 		
 		HttpSession s = req.getSession(true);
 		User user = userdao.selectUserbyPseudo((String) s.getAttribute("login"));
 		if(user == null){
 			res.sendRedirect("/");
 		}
 		
+		String avatarLink = pdao.getProfil((int) s.getAttribute("id")).getLien_avatar();
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
 		String dateInscription = user.getDateInscription();
@@ -41,6 +44,7 @@ public class myProfil extends HttpServlet{
 		String twitter = user.getTwitter();
 		String gplus = user.getGplus();
 		
+		req.setAttribute("avatar", avatarLink);
 		req.setAttribute("name", pseudo);
 		req.setAttribute("email", email);
 		req.setAttribute("dateInscription", dateInscription);
