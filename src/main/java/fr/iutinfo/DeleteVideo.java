@@ -17,6 +17,7 @@ public class DeleteVideo extends HttpServlet {
 	private static VideoDao vdao = App.dbi.open(VideoDao.class);
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		vdao.createTable();
 		String idVideo = request.getParameter("id");
 		int id = Integer.parseInt(idVideo);
 		vdao.deleteVideo(id);
