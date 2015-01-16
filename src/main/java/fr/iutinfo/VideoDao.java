@@ -49,4 +49,7 @@ public interface VideoDao {
 	
 	@SqlUpdate("UPDATE videos SET compteur=(SELECT compteur - 1 FROM videos WHERE id=:id) WHERE id=:id")
 	public void decrementVue(@Bind("id") int id);
+
+	@SqlUpdate("UPDATE videos SET titre=:titre, description=:description WHERE id=:id")
+	public void updateData(@Bind("id") int id, @Bind("titre") String titre, @Bind("description") String description);
 }
