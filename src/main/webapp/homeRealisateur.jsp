@@ -22,7 +22,32 @@
 	<%@ include file="/elements/menu.jsp" %>
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	<div class="container">
-		
+		<div class="panel panel-default">
+			<div class="panel-heading">Mes dernières vidéos</div>
+			<div class="panel-body">
+				<table class="table">
+					<tr>
+						<th>Titre</th>
+						<th>Réalisateur</th>
+						<th>Date de publication</th>
+					</tr>
+					<%
+						String videosString = (String) request.getAttribute("videos");
+						String[] videos = videosString.split("£");
+						for(int i = 0; i < videos.length; i++){
+							String[] infos = videos[i].split("§");
+					%>
+						<tr>
+							<td><a href="video?id=<% out.println(infos[0]); %>"><% out.println(infos[1]); %></a></td>
+							<td><% out.println(infos[2]); %></td>
+							<td><% out.println(infos[3]); %></td>
+						</tr>
+					<% 
+						}
+					%>
+				</table>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
