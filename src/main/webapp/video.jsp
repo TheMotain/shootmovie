@@ -122,7 +122,7 @@
 							String tmp2[];
 							if (!tmp[0].equals("")) {
 								for (int i = 0; i < tmp.length; i++) {
-									tmp2 = tmp[i].split(" ");
+									tmp2 = tmp[i].split("§");
 						%>
 						<div class="commentaire-box">
 							<div class="row">
@@ -133,8 +133,8 @@
 									</a><br>
 								</div>
 								<div class="col-md-10">
-									<span class="commentaire-date">Postï¿½ le <%
-										out.print(tmp2[2] + " ï¿½ " + tmp2[3]);
+									<span class="commentaire-date">Posté le <%
+										out.print(tmp2[2] + " à " + tmp2[3]);
 									%></span><br>
 									<p>
 										<%
