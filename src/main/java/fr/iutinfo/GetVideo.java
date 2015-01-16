@@ -25,6 +25,7 @@ public class GetVideo extends HttpServlet{
 
 		Video video = videodao.getVideo(Integer.parseInt(req.getParameter("id")));
 		video.setCompteur();
+		videodao.incrementVue(video.getId());
 		User realisateur = userdao.selectUserbyPseudo(video.getRealisateur());
 		
 		req.setAttribute("url", video.getUrl());
