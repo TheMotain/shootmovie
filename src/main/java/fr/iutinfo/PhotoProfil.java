@@ -31,9 +31,11 @@ public class PhotoProfil extends HttpServlet {
 		HttpSession s = request.getSession(true);
 		String lien = request.getParameter("avatar");
 		
+		
 		pdao.createTable();
+		pdao.updateAvatar((int) s.getAttribute("id"), lien);
 		
-		
+		response.sendRedirect("myProfil");
 	}
 
 }
