@@ -1,20 +1,9 @@
 package appBureau;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import chrriis.dj.nativeswing.swtimpl.NativeInterface;
-import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
-
 public class Video extends JPanel {
-
+/*
 	JButton left,right;
 	Profil p;	
 	JWebBrowser webBrowser;
@@ -87,5 +76,5 @@ public class Video extends JPanel {
 		
 	setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black));
 		
-}
+}*/
 }
