@@ -43,10 +43,29 @@ public class myProfil extends HttpServlet{
 		req.setAttribute("email", email);
 		req.setAttribute("dateInscription", dateInscription);
 		req.setAttribute("type", type);
-		req.setAttribute("des", des);
-		req.setAttribute("facebook", fb);
-		req.setAttribute("twitter", twitter);
-		req.setAttribute("gplus", gplus);
+		if(!(userdao.selectDes(pseudo)==null)){
+			req.setAttribute("des", des);
+		} else {
+			req.setAttribute("des", "");
+		}
+		
+		if(!(userdao.selectFb(pseudo)==null)){
+			req.setAttribute("facebook", fb);
+		} else {
+			req.setAttribute("facebook", "");
+		}
+		
+		if(!(userdao.selectTwitter(pseudo)==null)){
+			req.setAttribute("twitter", twitter);
+		} else {
+			req.setAttribute("twitter", "");
+		}
+		
+		if(!(userdao.selectGplus(pseudo)==null)){
+			req.setAttribute("gplus", gplus);
+		} else {
+			req.setAttribute("gplus", "");
+		}
 		
 		
 		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);

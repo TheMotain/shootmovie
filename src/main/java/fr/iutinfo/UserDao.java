@@ -57,6 +57,18 @@ public interface UserDao {
 	@SqlQuery("SELECT type FROM users WHERE pseudo=:pseudo ")
 	public String selectType(@Bind("pseudo") String pseudo);
 	
+	@SqlQuery("SELECT des FROM users WHERE pseudo=:pseudo ")
+	public String selectDes(@Bind("pseudo") String pseudo);
+	
+	@SqlQuery("SELECT fb FROM users WHERE pseudo=:pseudo ")
+	public String selectFb(@Bind("pseudo") String pseudo);
+	
+	@SqlQuery("SELECT twitter FROM users WHERE pseudo=:pseudo ")
+	public String selectTwitter(@Bind("pseudo") String pseudo);
+	
+	@SqlQuery("SELECT gplus FROM users WHERE pseudo=:pseudo ")
+	public String selectGplus(@Bind("pseudo") String pseudo);
+	
 	@SqlQuery("SELECT pseudo FROM users WHERE pseudo=:pseudo")
 	public String selectPseudo(@Bind("pseudo") String pseudo);
 	
