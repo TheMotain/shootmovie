@@ -29,7 +29,10 @@
 		<div class="panel panel-default header-profil" style="padding: 0">
 			<div class="row">
 				<div class="col-md-2">
-					<img src="http://placehold.it/150x150" class="photo-profil img-circle" />
+					<img src="<%
+							String avatar = (String) request.getAttribute("avatar");
+							out.println(avatar);
+						%>" class="photo-profil img-circle" />
 				</div>
 				<div class="col-md-8" style="margin-top: 10px;">
 					<span class="pseudo"><%
