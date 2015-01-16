@@ -20,6 +20,10 @@ public class Moderation extends HttpServlet {
 	private static DevenirRealisateurDao rdao = App.dbi.open(DevenirRealisateurDao.class);
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		userdao.createTable();
+		vdao.createTable();
+		rdao.createTable();
+		
 		Iterator<User> usersIterator = userdao.selectLastUsers();
 		String users = "";
 		

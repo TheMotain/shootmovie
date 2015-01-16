@@ -90,8 +90,6 @@ public class ModifierProfil extends HttpServlet{
 		}
 		
 		res.sendRedirect("myProfil");
-	
-		this.getServletContext().getRequestDispatcher("/modifProfil.jsp").forward(req, res);
 	}
 	
 }
