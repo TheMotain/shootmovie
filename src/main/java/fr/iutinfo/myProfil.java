@@ -34,7 +34,10 @@ public class myProfil extends HttpServlet{
 			res.sendRedirect("/");
 		}
 		
-		String avatarLink = pdao.getProfil((int) s.getAttribute("id")).getLien_avatar();
+		Profil p = pdao.getProfil(user.getId());
+		
+		String avatarLink = p.getLien_avatar();
+		String baniere = p.getLien_background();
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
 		String dateInscription = user.getDateInscription();
@@ -45,6 +48,7 @@ public class myProfil extends HttpServlet{
 		String gplus = user.getGplus();
 		
 		req.setAttribute("avatar", avatarLink);
+		req.setAttribute("baniere", baniere);
 		req.setAttribute("name", pseudo);
 		req.setAttribute("email", email);
 		req.setAttribute("dateInscription", dateInscription);

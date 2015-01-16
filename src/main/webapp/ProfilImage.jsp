@@ -24,30 +24,26 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Modifier la vidéo</div>
 			<div class="panel-body">
-				<div class="row">
-					<div class="col-md-6">
-						<form method="post" class="form-horizontal"
-							action="changeAvatar">
-							<div class="form-group">
-								<label for="inputPassword" class="col-sm-1 control-label">Avatar</label>
-								<div class="col-sm-11">
-									<input type="text" class="form-control" name="avatar">
-								</div>
-							</div>
-						</form>
+				<form method="post" class="form-horizontal"
+					action="changeAvatar">
+					<div class="form-group">
+						<label for="inputPassword" class="col-sm-1 control-label">Avatar</label>
+						<div class="col-sm-11">
+							<input type="text" class="form-control" name="avatar">
+							<input type="submit" value="Modifier">
+						</div>
 					</div>
-					<div class="col-md-6">
-						<form method="post" class="form-horizontal"
-							action="changeBaniere">
-							<div class="form-group">
-								<label for="inputPassword" class="col-sm-1 control-label">Bannière</label>
-								<div class="col-sm-11">
-									<input type="text" class="form-control" name="baniere">
-								</div>
-							</div>
-						</form>
+				</form>
+				<form method="post" class="form-horizontal"
+					action="changeBaniere">
+					<div class="form-group">
+						<label for="inputPassword" class="col-sm-1 control-label">Banière</label>
+						<div class="col-sm-11">
+							<input type="text" class="form-control" name="baniere">
+							<input type="submit" value="Modifier">
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface ProfilDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS profils (id INTEGER PRIMARY KEY, id_utilisateur INTEGER, lien_background TEXT, lien_avatar TEXT, FOREIGN KEY(id_utilisateur) REFERENCES users(id)))")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS profils (id INTEGER PRIMARY KEY, id_utilisateur INTEGER, lien_background TEXT, lien_avatar TEXT, FOREIGN KEY(id_utilisateur) REFERENCES users(id))")
 	public void createTable();
 
 	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,lien_background,lien_avatar) VALUES (:id,:id_utilisateur,:lien_background,:lien_avatar)")
@@ -25,7 +25,7 @@ public interface ProfilDao {
 	@SqlUpdate("UPDATE profils SET lien_avatar=:lien_avatar where id=:id")
 	public void updateAvatar(@Bind("id") int id, @Bind("lien_avatar") String lien_avatar);
 
-	@SqlQuery("SELECT * FROM profils where id=:id")
+	@SqlQuery("SELECT * FROM profils where id_utilisateur=:id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Profil getProfil(@Bind("id") int id);
 

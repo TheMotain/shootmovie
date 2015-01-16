@@ -21,6 +21,7 @@ public class Signup extends HttpServlet {
 			res.sendRedirect("home");
 		} else {
 			userdao.createTable();
+			profildao.createTable();
 			String pseudo = req.getParameter("login");
 			String password = req.getParameter("mdp");
 			String email = req.getParameter("email");
