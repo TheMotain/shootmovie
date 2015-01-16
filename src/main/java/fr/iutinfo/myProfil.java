@@ -1,6 +1,7 @@
 package fr.iutinfo;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/myProfil")
 public class myProfil extends HttpServlet{
 	private static UserDao userdao = App.dbi.open(UserDao.class);
+	private static VideoDao vdao = App.dbi.open(VideoDao.class);
 	
 	/*
 	 * Ceci est MON profil.
@@ -21,7 +23,7 @@ public class myProfil extends HttpServlet{
 	 */
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-		
+		vdao.createTable();
  		userdao.createTable();
 		
 		HttpSession s = req.getSession(true);

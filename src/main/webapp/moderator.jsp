@@ -47,7 +47,7 @@
 									<td><a href="video?id=<% out.println(infos[0]); %>"><% out.println(infos[1]); %></a></td>
 									<td><% out.println(infos[2]); %></td>
 									<td>
-										<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+										<a class="btn btn-xs btn-default" href="editVideo?id=<% out.println(infos[0]); %>" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 										<a class="btn btn-xs btn-danger" href="deleteVideo?id=<% out.println(infos[0]); %>" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 									</td>
 								</tr>
