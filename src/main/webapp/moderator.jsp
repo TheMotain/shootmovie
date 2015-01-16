@@ -32,16 +32,27 @@
 						<tr>
 							<th>#</th>
 							<th>Titre</th>
-							<th>Lien</th>
 							<th>Réalisateur</th>
 							<th>Action</th>
 							
-							<tr>
-							<td>
-								<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-							</td>
-							</tr>
+							<%
+								String videosString = (String) request.getAttribute("videos");
+								String[] videos = videosString.split("£");
+								for(int i = 0; i < videos.length; i++){
+									String[] infos = videos[i].split("§");
+							%>
+								<tr>
+									<td><% out.println(infos[0]); %></td>
+									<td><a href="video?id=<% out.println(infos[0]); %>"><% out.println(infos[1]); %></a></td>
+									<td><% out.println(infos[2]); %></td>
+									<td>
+										<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+										<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+									</td>
+								</tr>
+							<% 
+								}
+							%>
 						</tr>
 						</table>
 					</div>

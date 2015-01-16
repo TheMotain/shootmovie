@@ -7,11 +7,11 @@ public class Video {
 	private String description;
 	private String dateUpload;
 	private String url;
-	private String realisateur;
+	private int realisateur;
 	private double note;
 	private int compteur;
 	
-	public Video(String titre, String description, String dateUpload, String url, String realisateur){
+	public Video(String titre, String description, String dateUpload, String url, int realisateur){
 		this.titre = titre;
 		this.description = description;
 		this.dateUpload = dateUpload;
@@ -72,10 +72,10 @@ public class Video {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public String getRealisateur() {
+	public int getRealisateur() {
 		return realisateur;
 	}
-	public void setRealisateur(String realisateur) {
+	public void setRealisateur(int realisateur) {
 		this.realisateur = realisateur;
 	}
 	public double getNote() {
