@@ -29,7 +29,7 @@ public class AjouterVideo extends HttpServlet {
 		String lien = request.getParameter("lien");
 		String titre = request.getParameter("titre");
 		String description = request.getParameter("description");
-		int realisateur = (int) s.getAttribute("id");
+		String realisateur = (String) s.getAttribute("login");
 		
 		Video v = vdao.getVideoByLink(lien);
 		if(v == null){
