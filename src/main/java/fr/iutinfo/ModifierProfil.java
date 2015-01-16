@@ -62,19 +62,23 @@ public class ModifierProfil extends HttpServlet{
 			}
 			
 			if(!des.isEmpty()){
-				s.setAttribute("des", des);
+				user.setDes(des);
+				userdao.updateProfilDes(id, des);
 			}
 			
 			if(!facebook.isEmpty()){
-				s.setAttribute("facebook", facebook);
+				user.setFb(facebook);
+				userdao.updateProfilFb(id, facebook);
 			}
 			
 			if(!twitter.isEmpty()){
-				s.setAttribute("twitter", twitter);
+				user.setTwitter(twitter);
+				userdao.updateProfilTwitter(id, twitter);
 			}
 			
 			if(!gplus.isEmpty()){
-				s.setAttribute("gplus", gplus);
+				user.setGplus(gplus);
+				userdao.updateProfilGplus(id, gplus);
 			}
 			
 			s.setAttribute("login", user.getPseudo());

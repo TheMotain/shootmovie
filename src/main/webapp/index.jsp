@@ -32,9 +32,9 @@
 							courts-métrages de réalisateurs amateur. Vous pourrez noter et
 							commentez les réalisations présentes sur le site, et vous abonner
 							à vos réalisateurs, séries ou acteurs préférés. Vous pourrez même
-							retrouver des réalisations inédites à ShootMovie et introuvable
+							retrouver des réalisations inédites à ShootMovie et introuvables
 							autre part sur internet !</p>
-						<center><b>Vous êtes passioné de cinéma ou vous réalisez des courts-métrages ?<br>Alors <a href="inscription.html">rejoignez-nous</a>, c'est grauit !</b></center>
+						<center><b>Vous êtes passionné de cinéma ou vous réalisez des courts-métrages ?<br>Alors <a href="inscription.jsp">rejoignez-nous</a>, c'est grauit !</b></center>
 					</div>
 				</div>
 			</div>

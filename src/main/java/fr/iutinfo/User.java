@@ -7,6 +7,10 @@ public class User {
 	private String email;
 	private String type;
 	private String dateInscription;
+	private String des;
+	private String fb;
+	private String twitter;
+	private String gplus;
 	
 
 	public User() {}
@@ -18,12 +22,45 @@ public class User {
 		this.email = email;
 		this.type = "standard user";
 		this.dateInscription = "00/00/0000";
+		this.des = "";
+		this.fb = "*Facebook*";
+		this.twitter = "*Twitter*";
+		this.gplus = "*Google+*";
 	}
 	
 	public User(int id, String pseudo, String password, String email, String type, String dateInscription){
 		this(id,pseudo,password,email);
 		this.type = type;
 		this.dateInscription = dateInscription;
+		this.des = "";
+		this.fb = "*Facebook*";
+		this.twitter = "*Twitter*";
+		this.gplus = "*Google+*";
+	}
+	
+	public String getDes() {
+		return des;
+	}
+	public void setDes(String des){
+		this.des = des;
+	}
+	public String getFb() {
+		return fb;
+	}
+	public void setFb(String fb){
+		this.fb = fb;
+	}
+	public String getTwitter() {
+		return twitter;
+	}
+	public void setTwitter(String twitter){
+		this.twitter = twitter;
+	}
+	public String getGplus() {
+		return gplus;
+	}
+	public void setGplus(String gplus){
+		this.gplus = gplus;
 	}
 	
 	public String getMdp() {

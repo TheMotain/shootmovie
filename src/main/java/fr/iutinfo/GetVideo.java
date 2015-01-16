@@ -24,22 +24,24 @@ public class GetVideo extends HttpServlet{
 		notedao.createTable();
 
 		Video video = videodao.getVideo(Integer.parseInt(req.getParameter("id")));
-
+		video.setCompteur();
+		User realisateur = userdao.selectUserbyPseudo(video.getRealisateur());
+		
 		req.setAttribute("url", video.getUrl());
 		req.setAttribute("titre", video.getTitre());
 		req.setAttribute("realisateur", video.getRealisateur());
 		req.setAttribute("description", video.getDescription());
 		req.setAttribute("date", video.getDateUpload());
-		req.setAttribute("note", video.getNote());
+		req.setAttribute("note", video.getNote()); 
+		req.setAttribute("compteur", video.getCompteur());
 
 		if(req.getSession().getAttribute("logged") != null){
 			req.setAttribute("log", 1);
 			Integer id = notedao.getID(Integer.parseInt(req.getParameter("id")),(Integer) req.getSession().getAttribute("id"));
 			if(id != null){
-				System.out.println(notedao.getNote(id));
 				req.setAttribute("vote", notedao.getNote(id));
 			}else
-				req.setAttribute("vote", 3);
+				req.setAttribute("vote", 0);
 		}
 		else{
 			req.setAttribute("log", 0);

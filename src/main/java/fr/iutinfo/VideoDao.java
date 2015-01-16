@@ -27,6 +27,10 @@ public interface VideoDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getAllVideo();
 	
+	@SqlQuery("SELECT * FROM videos ORDER BY id DESC")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Video> getLastVideo();
+	
 	@SqlQuery("SELECT * FROM videos where realisateur=:pseudo")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getPseudoVideo(@Bind("pseudo") String pseudo);
@@ -39,4 +43,10 @@ public interface VideoDao {
 
 	@SqlUpdate("UPDATE videos SET note=:note WHERE id=:id")
 	public void updateNote(@Bind("id") int id, @Bind("note")double note);
+
+	@SqlUpdate("UPDATE videos SET compteur=(SELECT compteur + 1 FROM videos WHERE id=:id) WHERE id=:id")
+	public void incrementVue(@Bind("id") int id);
+	
+	@SqlUpdate("UPDATE videos SET compteur=(SELECT compteur - 1 FROM videos WHERE id=:id) WHERE id=:id")
+	public void decrementVue(@Bind("id") int id);
 }

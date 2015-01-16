@@ -16,6 +16,7 @@ public class SetNote extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		notedao.createTable();
 		videodao.createTable();
+		videodao.decrementVue(Integer.parseInt(req.getParameter("id")));
 		Integer id = notedao.getID(Integer.parseInt(req.getParameter("id")),(Integer) req.getSession().getAttribute("id"));
 		if(id != null){
 			notedao.update(id,Integer.parseInt(req.getParameter("note")));

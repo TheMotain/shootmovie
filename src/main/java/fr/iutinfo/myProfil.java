@@ -30,25 +30,42 @@ public class myProfil extends HttpServlet{
 			res.sendRedirect("/");
 		}
 		
-		// des, facebook, twitter et gplus à mettre dans un table si possible
-		String des = "*Description*";
-		String fb = "*Facebook*";
-		String twitter = "*Twitter*";
-		String gplus = "*Google+*";
-		
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
 		String dateInscription = user.getDateInscription();
 		String type = user.getType();
+		String des = user.getDes();
+		String fb = user.getFb();
+		String twitter = user.getTwitter();
+		String gplus = user.getGplus();
 		
 		req.setAttribute("name", pseudo);
 		req.setAttribute("email", email);
 		req.setAttribute("dateInscription", dateInscription);
 		req.setAttribute("type", type);
-		req.setAttribute("des", des);
-		req.setAttribute("facebook", fb);
-		req.setAttribute("twitter", twitter);
-		req.setAttribute("gplus", gplus);
+		if(!(userdao.selectDes(pseudo)==null)){
+			req.setAttribute("des", des);
+		} else {
+			req.setAttribute("des", "");
+		}
+		
+		if(!(userdao.selectFb(pseudo)==null)){
+			req.setAttribute("facebook", fb);
+		} else {
+			req.setAttribute("facebook", "");
+		}
+		
+		if(!(userdao.selectTwitter(pseudo)==null)){
+			req.setAttribute("twitter", twitter);
+		} else {
+			req.setAttribute("twitter", "");
+		}
+		
+		if(!(userdao.selectGplus(pseudo)==null)){
+			req.setAttribute("gplus", gplus);
+		} else {
+			req.setAttribute("gplus", "");
+		}
 		
 		
 		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);

@@ -19,7 +19,7 @@ public interface ProfilDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Profil getProfil(@Bind("id") int id);
 	
-	@SqlQuery("SELECT * FROM commentaires where id_utilisateur=:id_utilisateur")
+	@SqlQuery("SELECT * FROM profils where id_utilisateur=:id_utilisateur")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Profil getProfilByUser(@Bind("id_utilisateur") int id_utilisateur);
 	
