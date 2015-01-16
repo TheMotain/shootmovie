@@ -15,6 +15,12 @@ public interface ProfilDao {
 	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,lien_background,lien_avatar) VALUES (:id,:id_utilisateur,:lien_background,:lien_avatar)")
 	public void insertProfil(@Bind("id") int id, @Bind("id_utilisateur") int id_utilisateur, @Bind("lien_background") String lien_background, @Bind("lien_avatar") String lien_avatar);
 	
+	@SqlUpdate("UPDATE profils SET lien_background=:lien_background where id=:id")
+	public void updateBanniere(@Bind("id") int id, @Bind("lien_background") String lien_background);
+	
+	@SqlUpdate("UPDATE profils SET lien_avatar=:lien_avatar where id=:id")
+	public void updateAvatar(@Bind("id") int id, @Bind("lien_avatar") String lien_avatar);
+	
 	@SqlQuery("SELECT * FROM profils where id=:id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Profil getProfil(@Bind("id") int id);
