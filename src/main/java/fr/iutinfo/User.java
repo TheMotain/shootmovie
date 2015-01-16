@@ -51,7 +51,7 @@ public class User {
 		this.fb = fb;
 	}
 	public String getTwitter() {
-		return password;
+		return twitter;
 	}
 	public void setTwitter(String twitter){
 		this.twitter = twitter;

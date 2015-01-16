@@ -30,16 +30,14 @@ public class myProfil extends HttpServlet{
 			res.sendRedirect("/");
 		}
 		
-		// des, facebook, twitter et gplus à mettre dans un table si possible
-		String des = "*Description*";
-		String fb = "*Facebook*";
-		String twitter = "*Twitter*";
-		String gplus = "*Google+*";
-		
 		String pseudo = user.getPseudo();
 		String email = user.getEmail();
 		String dateInscription = user.getDateInscription();
 		String type = user.getType();
+		String des = user.getDes();
+		String fb = user.getFb();
+		String twitter = user.getTwitter();
+		String gplus = user.getGplus();
 		
 		req.setAttribute("name", pseudo);
 		req.setAttribute("email", email);

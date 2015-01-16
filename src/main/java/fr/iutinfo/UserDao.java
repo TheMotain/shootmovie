@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface UserDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, type STRING, dateInscription STRING)")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, pseudo STRING, password STRING, email STRING, type STRING, dateInscription STRING, des TEXT, fb TEXT, twitter TEXT, gplus TEXT)")
 	public void createTable();
 	
 	@SqlUpdate("INSERT INTO users (pseudo,password,type,dateInscription) VALUES (:pseudo,:password,'standard user',:date)")
@@ -20,6 +20,18 @@ public interface UserDao {
 	
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,type=:type,dateInscription:dateInscription) where id=:id")
 	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
+	
+	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:des)")
+	public void insertProfilDes(@Bind("id") int id, @Bind("des") String des);
+	
+	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:fb)")
+	public void insertProfilFb(@Bind("id") int id, @Bind("fb") String fb);
+	
+	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:twitter)")
+	public void insertProfilTwitter(@Bind("id") int id, @Bind("twitter") String twitter);
+	
+	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,des) VALUES (:id,:gplus)")
+	public void insertProfilGplus(@Bind("id") int id, @Bind("gplus") String gplus);
 	
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo where id=:id")
 	public void updateUserPseudo(@Bind("id") int id, @Bind("pseudo") String pseudo);
