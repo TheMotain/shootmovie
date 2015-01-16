@@ -73,5 +73,6 @@ public interface UserDao {
 	public void deleteUser(@Bind("id") int id);
 	
 	@SqlUpdate("SELECT * FROM users WHERE id=:id")
-	public void selectUserByID(@Bind("id") int id);
+	public User selectUserByID(@Bind("id") int id);
+	
 }
