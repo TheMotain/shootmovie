@@ -17,6 +17,7 @@ public class Moderation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 	private static VideoDao vdao = App.dbi.open(VideoDao.class);
+	private static DevenirRealisateurDao rdao = App.dbi.open(DevenirRealisateurDao.class);
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Iterator<User> usersIterator = userdao.selectLastUsers();
@@ -36,8 +37,21 @@ public class Moderation extends HttpServlet {
 			videos += "£";
 		}
 		
+		Iterator<DevenirRealisateur> realIterator = rdao.getLastDemandes();
+		String demandes = "";
+		while(realIterator.hasNext()){
+			DevenirRealisateur dr = realIterator.next();
+			demandes += dr.getId() + "§" + dr.getPseudo() + "§" + dr.getLien();
+			demandes += "£";
+		}
+		if(demandes.equals("")){
+			demandes = null;
+		}
+		
 		request.setAttribute("videos", videos);
 		request.setAttribute("users", users);
+		request.setAttribute("demandes", demandes);
+		System.out.println(demandes);
 		this.getServletContext().getRequestDispatcher("/moderator.jsp").forward(request, response);
 	}
 

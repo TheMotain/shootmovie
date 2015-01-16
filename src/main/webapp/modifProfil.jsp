@@ -133,7 +133,7 @@
 						propriétaire du compte, et aussi vérifier que vous faites bien des
 						réalisations en correspondance avec le thème du site.</p>
 
-						<form action="#" method="post">
+						<form action="realisateur" method="post">
 							<div class="form-group">
 								<input type='text' class="form-control" name='link' placeholder="Lien de la chaîne"><br>
 							</div>
