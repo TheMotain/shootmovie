@@ -73,6 +73,7 @@ public interface UserDao {
 	public void deleteUser(@Bind("id") int id);
 	
 	@SqlUpdate("SELECT * FROM users WHERE id=:id")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	public User selectUserByID(@Bind("id") int id);
 	
 }
