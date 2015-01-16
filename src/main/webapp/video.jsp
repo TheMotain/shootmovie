@@ -76,7 +76,7 @@
 						</p>
 						<p>Noter la vidéo:
 						<form
-							action="/shootmovie/setNote?id=<%out.print(request.getParameter("id"));%>"
+							action="/setNote?id=<%out.print(request.getParameter("id"));%>"
 							method="post" class="form-horizontal">
 							<input type="range" name="note" min="0" max="5"
 								value="<%Integer vote = (Integer) request.getAttribute("vote");
@@ -122,7 +122,7 @@
 							String tmp2[];
 							if (!tmp[0].equals("")) {
 								for (int i = 0; i < tmp.length; i++) {
-									tmp2 = tmp[i].split("§");
+									tmp2 = tmp[i].split(" ");
 						%>
 						<div class="commentaire-box">
 							<div class="row">
@@ -133,8 +133,8 @@
 									</a><br>
 								</div>
 								<div class="col-md-10">
-									<span class="commentaire-date">Posté le <%
-										out.print(tmp2[2] + " à " + tmp2[3]);
+									<span class="commentaire-date">Postï¿½ le <%
+										out.print(tmp2[2] + " ï¿½ " + tmp2[3]);
 									%></span><br>
 									<p>
 										<%
@@ -156,7 +156,7 @@
 							if (log == 1) {
 						%>
 						<form
-							action="/shootmovie/setCommentaire?id=<%out.print(request.getParameter("id"));%>"
+							action="/setCommentaire?id=<%out.print(request.getParameter("id"));%>"
 							method="post" class="form-horizontal">
 							<textarea id="textarea" rows="5" class="form-control"
 								placeholder="Commentez la vidéo ..." name="comm"></textarea>
