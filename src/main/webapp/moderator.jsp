@@ -37,9 +37,10 @@
 							
 							<%
 								String videosString = (String) request.getAttribute("videos");
-								String[] videos = videosString.split("£");
-								for(int i = 0; i < videos.length; i++){
-									String[] infos = videos[i].split("§");
+								if(!videosString.equals("")){
+									String[] videos = videosString.split("£");
+									for(int i = 0; i < videos.length; i++){
+										String[] infos = videos[i].split("§");
 							%>
 								<tr>
 									<td><% out.println(infos[0]); %></td>
@@ -51,7 +52,7 @@
 									</td>
 								</tr>
 							<% 
-								}
+								}}
 							%>
 						</tr>
 						</table>
@@ -98,13 +99,14 @@
 						</tr>
 						<%
 							String users = (String) request.getAttribute("users");
-							String[] user = users.split("\\|");
-							for(int i = 0; i < user.length; i++){
-								String[] infos = user[i].split(":");
-								out.println("<tr>");
-								for(int j = 0; j < infos.length; j++){
-									out.println("<td>"+infos[j]+"</td>");
-								}
+							if(!users.equals("")){
+								String[] user = users.split("\\|");
+								for(int i = 0; i < user.length; i++){
+									String[] infos = user[i].split(":");
+									out.println("<tr>");
+									for(int j = 0; j < infos.length; j++){
+										out.println("<td>"+infos[j]+"</td>");
+									}
 						%>
 								<td>
 								<a class="btn btn-xs btn-default" href="#" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
@@ -112,7 +114,7 @@
 								</td>
 						<%
 								out.println("</tr>");
-							}
+							}}
 						%>
 						</table>
 					</div>
