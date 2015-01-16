@@ -22,12 +22,20 @@ public class User {
 		this.email = email;
 		this.type = "standard user";
 		this.dateInscription = "00/00/0000";
+		this.des = "";
+		this.fb = "*Facebook*";
+		this.twitter = "*Twitter*";
+		this.gplus = "*Google+*";
 	}
 	
 	public User(int id, String pseudo, String password, String email, String type, String dateInscription){
 		this(id,pseudo,password,email);
 		this.type = type;
 		this.dateInscription = dateInscription;
+		this.des = "";
+		this.fb = "*Facebook*";
+		this.twitter = "*Twitter*";
+		this.gplus = "*Google+*";
 	}
 	
 	public String getDes() {
