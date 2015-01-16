@@ -17,9 +17,17 @@ import javax.servlet.http.HttpSession;
 public class AjouterVideo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static VideoDao vdao = App.dbi.open(VideoDao.class);
+	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/addVideo.jsp").forward(request, response);
+		HttpSession s = request.getSession(true);
+		String pseudo = (String) s.getAttribute("login");
+		String typeUser = userdao.selectUserbyPseudo(pseudo).getType();
+		if(typeUser.equals("realisator")){
+			this.getServletContext().getRequestDispatcher("/addVideo.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("home");
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
