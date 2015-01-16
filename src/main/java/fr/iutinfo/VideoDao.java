@@ -27,6 +27,10 @@ public interface VideoDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getAllVideo();
 	
+	@SqlQuery("SELECT * FROM videos where titre=:titre")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Video> getAllVideoTitre(@Bind("titre") String titre);
+	
 	@SqlQuery("SELECT * FROM videos ORDER BY id DESC")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getLastVideo();
