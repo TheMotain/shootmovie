@@ -21,8 +21,8 @@ public class App extends Application{
     public static DBI dbi;
 	static {
 		SQLiteDataSource ds = new SQLiteDataSource();
-		ds.setUrl("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"ShoutMovie.db");
-		System.out.println("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"ShoutMovie.db");
+		ds.setUrl("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"ShootMovie.db");
+		System.out.println("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"ShootMovie.db");
 		dbi = new DBI(ds);
     }
 }

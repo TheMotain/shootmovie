@@ -16,17 +16,22 @@ public class Signin extends HttpServlet {
 
 	public void service( HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		userdao.createTable();
-		String login = req.getParameter("login");
-		String password = req.getParameter("mdp");
-		String user = userdao.selectPseudo(login,password);
-		if(user != null){
-			HttpSession s = req.getSession(true);
-			s.setAttribute("login", login);
-			s.setAttribute("id", userdao.selectId(login));
-			s.setAttribute("logged", true);
-			res.sendRedirect("/shootmovie/home");
+		HttpSession s = req.getSession(true);
+		if(s.getAttribute("login") != null){
+			res.sendRedirect("/home");
+		} else {
+			String login = req.getParameter("login");
+			String password = req.getParameter("mdp");
+			User user = userdao.selectUser(login, password);
+			if(user != null){
+				
+				s.setAttribute("login", user.getPseudo());
+				s.setAttribute("id", user.getId());
+				s.setAttribute("logged", true);
+				res.sendRedirect("home");
+			}
+			else
+				res.sendRedirect("login.jsp?error");
 		}
-		else
-			res.sendRedirect("login.html");
 	}
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>ShootFilm - Pseudo</title>
+<title>ShootFilm - <%
+							String nom = (String) request.getAttribute("name");
+							out.println(nom);
+						%></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- jQuery -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -30,11 +33,15 @@
 				</div>
 				<div class="col-md-8" style="margin-top: 10px;">
 					<span class="pseudo"><%
-							String nom = (String) request.getAttribute("name");
 							out.println(nom);
 						%> ( <%
 							String role = (String) request.getAttribute("type");
-							out.println(role);
+							if(role.equals("realisator")){
+								out.println("Réalisateur");
+							} else {
+								out.println("Spectateur");
+							}
+							
 						%> )</span><br> <span
 						class="date-inscription">Inscrit le <%
 							String date = (String) request.getAttribute("dateInscription");
@@ -46,7 +53,8 @@
 						%></p>
 				</div>
 				<div class="col-md-2" style="margin-top: 10px;padding-right:10px;">
-					
+					<a href="modifProfil.jsp" role="button" class="btn btn-xs btn-default" style="float:right;margin-right:15px;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
@@ -89,6 +97,6 @@
 			
 		</div>
 	</div>
-	<a href="modifProfil.jsp" role="button" class="btn btn-block btn-default">Modifier son profil</a>
+	
 </body>
 </html>

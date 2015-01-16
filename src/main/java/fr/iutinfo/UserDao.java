@@ -15,8 +15,8 @@ public interface UserDao {
 	@SqlUpdate("INSERT INTO users (pseudo,password,type,dateInscription) VALUES (:pseudo,:password,'standard user',:date)")
 	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("date") String date);
 	
-	@SqlUpdate("INSERT INTO users (pseudo,password,email,type,dateInscription) VALUES(:pseudo,:password,:email,:type,:dateInscription)")
-	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
+	@SqlUpdate("INSERT INTO users (pseudo,password,email,type,dateInscription) VALUES(:pseudo,:password,:email,'standard user',:dateInscription)")
+	public void insertUser(@Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("dateInscription") String dateInscription);
 	
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,type=:type,dateInscription:dateInscription) where id=:id")
 	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
@@ -59,7 +59,4 @@ public interface UserDao {
 	
 	@SqlUpdate("DELETE FROM users WHERE id=:id")
 	public void deleteUser(@Bind("id") int id);
-	
-	@SqlUpdate("SELECT id FROM users WHERE pseudo=:pseudo")
-	public int selectId(@Bind("pseudo") String pseudo);
 }
