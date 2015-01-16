@@ -42,12 +42,6 @@ String login = (String) s.getAttribute("login");
 		<%
           	} else {
 		%>
-		<form class="form-inline" action="recherche" method="get" style="float:right; margin-top:8px;margin-right:8px;" role="search">
-	        	<div class="input-group">
-	        		<span class="input-group-addon" id="loupe-recherche"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-	          		<input type="text" class="form-control" name=search aria-describedby="loupe-recherche">
-	        	</div>
-	      	</form>
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bonjour <% out.println(login); %> ! <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
