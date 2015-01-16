@@ -80,10 +80,10 @@
 							method="post" class="form-horizontal">
 							<input type="range" name="note" min="0" max="5"
 								value="<%Integer vote = (Integer) request.getAttribute("vote");
-				out.print(note);%>"
+				out.print(vote);%>"
 								step="1" onchange="showValue(this.value)"> <span
 								id="range"> <%
- 	out.print(note);
+ 	out.print(vote);
  %>
 							</span> <input type="submit" value="Noter">
 						</form>

@@ -12,8 +12,13 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/setCommentaire")
 public class SetCommentaire extends HttpServlet{
 	public static CommentaireDao commentairedao = App.dbi.open(CommentaireDao.class);
+	public static VideoDao videodao = App.dbi.open(VideoDao.class);
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException{
+		videodao.createTable();
+		commentairedao.createTable();
+		videodao.decrementVue(Integer.parseInt(req.getParameter("id")));
+		
 		HttpSession session = req.getSession();
 		Calendar cal = Calendar.getInstance();
 		String day;
