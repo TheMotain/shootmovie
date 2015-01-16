@@ -15,6 +15,9 @@ public interface ProfilDao {
 	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,lien_background,lien_avatar) VALUES (:id,:id_utilisateur,:lien_background,:lien_avatar)")
 	public void insertProfil(@Bind("id") int id, @Bind("id_utilisateur") int id_utilisateur, @Bind("lien_background") String lien_background, @Bind("lien_avatar") String lien_avatar);
 	
+	@SqlUpdate("INSERT INTO profils (id_utilisateur,lien_background,lien_avatar) VALUES (:id_utilisateur,'http://placehold.it/1170x200','http://face-woot.com/images/facebook-profile.png')")
+	public void insertProfil(@Bind("id_utilisateur") int id_utilisateur);
+	
 	@SqlUpdate("UPDATE profils SET lien_background=:lien_background where id=:id")
 	public void updateBanniere(@Bind("id") int id, @Bind("lien_background") String lien_background);
 	

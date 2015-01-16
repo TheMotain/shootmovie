@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/signup")
 public class Signup extends HttpServlet {
 	private static UserDao userdao = App.dbi.open(UserDao.class);
+	private static ProfilDao profildao = App.dbi.open(ProfilDao.class);
 
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		HttpSession s = req.getSession(true);
@@ -39,6 +40,8 @@ public class Signup extends HttpServlet {
 			String date = day + "/" + month + "/" + year;
 			if (user == null) {
 				userdao.insertUser(pseudo, password, email, date);
+				User user1 = userdao.selectUser(pseudo, password);
+				profildao.insertProfil(user1.getId());
 				res.sendRedirect("login.jsp?inscription");
 			} else
 				res.sendRedirect("inscription.html");
