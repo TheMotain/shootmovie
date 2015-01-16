@@ -7,7 +7,7 @@
 .formulaire .champ {width:600px; height:35px;}
 .formulaire .bouton{
 box-shadow: none;
-background-image: url(../img/recherche.png);
+background-image: url('../img/recherche.png');
 background-repeat: no-repeat;
 width: 35px;
 height: 35px;
@@ -21,7 +21,7 @@ h1{
 }
 
 body{
-background-image: url(../img/bg.png);
+background-image: url('../img/background.jpg');
 background-repeat: repeat
 
 }
@@ -33,4 +33,5 @@ background-color:#931010
  border-collapse: separate;
  border-spacing: 15px 10px;
 }
+
 
