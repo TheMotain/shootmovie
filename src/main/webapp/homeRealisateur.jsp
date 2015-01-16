@@ -33,9 +33,10 @@
 					</tr>
 					<%
 						String videosString = (String) request.getAttribute("videos");
-						String[] videos = videosString.split("£");
-						for(int i = 0; i < videos.length; i++){
-							String[] infos = videos[i].split("§");
+						if(!videosString.equals("")){
+							String[] videos = videosString.split("£");
+							for(int i = 0; i < videos.length; i++){
+								String[] infos = videos[i].split("§");
 					%>
 						<tr>
 							<td><a href="video?id=<% out.println(infos[0]); %>"><% out.println(infos[1]); %></a></td>
@@ -43,7 +44,7 @@
 							<td><% out.println(infos[3]); %></td>
 						</tr>
 					<% 
-						}
+						}}
 					%>
 				</table>
 			</div>
