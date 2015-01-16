@@ -1,4 +1,4 @@
-package appBureau;
+   package appBureau;
 
 import javax.swing.*;
 import fr.iutinfo.App;
@@ -26,6 +26,7 @@ public class Connexion {
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	public Connexion() {
+		userdao.createTable();
 		AutoRemplissageBDD.remplissageUsers();
 		AutoRemplissageBDD.remplissageVideos();
 		Container c = frame.getContentPane();

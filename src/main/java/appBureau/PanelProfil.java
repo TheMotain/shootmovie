@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -17,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import fr.iutinfo.App;
+import fr.iutinfo.VideoDao;
+
 @SuppressWarnings("serial")
 public class PanelProfil extends JPanel {
 
@@ -25,6 +29,9 @@ public class PanelProfil extends JPanel {
 	JLabel photo,pseudo,age,datecreation,nbreAbos;
 	JPanel info;
 	JButton upload;
+	Upload up;
+	static VideoDao videodao = App.dbi.open(VideoDao.class);
+	
 	
 	PanelProfil(Profil p){
 		this.p=p;
@@ -54,38 +61,14 @@ public class PanelProfil extends JPanel {
 
 		//upload.setPreferredSize(new Dimension(200,100));
 		add(upload,BorderLayout.SOUTH);
-		
-		upload.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource().equals(upload)){
-					
-					// On définit les extensions que l'on accepte
-					FileFilter imagesFilter = new FileNameExtensionFilter("avi", "jpg", "mp4");
-					 
-					// Ouverture du Gestionnaire de fichier
-					JFileChooser choix = new JFileChooser();
-					choix.setDialogTitle("Choisir une vidéo à importer");
-					choix.addChoosableFileFilter(imagesFilter);
-					int retour = choix.showOpenDialog(null);
-					 
-					if (retour == JFileChooser.APPROVE_OPTION) {
-					    @SuppressWarnings("unused")
-						String name = choix.getSelectedFile().getName();
-					    @SuppressWarnings("unused")
-						String path = choix.getSelectedFile().getAbsolutePath();               
+		up= new Upload(this);
 
-					}
-					
-				}
 				
 				
-			}
-		});
-				
-		
+	}
 			
+	Profil getProfil(){
+		return p;
 	}
 	
 	public void paintComponent(Graphics g) {

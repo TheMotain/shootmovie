@@ -122,6 +122,11 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Demandes de grade</div>
 					<div class="panel-body">
+					<%
+					String demandesString = (String) request.getAttribute("demandes");
+					if(demandesString != null){
+						String[] demandes = demandesString.split("£");
+					%>
 						<table class="table table-hover">
 						<tr>
 							<th>#</th>
@@ -129,14 +134,29 @@
 							<th>Lien de chaine</th>
 							<th>Action</th>
 							
-							<tr>
-							<td>
-								<a class="btn btn-xs btn-success" href="#" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
-								<a class="btn btn-xs btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-							</td>
-							</tr>
-						</tr>
+							<%
+								for(int i = 0; i < demandes.length; i++){
+									String[] infos = demandes[i].split("§");
+									out.println(infos.length);
+									out.println(demandes.length);
+							%>
+								
+								<tr>
+									<td><% out.println(infos[0]); %></td>
+									<td><% out.println(infos[1]); %></td>
+									<td><a href="<% out.println(infos[2]); %>">Lien</a></td>
+									<td>
+										<a class="btn btn-xs btn-success" href="addRealisateur?id=<% out.println(infos[0]); %>&success=1" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+										<a class="btn btn-xs btn-danger" href="addRealisateur?id=<% out.println(infos[0]); %>&success=0" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+									</td>
+								</tr>
+							<% 
+								}
+							%>
 						</table>
+						<% } else { %>
+							<p class="text-center">Aucune demande.</p>
+						<% } %>
 					</div>
 				</div>
 			</div>

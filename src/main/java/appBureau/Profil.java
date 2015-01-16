@@ -77,7 +77,7 @@ public class Profil  {
 	public void updateVideos(){
 		
 		
-		Iterator<fr.iutinfo.Video> it = videodao.getAllVideo();
+		Iterator<fr.iutinfo.Video> it = videodao.getPseudoVideo(getPseudo());
 		while(it.hasNext()){
 			listVideos.add(it.next());
 		}
