@@ -18,12 +18,19 @@
 <body>
 
 	<!-- ----------------- MENU HAUT ------------------- -->
-	
-	<%@ include file="/elements/menu.jsp" %>
+
+	<%@ include file="/elements/menu.jsp"%>
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	<div class="container">
 		<div class="panel panel-default">
-			<div class="panel-heading">Mes dernières vidéos</div>
+			<div class="panel-heading">
+				Mes dernières vidéos
+				<div style="float: right">
+					<a class="btn btn-xs btn-success" href="addVideo" role="button"><span
+						class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+				</div>
+				<div style="clear: both"></div>
+			</div>
 			<div class="panel-body">
 				<table class="table">
 					<tr>
@@ -33,16 +40,30 @@
 					</tr>
 					<%
 						String videosString = (String) request.getAttribute("videos");
-						String[] videos = videosString.split("£");
-						for(int i = 0; i < videos.length; i++){
-							String[] infos = videos[i].split("§");
+						if (!videosString.equals("")) {
+							String[] videos = videosString.split("£");
+							for (int i = 0; i < videos.length; i++) {
+								String[] infos = videos[i].split("§");
 					%>
-						<tr>
-							<td><a href="video?id=<% out.println(infos[0]); %>"><% out.println(infos[1]); %></a></td>
-							<td><% out.println(infos[2]); %></td>
-							<td><% out.println(infos[3]); %></td>
-						</tr>
-					<% 
+					<tr>
+						<td><a href="video?id=<%out.println(infos[0]);%>">
+								<%
+									out.println(infos[1]);
+								%>
+						</a></td>
+						<td>
+							<%
+								out.println(infos[2]);
+							%>
+						</td>
+						<td>
+							<%
+								out.println(infos[3]);
+							%>
+						</td>
+					</tr>
+					<%
+						}
 						}
 					%>
 				</table>

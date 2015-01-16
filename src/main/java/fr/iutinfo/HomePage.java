@@ -20,6 +20,9 @@ public class HomePage extends HttpServlet {
 	private static UserDao udao = App.dbi.open(UserDao.class);
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		vdao.createTable();
+		udao.createTable();
 		HttpSession s = request.getSession(true);
 		String login = (String) s.getAttribute("login");
 		if (login == null) {

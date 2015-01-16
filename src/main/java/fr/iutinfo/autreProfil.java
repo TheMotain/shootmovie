@@ -1,7 +1,6 @@
 package fr.iutinfo;
 
 import java.io.IOException;
-import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("/myProfil")
-public class myProfil extends HttpServlet{
+@WebServlet("/Profil")
+public class autreProfil extends HttpServlet{
 	private static UserDao userdao = App.dbi.open(UserDao.class);
-	private static VideoDao vdao = App.dbi.open(VideoDao.class);
 	
 	/*
 	 * Ceci est MON profil.
@@ -23,11 +21,11 @@ public class myProfil extends HttpServlet{
 	 */
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-		vdao.createTable();
+		
  		userdao.createTable();
 		
 		HttpSession s = req.getSession(true);
-		User user = userdao.selectUserbyPseudo((String) s.getAttribute("login"));
+		User user = userdao.selectUserbyPseudo(req.getParameter("name"));
 		if(user == null){
 			res.sendRedirect("/");
 		}
@@ -69,7 +67,7 @@ public class myProfil extends HttpServlet{
 			req.setAttribute("gplus", "");
 		}
 		
-		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);
+		this.getServletContext().getRequestDispatcher("/Profil.jsp").forward(req, res);
 		
 	}
 

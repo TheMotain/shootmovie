@@ -15,7 +15,7 @@ public class PanelVideo extends JPanel {
 	public PanelVideo(PanelProfil pp) {
 
 		this.pp = pp;
-		v = new Video(pp.p);
+		//v = new Video(pp.p);
 		setLayout(new BorderLayout());
 		add(pp, BorderLayout.WEST);
 		add(v, BorderLayout.CENTER);
@@ -45,7 +45,7 @@ public class PanelVideo extends JPanel {
 								
 								getPanelProfil().getProfil().updateVideos();
 								remove(v);
-								v = new Video(getPanelProfil().getProfil());
+								//v = new Video(getPanelProfil().getProfil());
 								add(v);
 								v.validate();
 								v.revalidate();

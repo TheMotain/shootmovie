@@ -21,6 +21,6 @@ public class SetChangeVideo extends HttpServlet{
 		int id = Integer.parseInt(req.getParameter("id"));
 		
 		videodao.updateData(id,titre,description);
-		res.sendRedirect("/video?id="+id);
+		res.sendRedirect("/shootmovie/video?id="+id);
 	}
 }

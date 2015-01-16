@@ -53,7 +53,6 @@
 						%></p>
 				</div>
 				<div class="col-md-2" style="margin-top: 10px;padding-right:10px;">
-					<a href="tempProfil" role="button" class="btn btn-xs btn-default" style="float:right;margin-right:15px;"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 					<div class="clearfix"></div>
 				</div>
 			</div>

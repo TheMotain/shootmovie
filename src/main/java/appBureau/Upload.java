@@ -39,7 +39,7 @@ public class Upload extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				getPf().videodao.insertVideo(getPf().up.titreField.getText(),getPf().up.descriptionField.getText(), new Date().toString(),getPf().up.urlField.getText(),getPf(). pseudo.getText());
 				getPf().getProfil().updateVideos();
-				v=new Video(getPf().getProfil());
+				//v=new Video(getPf().getProfil());
 				getPf().up.dispose();
 				System.out.println("ok");
 				

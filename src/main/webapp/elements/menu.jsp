@@ -46,7 +46,7 @@ String login = (String) s.getAttribute("login");
           <ul class="dropdown-menu" role="menu">
 			<li><a href="home">Mon Home</a></li>
 			<li><a href="myProfil">Mon Profil</a></li>
-			<li><a href="modifProfil.jsp">Paramètres</a></li>
+			<li><a href="tempProfil">Paramètres</a></li>
 			<li class="divider"></li>
 			<li><a href="signout">Déconnexion</a></li>
 			</ul>

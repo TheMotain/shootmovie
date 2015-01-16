@@ -30,7 +30,11 @@
 						<label for="pseudo" class="col-sm-2 control-label">Pseudo
 							:</label>
 						<div class="col-sm-10">
-							<input type="text" name="pseudo" class="form-control" id="pseudo"
+							<input type="text" name="pseudo" class="form-control" id="pseudo" value= 
+									<%
+										String pseudo = (String) request.getAttribute("name");
+										out.println(pseudo);
+									%>
 								placeholder="Ex : toto" />
 						</div>
 					</div>
@@ -61,7 +65,12 @@
 					<div class="form-group">
 						<label for="email" class="col-sm-2 control-label">E-mail :</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" name="email" id="email" />
+							<input type="email" class="form-control" name="email" id="email" value=
+									<%
+										String email = (String) request.getAttribute("email");
+										out.println(email);
+									%> 
+							/>
 						</div>
 					</div>
 
@@ -71,7 +80,12 @@
 						<label for="des" class="col-sm-2 control-label">Description
 							:</label>
 						<div class="col-sm-10">
-							<textarea name="des" class="form-control" rows=5 id="des"></textarea>
+							<textarea name="des" class="form-control" rows=5 id="des" value=
+									<%
+										String des = (String) request.getAttribute("des");
+										out.println(des);
+									%>>
+							</textarea>
 						</div>
 					</div>
 
@@ -80,7 +94,12 @@
 					<div class="form-group">
 						<label for="fb" class="col-sm-2 control-label">Facebook :</label>
 						<div class="col-sm-10">
-							<input type="url" class="form-control" name="fb" id="fb" />
+							<input type="url" class="form-control" name="fb" id="fb" value=
+									<%
+										String fb = (String) request.getAttribute("facebook");
+										out.println(fb);
+									%>
+							/>
 						</div>
 					</div>
 
@@ -91,7 +110,12 @@
 							:</label>
 						<div class="col-sm-10">
 							<input type="url" class="form-control" name="twitter"
-								id="twitter" />
+								id="twitter" value=
+									<%
+										String twitter = (String) request.getAttribute("twitter");
+										out.println(twitter);
+									%>
+							/>
 						</div>
 					</div>
 
@@ -101,7 +125,12 @@
 						<label for="gplus" class="col-sm-2 control-label">Google +
 							:</label>
 						<div class="col-sm-10">
-							<input type="url" class="form-control" name="gplus" id="gplus" />
+							<input type="url" class="form-control" name="gplus" id="gplus" value=
+									<%
+										String gplus = (String) request.getAttribute("gplus");
+										out.println(gplus);
+									%>
+							/>
 						</div>
 					</div>
 
