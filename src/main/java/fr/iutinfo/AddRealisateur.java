@@ -18,6 +18,8 @@ public class AddRealisateur extends HttpServlet {
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		rdao.createTable();
+		userdao.createTable();
 		int idDemande = Integer.parseInt(request.getParameter("id"));
 		int success = Integer.parseInt(request.getParameter("success"));
 		int idUser = userdao.selectUserbyPseudo(rdao.getDemandeById(idDemande).getPseudo()).getId();

@@ -20,6 +20,8 @@ public class AjouterVideo extends HttpServlet {
 	private static UserDao userdao = App.dbi.open(UserDao.class);
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		vdao.createTable();
+		userdao.createTable();
 		HttpSession s = request.getSession(true);
 		String pseudo = (String) s.getAttribute("login");
 		String typeUser = userdao.selectUserbyPseudo(pseudo).getType();
@@ -32,6 +34,7 @@ public class AjouterVideo extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		vdao.createTable();
+		userdao.createTable();
 		HttpSession s = request.getSession(true);
 		
 		String lien = request.getParameter("lien");

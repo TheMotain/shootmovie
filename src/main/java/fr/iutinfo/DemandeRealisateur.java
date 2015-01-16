@@ -28,6 +28,7 @@ public class DemandeRealisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		rdao.createTable();
 		HttpSession s = request.getSession(true);
 		if (s.getAttribute("login") == null) {
 			response.sendRedirect("index.jsp");
