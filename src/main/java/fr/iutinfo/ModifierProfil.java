@@ -26,6 +26,10 @@ public class ModifierProfil extends HttpServlet{
 		}
 		int id = user.getId();
 		
+		
+		
+		// Pour modifier les infos de l'user
+		
 		String change = (String) req.getParameter("change");
 		String newPseudo = req.getParameter("pseudo");
 		String mdp = req.getParameter("mdp");
@@ -82,7 +86,6 @@ public class ModifierProfil extends HttpServlet{
 			}
 			
 			s.setAttribute("login", user.getPseudo());
-			res.sendRedirect("myProfil");
 			
 		}
 		

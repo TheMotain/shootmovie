@@ -67,7 +67,6 @@ public class myProfil extends HttpServlet{
 			req.setAttribute("gplus", "");
 		}
 		
-		
 		this.getServletContext().getRequestDispatcher("/dumpPage.jsp").forward(req, res);
 		
 	}
