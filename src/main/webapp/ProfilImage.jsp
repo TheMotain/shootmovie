@@ -30,6 +30,7 @@
 						<label for="inputPassword" class="col-sm-1 control-label">Avatar</label>
 						<div class="col-sm-11">
 							<input type="text" class="form-control" name="avatar">
+							<input type="submit" value="Modifier">
 						</div>
 					</div>
 				</form>
@@ -39,6 +40,7 @@
 						<label for="inputPassword" class="col-sm-1 control-label">Banière</label>
 						<div class="col-sm-11">
 							<input type="text" class="form-control" name="baniere">
+							<input type="submit" value="Modifier">
 						</div>
 					</div>
 				</form>

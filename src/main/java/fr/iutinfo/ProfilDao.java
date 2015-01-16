@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface ProfilDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS profils (id INTEGER PRIMARY KEY, id_utilisateur INTEGER, lien_background TEXT, lien_avatar TEXT, FOREIGN KEY(id_utilisateur) REFERENCES users(id)))")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS profils (id INTEGER PRIMARY KEY, id_utilisateur INTEGER, lien_background TEXT, lien_avatar TEXT, FOREIGN KEY(id_utilisateur) REFERENCES users(id))")
 	public void createTable();
 	
 	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,lien_background,lien_avatar) VALUES (:id,:id_utilisateur,:lien_background,:lien_avatar)")

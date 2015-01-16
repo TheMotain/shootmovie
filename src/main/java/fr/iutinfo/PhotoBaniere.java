@@ -19,7 +19,7 @@ public class PhotoBaniere extends HttpServlet{
 		if(s.getAttribute("login") == null)
 			response.sendRedirect("singin");
 		else
-			request.getServletContext().getRequestDispatcher("/Profil.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/ProfilImage.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
