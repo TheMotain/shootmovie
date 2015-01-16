@@ -23,6 +23,10 @@ public interface VideoDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Video getVideo(@Bind("id") int id);
 	
+	@SqlQuery("SELECT * FROM videos where titre LIKE ('%:titre%')")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	public Iterator<Video> recherche(@Bind("titre") String titre);
+	
 	@SqlQuery("SELECT * FROM videos")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Iterator<Video> getAllVideo();

@@ -17,6 +17,17 @@ public class Recherche extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String search = request.getParameter("search");
+		vdao.createTable();
+		
+		Iterator<Video> it = vdao.recherche(search);
+		String videos = "";
+		while(it.hasNext()){
+			Video v = it.next();
+			videos += v.getId()+ "§" +v.getTitre() + "§" + v.getRealisateur() + "§" + v.getDateUpload();
+			videos += "£";
+		}
+		System.out.println(videos);
+		request.setAttribute("videos", videos);
 		this.getServletContext().getRequestDispatcher("/recherche.jsp").forward(request, response);
 	}
 }
