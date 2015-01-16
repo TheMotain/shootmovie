@@ -50,6 +50,6 @@ public class SetCommentaire extends HttpServlet{
 			s = "" + cal.get(Calendar.SECOND);
 		String heure = h + ":" + m + ":" + s;
 		commentairedao.insertCommentaire(Integer.parseInt(req.getParameter("id")), (Integer) session.getAttribute("id"), req.getParameter("comm"), date, heure);
-		res.sendRedirect("/video?id="+req.getParameter("id"));
+		res.sendRedirect("/shootmovie/video?id="+req.getParameter("id"));
 	}
 }

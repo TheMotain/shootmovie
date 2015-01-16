@@ -76,7 +76,7 @@
 						</p>
 						<p>Noter la vidéo:
 						<form
-							action="/setNote?id=<%out.print(request.getParameter("id"));%>"
+							action="/shootmovie/setNote?id=<%out.print(request.getParameter("id"));%>"
 							method="post" class="form-horizontal">
 							<input type="range" name="note" min="0" max="5"
 								value="<%Integer vote = (Integer) request.getAttribute("vote");
@@ -156,7 +156,7 @@
 							if (log == 1) {
 						%>
 						<form
-							action="/setCommentaire?id=<%out.print(request.getParameter("id"));%>"
+							action="/shootmovie/setCommentaire?id=<%out.print(request.getParameter("id"));%>"
 							method="post" class="form-horizontal">
 							<textarea id="textarea" rows="5" class="form-control"
 								placeholder="Commentez la vidéo ..." name="comm"></textarea>

@@ -26,6 +26,6 @@ public class SetNote extends HttpServlet{
 			notedao.insertNote(Integer.parseInt(req.getParameter("id")),(Integer) req.getSession().getAttribute("id"),Integer.parseInt(req.getParameter("note")));
 			videodao.updateNote(Integer.parseInt(req.getParameter("id")),notedao.getMoyenne(Integer.parseInt(req.getParameter("id"))));
 		}
-		res.sendRedirect("video?id="+req.getParameter("id"));
+		res.sendRedirect("/shootmovie/video?id="+req.getParameter("id"));
 	}
 }
