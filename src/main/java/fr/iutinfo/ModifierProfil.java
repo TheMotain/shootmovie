@@ -63,18 +63,22 @@ public class ModifierProfil extends HttpServlet{
 			
 			if(!des.isEmpty()){
 				user.setDes(des);
+				userdao.updateProfilDes(id, des);
 			}
 			
 			if(!facebook.isEmpty()){
 				user.setFb(facebook);
+				userdao.updateProfilFb(id, facebook);
 			}
 			
 			if(!twitter.isEmpty()){
 				user.setTwitter(twitter);
+				userdao.updateProfilTwitter(id, twitter);
 			}
 			
 			if(!gplus.isEmpty()){
 				user.setGplus(gplus);
+				userdao.updateProfilGplus(id, gplus);
 			}
 			
 			s.setAttribute("login", user.getPseudo());

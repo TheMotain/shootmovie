@@ -21,17 +21,17 @@ public interface UserDao {
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo,password=:password,email=:email,type=:type,dateInscription:dateInscription) where id=:id")
 	public void updateUser(@Bind("id") int id, @Bind("pseudo") String pseudo, @Bind("password") String password, @Bind("email") String email, @Bind("type") String type, @Bind("dateInscription") String dateInscription);
 	
-	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:des)")
-	public void insertProfilDes(@Bind("id") int id, @Bind("des") String des);
+	@SqlUpdate("UPDATE users SET des=:des where id=:id")
+	public void updateProfilDes(@Bind("id") int id, @Bind("des") String des);
 	
-	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:fb)")
-	public void insertProfilFb(@Bind("id") int id, @Bind("fb") String fb);
+	@SqlUpdate("UPDATE users SET fb=:fb where id=:id")
+	public void updateProfilFb(@Bind("id") int id, @Bind("fb") String fb);
 	
-	@SqlUpdate("INSERT INTO profils (id,des) VALUES (:id,:twitter)")
-	public void insertProfilTwitter(@Bind("id") int id, @Bind("twitter") String twitter);
+	@SqlUpdate("UPDATE users SET twitter=:twitter where id=:id")
+	public void updateProfilTwitter(@Bind("id") int id, @Bind("twitter") String twitter);
 	
-	@SqlUpdate("INSERT INTO profils (id,id_utilisateur,des) VALUES (:id,:gplus)")
-	public void insertProfilGplus(@Bind("id") int id, @Bind("gplus") String gplus);
+	@SqlUpdate("UPDATE users SET gplus=:gplus where id=:id")
+	public void updateProfilGplus(@Bind("id") int id, @Bind("gplus") String gplus);
 	
 	@SqlUpdate("UPDATE users SET pseudo=:pseudo where id=:id")
 	public void updateUserPseudo(@Bind("id") int id, @Bind("pseudo") String pseudo);
