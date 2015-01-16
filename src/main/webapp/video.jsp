@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>ShootFilm - Titre de la vidï¿½o</title>
+<title>ShootFilm - <%
+	String titre = (String) request.getAttribute("titre");
+	out.print(titre);
+%></title>
 <meta charset='utf-8'>
 <!-- jQuery -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -32,56 +35,64 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<%
-					String titre = (String) request.getAttribute("titre");
 					out.print(titre);
 				%>
+				<span style="float: right; font-style: italic;"> <%
+ 	out.print(request.getAttribute("compteur"));
+ %> vues
+				</span>
+				<div style="clear: both"></div>
 			</div>
 			<div class="panel-body">
-				<p>Synopsis :</p>
-				<p>
-					<%
-						String description = (String) request.getAttribute("description");
-						out.print(description);
-					%>
-				</p>
-				<p>
-					Date Upload :
-					<%
-					String date = (String) request.getAttribute("date");
-					out.print(date);
-				%>
-				</p>
-				<p>
-					Realisateur :
-					<%
-					String realisateur = (String) request.getAttribute("realisateur");
-					out.print(realisateur);
-				%>
-				</p>
-				<p>
-					Note :
-					<%
-					Double note = (Double) request.getAttribute("note");
-					out.print(note);
-				%>
-				<%
-					Integer log = (Integer) request.getAttribute("log");
-					if (log == 1) {
-				%>
-				</p>
-				<p>Noter la vidéo:
-				<form action="/setNote?id=<%out.print(request.getParameter("id"));%>"
-					method="post" class="form-horizontal">
-					<input type="range" name="note" min="0" max="5" value="<%Integer vote = (Integer) request.getAttribute("vote");
-					out.print(note);%>" step="1"
-						onchange="showValue(this.value)"> <span id="range"><%out.print(note);%></span>
-					<input type="submit" value="Noter">
-				</form>
-				</p>
-				<%
-				}
-				%>
-				<p>Vues : <%out.print(request.getAttribute("compteur")); %>
+				<div class="row">
+					<div class="col-md-8">
+						<p>Synopsis :</p>
+						<p>
+							<%
+								String description = (String) request.getAttribute("description");
+								out.print(description);
+							%>
+						</p>
+					</div>
+					<div class="col-md-4">
+						<p>
+							Date Upload :
+							<%
+							String date = (String) request.getAttribute("date");
+							out.print(date);
+						%>
+						</p>
+
+						<p>
+							Note :
+							<%
+								Double note = (Double) request.getAttribute("note");
+								out.print(note);
+							%>
+							<%
+								Integer log = (Integer) request.getAttribute("log");
+								if (log == 1) {
+							%>
+						</p>
+						<p>Noter la vidéo:
+						<form
+							action="/setNote?id=<%out.print(request.getParameter("id"));%>"
+							method="post" class="form-horizontal">
+							<input type="range" name="note" min="0" max="5"
+								value="<%Integer vote = (Integer) request.getAttribute("vote");
+				out.print(note);%>"
+								step="1" onchange="showValue(this.value)"> <span
+								id="range"> <%
+ 	out.print(note);
+ %>
+							</span> <input type="submit" value="Noter">
+						</form>
+						</p>
+						<%
+							}
+						%>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -89,9 +100,13 @@
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<span id="realisateur"></span>
+						<span id="realisateur"> <%
+ 	String realisateur = (String) request.getAttribute("realisateur");
+ 	out.print(realisateur);
+ %>
+						</span>
 					</div>
-					<div class="panel-body">Contenu</div>
+					<div class="panel-body"></div>
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -113,8 +128,8 @@
 							<div class="row">
 								<div class="col-md-2">
 									<img src="http://placehold.it/100x100" /> <a href="#"> <%
- 									out.print(tmp2[0]);
- 									%>
+ 	out.print(tmp2[0]);
+ %>
 									</a><br>
 								</div>
 								<div class="col-md-10">
@@ -144,7 +159,7 @@
 							action="/setCommentaire?id=<%out.print(request.getParameter("id"));%>"
 							method="post" class="form-horizontal">
 							<textarea id="textarea" rows="5" class="form-control"
-								placeholder="Commentez la vidï¿½o ..." name="comm"></textarea>
+								placeholder="Commentez la vidéo ..." name="comm"></textarea>
 							<br> <input type="submit" class="btn btn-block btn-default"
 								value="Poster" />
 						</form>
