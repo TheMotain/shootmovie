@@ -25,7 +25,7 @@ public interface ProfilDao {
 	@SqlUpdate("UPDATE profils SET lien_avatar=:lien_avatar where id=:id")
 	public void updateAvatar(@Bind("id") int id, @Bind("lien_avatar") String lien_avatar);
 
-	@SqlQuery("SELECT * FROM profils where id=:id")
+	@SqlQuery("SELECT * FROM profils where id_utilisateur=:id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	public Profil getProfil(@Bind("id") int id);
 

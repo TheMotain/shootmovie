@@ -25,7 +25,7 @@
 	<%@ include file="/elements/menu.jsp" %>
 	<!-- ----------------- FIN MENU HAUT ------------------- -->
 	<div class="container">
-		<img src="http://placehold.it/1170x200" class="banniere" />
+		<img src="<%out.print(request.getAttribute("baniere")); %>" class="banniere" />
 		<div class="panel panel-default header-profil" style="padding: 0">
 			<div class="row">
 				<div class="col-md-2">
