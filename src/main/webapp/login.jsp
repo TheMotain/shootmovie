@@ -31,19 +31,19 @@
 			} else if (request.getParameter("inscription") != null) {
 		%>
 		<div class="alert alert-success" role="alert">Inscription
-			réussie, vous pouvez vous connecter à ShootMovie.</div>
+			rÃ©ussie, vous pouvez vous connecter Ã  ShootMovie.</div>
 		<%
 			} else if (request.getParameter("connexion") != null) {
 		%>
-		<div class="alert alert-danger" role="alert">Vous devez être connecté pour accéder à cette page.</div>
+		<div class="alert alert-danger" role="alert">Vous devez Ãªtre connectÃ© pour accÃ©der Ã  cette page.</div>
 		<%
 			}
 		%>
 
 		<div class="panel panel-default" style="width: 400px; margin: 0 auto;">
-			<div class="panel-heading">Connexion à ShootMovie</div>
+			<div class="panel-heading">Connexion Ã  ShootMovie</div>
 			<div class="panel-body">
-				<form action='signin' method='post' class="form-horizontal">
+				<form action='signin' method='post' class="form-horizontal" name="log" onSubmit="saisieComplete()">
 					<div class="form-group">
 						<input type='text' style="width: 370px; margin-left: 15px"
 							class="form-control" name='login' placeholder="Login"><br>
@@ -60,4 +60,11 @@
 
 	</div>
 </body>
+	<script>
+		fonction saisieComplete(){
+			if(document.log.login=""){
+				document.long.login.focus();
+			}
+			return true;
+		}
 </html>
