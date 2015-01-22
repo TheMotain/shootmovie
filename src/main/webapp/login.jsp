@@ -63,6 +63,7 @@
 	<script>
 		fonction saisieComplete(){
 			if(document.log.login=""){
+				alert("pseudo obligatoire");
 				document.long.login.focus();
 			}
 			return true;
