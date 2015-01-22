@@ -43,7 +43,7 @@
 		<div class="panel panel-default" style="width: 400px; margin: 0 auto;">
 			<div class="panel-heading">Connexion à ShootMovie</div>
 			<div class="panel-body">
-				<form action='signin' method='post' class="form-horizontal" name="log" onSubmit="saisieComplete()">
+				<form action='signin' method='post' class="form-horizontal">
 					<div class="form-group">
 						<input type='text' style="width: 370px; margin-left: 15px"
 							class="form-control" name='login' placeholder="Login"><br>
@@ -60,13 +60,4 @@
 
 	</div>
 </body>
-	<script>
-		function saisieComplete(){
-			if(document.log.login=""){
-				alert("pseudo obligatoire");
-				document.long.login.focus();
-			}
-			return true;
-		}
-	</script>
 </html>
