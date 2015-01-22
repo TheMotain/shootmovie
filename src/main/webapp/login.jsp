@@ -68,4 +68,5 @@
 			}
 			return true;
 		}
+	</script>
 </html>
