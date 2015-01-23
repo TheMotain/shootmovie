@@ -53,7 +53,7 @@
 
 					<div class="form-group">
 						<label for="mdpVerif" class="col-sm-2 control-label">Mot
-							de Passe (vérification) :</label>
+							de Passe (vÃ©rification) :</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" name="mdpVerif"
 								id="mdpVerif" />
@@ -141,7 +141,7 @@
 				<br>
 				<button type="button" class="btn btn-success pull-right"
 					data-toggle="modal" data-target="#realisateur">Devenir
-					réalisateur</button>
+					rÃ©alisateur</button>
 				<div style="clear: both"></div>
 
 			</div>
@@ -153,25 +153,38 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">Devenir réalisateur</h4>
+					<h4 class="modal-title" id="myModalLabel">Devenir rÃ©alisateur</h4>
 				</div>
 				<div class="modal-body">
-					<p>Pour pouvoir <b>devenir réalisateur</b>, vous devez simplement
-						ajouter <b>un lien vers votre chaine de publication de vos vidéos</b>.
-						Grace à ça, nos équipes vont pouvoir vérifier que vous êtes bien
-						propriétaire du compte, et aussi vérifier que vous faites bien des
-						réalisations en correspondance avec le thème du site.</p>
+					<p>Pour pouvoir <b>devenir rÃ©alisateur</b>, vous devez simplement
+						ajouter <b>un lien vers votre chaine de publication de vos vidÃ©os</b>.
+						Grace Ã  Ã§a, nos Ã©quipes vont pouvoir vÃ©rifier que vous Ãªtes bien
+						propriÃ©taire du compte, et aussi vÃ©rifier que vous faites bien des
+						rÃ©alisations en correspondance avec le thÃ¨me du site.</p>
 
-						<form action="realisateur" method="post">
+						<form action="realisateur" method="post" id="ask" onsubmit="return valider()">
 							<div class="form-group">
-								<input type='text' class="form-control" name='link' placeholder="Lien de la chaîne"><br>
+								<input type='text' class="form-control" name='link' placeholder="Lien de la chaÃ®ne"><br>
 							</div>
 							<input class="btn btn-block btn-success" type='submit'
-							value="Devenir réalisateur">
+							value="Devenir rÃ©alisateur">
 						</form>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		function valider(){
+			form=document.forms["ask"];
+			if(form.elements["link"].value !== ""){
+				return true;
+			}
+			else{
+				alert("Veuillez mettre un lien vers vos rÃ©alisations");
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>
