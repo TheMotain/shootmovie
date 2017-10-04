@@ -12,9 +12,9 @@
 	
 	<scm>
 		<url>https://github.com/TheMotain/shootmovie</url>
-		<connection>scm:git:git://github.com/TheMotain/shootmovie</connection>
-		<developerConnection>scm:git:https://github.com/TheMotain/shootmovie</developerConnection>
-		<tag>HEAD</tag>
+		<connection>scm:git:https://github.com/TheMotain/shootmovie.git</connection>
+		<developerConnection>scm:git:https://github.com/TheMotain/shootmovie.git</developerConnection>
+		<tag>master</tag>
 	</scm>
 
 	<properties>
