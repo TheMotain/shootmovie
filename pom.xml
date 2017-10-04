@@ -11,9 +11,9 @@
 	<url>http://maven.apache.org</url>
 	
 	<scm>
-		<url>https://github.com/RomainHbt/shootmovie</url>
-		<connection>scm:git:git://github.com/RomainHbt/shootmovie</connection>
-		<developerConnection>scm:git:git@github.com:RomainHbt/shootmovie</developerConnection>
+		<url>https://github.com/TheMotain/shootmovie</url>
+		<connection>scm:git:git://github.com/TheMotain/shootmovie</connection>
+		<developerConnection>scm:git:git@github.com:TheMotain/shootmovie</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
