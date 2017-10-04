@@ -98,5 +98,10 @@
 			<artifactId>sqlite-jdbc</artifactId>
 			<version>3.8.7</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.apache.maven.scm</groupId>
+		    <artifactId>maven-scm-provider-gitexe</artifactId>
+		    <version>1.9.2</version>
+		</dependency>
 	</dependencies>
 </project>
